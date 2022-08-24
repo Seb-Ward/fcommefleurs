@@ -1,0 +1,11 @@
+CRITICAL - 2022-08-23 13:05:49 --> Call to a member function getAdmin() on null
+#0 C:\laragon\www\fcommefleurs\system\View\View.php(210): include()
+#1 C:\laragon\www\fcommefleurs\system\View\View.php(213): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#2 C:\laragon\www\fcommefleurs\system\Common.php(1089): CodeIgniter\View\View->render('application', Array, true)
+#3 C:\laragon\www\fcommefleurs\app\Controllers\Home.php(24): view('application', Array)
+#4 C:\laragon\www\fcommefleurs\system\CodeIgniter.php(832): App\Controllers\Home->index()
+#5 C:\laragon\www\fcommefleurs\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#6 C:\laragon\www\fcommefleurs\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 C:\laragon\www\fcommefleurs\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#8 C:\laragon\www\fcommefleurs\system\Commands\Server\rewrite.php(43): require_once('C:\\laragon\\www\\...')
+#9 {main}

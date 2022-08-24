@@ -19,7 +19,7 @@ class Home extends BaseController
                 'produit_list'=> transformItemsToObjects($produitModel->getProduit())
             )),
             'connected' => $user != null,
-            'admin' => $user != null && $user->admin == 1
+            'admin' => $user != null && $user->admin == 1,
         );
         return view('application', $data);
     }
