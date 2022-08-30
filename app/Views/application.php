@@ -16,7 +16,7 @@
         <body>
         <div class="container">
             <header class="pt-4 pb-4 d-flex flex-wrap align-items-center justify-content-center  justify-content-md-between">
-                <a class="d-flex align-items-center col-md-3 mb-2 mb-md-0" href="accueil.php"><img width="270" height="100" src="../assets/images/logo_fomme_fleurs_270x100px-min.png" alt=""></a>
+                <a class="d-flex align-items-center col-md-3 mb-2 mb-md-0" href="accueil.php"><img width="293" height="120" src="../assets/images/logo_fomme_fleurs_270x100px-min.png" alt=""></a>
                 <ul class="nav col-12 col-md-auto mb-2 justify-content-center mb-md-0"> 
                     <li>
                         <a class='nav-link px-2 link-<?= $page == 'accueil' ? "secondary" : "dark" ?>' href="Home">Accueil</a>
