@@ -273,3 +273,12 @@ a:hover, a:active, a:focus {
 .text-md-right {
     text-align: right !important;
 }
+.sign_in_image{
+    background-size: cover ;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-image:url(../images/sign_in_image.jpg);
+}
+.wrap .sign_in_image{
+    height: 250px;
+}

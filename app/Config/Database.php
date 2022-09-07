@@ -33,9 +33,32 @@ class Database extends Config
     public $default = [
         'DSN'      => '',
         'hostname' => 'localhost',
+        'username' => 'jvbx7270_fcommefleursadmin',
+        'password' => 'mi[?I@BDHT*m[4n+NQ',
+        'database' => 'jvbx7270_fcommefleurs',
+        'DBDriver' => 'MySQLi',
+        'DBPrefix' => '',
+        'pConnect' => false,
+        'DBDebug'  => (ENVIRONMENT !== 'production'),
+        'charset'  => 'utf8',
+        'DBCollat' => 'utf8_general_ci',
+        'swapPre'  => '',
+        'encrypt'  => false,
+        'compress' => false,
+        'strictOn' => false,
+        'failover' => [],
+        'port'     => 3306,
+    ];
+
+    /**
+     * The default database connection.
+     */
+    public $testing = [
+        'DSN'      => '',
+        'hostname' => 'localhost',
         'username' => 'root',
         'password' => 'root',
-        'database' => 'rose_ecarlate',
+        'database' => 'fcommefleurs',
         'DBDriver' => 'MySQLi',
         'DBPrefix' => '',
         'pConnect' => false,

@@ -8,15 +8,13 @@ class Connexion extends BaseController{
 
 
     public function index(){
-        if ($this->session->get('user') != null) {
+        if ($this->data['connected']) {
             return redirect()->to('/home');
-        } 
-        $data = array(
-            'title' => "Se connecter",
-            'page'=>"connexion_admin",
-            'content' => view('connexion')
-        );
-        return view('application', $data);
+        }
+        $this->data['title'] = "Se connecter";
+        $this->data['page'] = "connexion_admin";
+        $this->data['content'] = view('connexion');
+        return view('application', $this->data);
     }
 
     public function connect(){
@@ -44,10 +42,7 @@ class Connexion extends BaseController{
 
     public function deconnect(){
         if($this->session->get("user") !=null){//I check if the user session doesn't allready exist
-            $this->index();
-            }
-            
-            $this->session->destroy();
+            $this->session->destroy(); }
             return redirect()->to('/home');
         }
 

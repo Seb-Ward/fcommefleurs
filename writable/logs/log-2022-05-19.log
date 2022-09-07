@@ -1,0 +1,86 @@
+CRITICAL - 2022-05-19 12:02:15 --> Call to a member function getProduit_id() on null
+#0 C:\Users\sebwa\Desktop\codeigniter4-CodeIgniter4-v4.1.9-0-g202f41a\codeigniter4-CodeIgniter4-202f41a\system\View\View.php(210): include()
+#1 C:\Users\sebwa\Desktop\codeigniter4-CodeIgniter4-v4.1.9-0-g202f41a\codeigniter4-CodeIgniter4-202f41a\system\View\View.php(213): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#2 C:\Users\sebwa\Desktop\codeigniter4-CodeIgniter4-v4.1.9-0-g202f41a\codeigniter4-CodeIgniter4-202f41a\system\Common.php(1089): CodeIgniter\View\View->render('accueil', Array, true)
+#3 C:\Users\sebwa\Desktop\codeigniter4-CodeIgniter4-v4.1.9-0-g202f41a\codeigniter4-CodeIgniter4-202f41a\app\Controllers\Home.php(17): view('accueil', Array)
+#4 C:\Users\sebwa\Desktop\codeigniter4-CodeIgniter4-v4.1.9-0-g202f41a\codeigniter4-CodeIgniter4-202f41a\system\CodeIgniter.php(832): App\Controllers\Home->index()
+#5 C:\Users\sebwa\Desktop\codeigniter4-CodeIgniter4-v4.1.9-0-g202f41a\codeigniter4-CodeIgniter4-202f41a\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#6 C:\Users\sebwa\Desktop\codeigniter4-CodeIgniter4-v4.1.9-0-g202f41a\codeigniter4-CodeIgniter4-202f41a\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 C:\Users\sebwa\Desktop\codeigniter4-CodeIgniter4-v4.1.9-0-g202f41a\codeigniter4-CodeIgniter4-202f41a\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#8 C:\Users\sebwa\Desktop\codeigniter4-CodeIgniter4-v4.1.9-0-g202f41a\codeigniter4-CodeIgniter4-202f41a\system\Commands\Server\rewrite.php(43): require_once('C:\\Users\\sebwa\\...')
+#9 {main}
+CRITICAL - 2022-05-19 12:04:08 --> Call to a member function getProduit_id() on null
+#0 C:\Users\sebwa\Desktop\codeigniter4-CodeIgniter4-v4.1.9-0-g202f41a\codeigniter4-CodeIgniter4-202f41a\system\View\View.php(210): include()
+#1 C:\Users\sebwa\Desktop\codeigniter4-CodeIgniter4-v4.1.9-0-g202f41a\codeigniter4-CodeIgniter4-202f41a\system\View\View.php(213): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#2 C:\Users\sebwa\Desktop\codeigniter4-CodeIgniter4-v4.1.9-0-g202f41a\codeigniter4-CodeIgniter4-202f41a\system\Common.php(1089): CodeIgniter\View\View->render('accueil', Array, true)
+#3 C:\Users\sebwa\Desktop\codeigniter4-CodeIgniter4-v4.1.9-0-g202f41a\codeigniter4-CodeIgniter4-202f41a\app\Controllers\Home.php(17): view('accueil', Array)
+#4 C:\Users\sebwa\Desktop\codeigniter4-CodeIgniter4-v4.1.9-0-g202f41a\codeigniter4-CodeIgniter4-202f41a\system\CodeIgniter.php(832): App\Controllers\Home->index()
+#5 C:\Users\sebwa\Desktop\codeigniter4-CodeIgniter4-v4.1.9-0-g202f41a\codeigniter4-CodeIgniter4-202f41a\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#6 C:\Users\sebwa\Desktop\codeigniter4-CodeIgniter4-v4.1.9-0-g202f41a\codeigniter4-CodeIgniter4-202f41a\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 C:\Users\sebwa\Desktop\codeigniter4-CodeIgniter4-v4.1.9-0-g202f41a\codeigniter4-CodeIgniter4-202f41a\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#8 C:\Users\sebwa\Desktop\codeigniter4-CodeIgniter4-v4.1.9-0-g202f41a\codeigniter4-CodeIgniter4-202f41a\system\Commands\Server\rewrite.php(43): require_once('C:\\Users\\sebwa\\...')
+#9 {main}
+CRITICAL - 2022-05-19 12:05:21 --> Call to a member function getProduit_id() on array
+#0 C:\Users\sebwa\Desktop\codeigniter4-CodeIgniter4-v4.1.9-0-g202f41a\codeigniter4-CodeIgniter4-202f41a\system\View\View.php(210): include()
+#1 C:\Users\sebwa\Desktop\codeigniter4-CodeIgniter4-v4.1.9-0-g202f41a\codeigniter4-CodeIgniter4-202f41a\system\View\View.php(213): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#2 C:\Users\sebwa\Desktop\codeigniter4-CodeIgniter4-v4.1.9-0-g202f41a\codeigniter4-CodeIgniter4-202f41a\system\Common.php(1089): CodeIgniter\View\View->render('accueil', Array, true)
+#3 C:\Users\sebwa\Desktop\codeigniter4-CodeIgniter4-v4.1.9-0-g202f41a\codeigniter4-CodeIgniter4-202f41a\app\Controllers\Home.php(17): view('accueil', Array)
+#4 C:\Users\sebwa\Desktop\codeigniter4-CodeIgniter4-v4.1.9-0-g202f41a\codeigniter4-CodeIgniter4-202f41a\system\CodeIgniter.php(832): App\Controllers\Home->index()
+#5 C:\Users\sebwa\Desktop\codeigniter4-CodeIgniter4-v4.1.9-0-g202f41a\codeigniter4-CodeIgniter4-202f41a\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#6 C:\Users\sebwa\Desktop\codeigniter4-CodeIgniter4-v4.1.9-0-g202f41a\codeigniter4-CodeIgniter4-202f41a\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 C:\Users\sebwa\Desktop\codeigniter4-CodeIgniter4-v4.1.9-0-g202f41a\codeigniter4-CodeIgniter4-202f41a\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#8 C:\Users\sebwa\Desktop\codeigniter4-CodeIgniter4-v4.1.9-0-g202f41a\codeigniter4-CodeIgniter4-202f41a\system\Commands\Server\rewrite.php(43): require_once('C:\\Users\\sebwa\\...')
+#9 {main}
+CRITICAL - 2022-05-19 12:06:39 --> Call to a member function getProduit_id() on array
+#0 C:\Users\sebwa\Desktop\codeigniter4-CodeIgniter4-v4.1.9-0-g202f41a\codeigniter4-CodeIgniter4-202f41a\system\View\View.php(210): include()
+#1 C:\Users\sebwa\Desktop\codeigniter4-CodeIgniter4-v4.1.9-0-g202f41a\codeigniter4-CodeIgniter4-202f41a\system\View\View.php(213): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#2 C:\Users\sebwa\Desktop\codeigniter4-CodeIgniter4-v4.1.9-0-g202f41a\codeigniter4-CodeIgniter4-202f41a\system\Common.php(1089): CodeIgniter\View\View->render('accueil', Array, true)
+#3 C:\Users\sebwa\Desktop\codeigniter4-CodeIgniter4-v4.1.9-0-g202f41a\codeigniter4-CodeIgniter4-202f41a\app\Controllers\Home.php(17): view('accueil', Array)
+#4 C:\Users\sebwa\Desktop\codeigniter4-CodeIgniter4-v4.1.9-0-g202f41a\codeigniter4-CodeIgniter4-202f41a\system\CodeIgniter.php(832): App\Controllers\Home->index()
+#5 C:\Users\sebwa\Desktop\codeigniter4-CodeIgniter4-v4.1.9-0-g202f41a\codeigniter4-CodeIgniter4-202f41a\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#6 C:\Users\sebwa\Desktop\codeigniter4-CodeIgniter4-v4.1.9-0-g202f41a\codeigniter4-CodeIgniter4-202f41a\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 C:\Users\sebwa\Desktop\codeigniter4-CodeIgniter4-v4.1.9-0-g202f41a\codeigniter4-CodeIgniter4-202f41a\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#8 C:\Users\sebwa\Desktop\codeigniter4-CodeIgniter4-v4.1.9-0-g202f41a\codeigniter4-CodeIgniter4-202f41a\system\Commands\Server\rewrite.php(43): require_once('C:\\Users\\sebwa\\...')
+#9 {main}
+CRITICAL - 2022-05-19 12:06:41 --> Call to a member function getProduit_id() on array
+#0 C:\Users\sebwa\Desktop\codeigniter4-CodeIgniter4-v4.1.9-0-g202f41a\codeigniter4-CodeIgniter4-202f41a\system\View\View.php(210): include()
+#1 C:\Users\sebwa\Desktop\codeigniter4-CodeIgniter4-v4.1.9-0-g202f41a\codeigniter4-CodeIgniter4-202f41a\system\View\View.php(213): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#2 C:\Users\sebwa\Desktop\codeigniter4-CodeIgniter4-v4.1.9-0-g202f41a\codeigniter4-CodeIgniter4-202f41a\system\Common.php(1089): CodeIgniter\View\View->render('accueil', Array, true)
+#3 C:\Users\sebwa\Desktop\codeigniter4-CodeIgniter4-v4.1.9-0-g202f41a\codeigniter4-CodeIgniter4-202f41a\app\Controllers\Home.php(17): view('accueil', Array)
+#4 C:\Users\sebwa\Desktop\codeigniter4-CodeIgniter4-v4.1.9-0-g202f41a\codeigniter4-CodeIgniter4-202f41a\system\CodeIgniter.php(832): App\Controllers\Home->index()
+#5 C:\Users\sebwa\Desktop\codeigniter4-CodeIgniter4-v4.1.9-0-g202f41a\codeigniter4-CodeIgniter4-202f41a\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#6 C:\Users\sebwa\Desktop\codeigniter4-CodeIgniter4-v4.1.9-0-g202f41a\codeigniter4-CodeIgniter4-202f41a\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 C:\Users\sebwa\Desktop\codeigniter4-CodeIgniter4-v4.1.9-0-g202f41a\codeigniter4-CodeIgniter4-202f41a\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#8 C:\Users\sebwa\Desktop\codeigniter4-CodeIgniter4-v4.1.9-0-g202f41a\codeigniter4-CodeIgniter4-202f41a\system\Commands\Server\rewrite.php(43): require_once('C:\\Users\\sebwa\\...')
+#9 {main}
+CRITICAL - 2022-05-19 12:07:03 --> Call to a member function getProduit_id() on array
+#0 C:\Users\sebwa\Desktop\codeigniter4-CodeIgniter4-v4.1.9-0-g202f41a\codeigniter4-CodeIgniter4-202f41a\system\View\View.php(210): include()
+#1 C:\Users\sebwa\Desktop\codeigniter4-CodeIgniter4-v4.1.9-0-g202f41a\codeigniter4-CodeIgniter4-202f41a\system\View\View.php(213): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#2 C:\Users\sebwa\Desktop\codeigniter4-CodeIgniter4-v4.1.9-0-g202f41a\codeigniter4-CodeIgniter4-202f41a\system\Common.php(1089): CodeIgniter\View\View->render('accueil', Array, true)
+#3 C:\Users\sebwa\Desktop\codeigniter4-CodeIgniter4-v4.1.9-0-g202f41a\codeigniter4-CodeIgniter4-202f41a\app\Controllers\Home.php(17): view('accueil', Array)
+#4 C:\Users\sebwa\Desktop\codeigniter4-CodeIgniter4-v4.1.9-0-g202f41a\codeigniter4-CodeIgniter4-202f41a\system\CodeIgniter.php(832): App\Controllers\Home->index()
+#5 C:\Users\sebwa\Desktop\codeigniter4-CodeIgniter4-v4.1.9-0-g202f41a\codeigniter4-CodeIgniter4-202f41a\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#6 C:\Users\sebwa\Desktop\codeigniter4-CodeIgniter4-v4.1.9-0-g202f41a\codeigniter4-CodeIgniter4-202f41a\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 C:\Users\sebwa\Desktop\codeigniter4-CodeIgniter4-v4.1.9-0-g202f41a\codeigniter4-CodeIgniter4-202f41a\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#8 C:\Users\sebwa\Desktop\codeigniter4-CodeIgniter4-v4.1.9-0-g202f41a\codeigniter4-CodeIgniter4-202f41a\system\Commands\Server\rewrite.php(43): require_once('C:\\Users\\sebwa\\...')
+#9 {main}
+CRITICAL - 2022-05-19 12:07:50 --> Call to a member function getProduit_id() on array
+#0 C:\Users\sebwa\Desktop\codeigniter4-CodeIgniter4-v4.1.9-0-g202f41a\codeigniter4-CodeIgniter4-202f41a\system\View\View.php(210): include()
+#1 C:\Users\sebwa\Desktop\codeigniter4-CodeIgniter4-v4.1.9-0-g202f41a\codeigniter4-CodeIgniter4-202f41a\system\View\View.php(213): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#2 C:\Users\sebwa\Desktop\codeigniter4-CodeIgniter4-v4.1.9-0-g202f41a\codeigniter4-CodeIgniter4-202f41a\system\Common.php(1089): CodeIgniter\View\View->render('accueil', Array, true)
+#3 C:\Users\sebwa\Desktop\codeigniter4-CodeIgniter4-v4.1.9-0-g202f41a\codeigniter4-CodeIgniter4-202f41a\app\Controllers\Home.php(17): view('accueil', Array)
+#4 C:\Users\sebwa\Desktop\codeigniter4-CodeIgniter4-v4.1.9-0-g202f41a\codeigniter4-CodeIgniter4-202f41a\system\CodeIgniter.php(832): App\Controllers\Home->index()
+#5 C:\Users\sebwa\Desktop\codeigniter4-CodeIgniter4-v4.1.9-0-g202f41a\codeigniter4-CodeIgniter4-202f41a\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#6 C:\Users\sebwa\Desktop\codeigniter4-CodeIgniter4-v4.1.9-0-g202f41a\codeigniter4-CodeIgniter4-202f41a\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 C:\Users\sebwa\Desktop\codeigniter4-CodeIgniter4-v4.1.9-0-g202f41a\codeigniter4-CodeIgniter4-202f41a\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#8 C:\Users\sebwa\Desktop\codeigniter4-CodeIgniter4-v4.1.9-0-g202f41a\codeigniter4-CodeIgniter4-202f41a\system\Commands\Server\rewrite.php(43): require_once('C:\\Users\\sebwa\\...')
+#9 {main}
+CRITICAL - 2022-05-19 12:38:47 --> Class 'Produit' not found
+#0 C:\Users\sebwa\Desktop\codeigniter4-CodeIgniter4-v4.1.9-0-g202f41a\codeigniter4-CodeIgniter4-202f41a\app\Helpers\produit_helper.php(6): transformItemToObject(Array)
+#1 C:\Users\sebwa\Desktop\codeigniter4-CodeIgniter4-v4.1.9-0-g202f41a\codeigniter4-CodeIgniter4-202f41a\app\Controllers\Home.php(18): transformItemsToObjects(Array)
+#2 C:\Users\sebwa\Desktop\codeigniter4-CodeIgniter4-v4.1.9-0-g202f41a\codeigniter4-CodeIgniter4-202f41a\system\CodeIgniter.php(832): App\Controllers\Home->index()
+#3 C:\Users\sebwa\Desktop\codeigniter4-CodeIgniter4-v4.1.9-0-g202f41a\codeigniter4-CodeIgniter4-202f41a\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#4 C:\Users\sebwa\Desktop\codeigniter4-CodeIgniter4-v4.1.9-0-g202f41a\codeigniter4-CodeIgniter4-202f41a\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 C:\Users\sebwa\Desktop\codeigniter4-CodeIgniter4-v4.1.9-0-g202f41a\codeigniter4-CodeIgniter4-202f41a\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#6 C:\Users\sebwa\Desktop\codeigniter4-CodeIgniter4-v4.1.9-0-g202f41a\codeigniter4-CodeIgniter4-202f41a\system\Commands\Server\rewrite.php(43): require_once('C:\\Users\\sebwa\\...')
+#7 {main}

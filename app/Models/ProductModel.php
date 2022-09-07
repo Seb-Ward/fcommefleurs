@@ -4,38 +4,38 @@ namespace App\Models;
 use CodeIgniter\Model;
 
  
-class ProduitModel extends Model {
+class ProductModel extends Model {
 
         protected $DBGroup = 'default';
 
-        protected $table = 'produit';
-        protected $primaryKey = 'produit_id';
+        protected $table = 'product';
+        protected $primaryKey = 'id';
         protected $returnType = 'array';
-        protected $allowedFields = ['produit_nom','produit_description','produit_prix','taxe_id','image_id','produit_publish_accueil','produit_publish_boutique'];
+        protected $allowedFields = ['name','description','price','taxe_id','image_id','publish_home_page','publish_shop_page'];
         protected $createdField = null;
         protected $updatedField = null;
 
 
 
-  function insertProduit($data){
+  function insertProduct($data){
         $this->db->table($this->table)->insert($data);//new way to insert a product in the data base
         return $this->db->insertID();
   }      
-  function updateProduit($data){
+  function updateProduct($data){
         $this->db->table($this->table)->update($data);//new way to update a product in the data base
   }  
-  function deleteProduit($data){
+  function deleteProduct($data){
         $this->db->table($this->table)->delete($data);//new way to delete a product in the data base
   }  
   
-  function getProduit($id = null){
+  function getProduct($id = null){
         $dbQuery = $this->db->table($this->table);
           if ($id != null) {
-                  $dbQuery->where('produit_id', $id);
+                  $dbQuery->where($this->primaryKey, $id);
           }
           return $dbQuery->select("*")
-                ->join("taxe","produit.taxe_id=taxe.taxe_id")
-                ->join("image","produit.image_id=image.image_id")->get()->getResultArray();
+                ->join("taxe","product.taxe_id=taxe.id")
+                ->join("image","product.image_id=image.id")->get()->getResultArray();
 
 
   }

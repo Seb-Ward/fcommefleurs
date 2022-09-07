@@ -1,0 +1,9 @@
+CRITICAL - 2022-05-25 13:09:13 --> Cannot use object of type mysqli as array
+#0 C:\Users\sebwa\Desktop\codeigniter4-CodeIgniter4-v4.1.9-0-g202f41a\rose_ecarlate_codeigniter4\app\Helpers\produit_helper.php(10): transformItemToObject(Object(mysqli))
+#1 C:\Users\sebwa\Desktop\codeigniter4-CodeIgniter4-v4.1.9-0-g202f41a\rose_ecarlate_codeigniter4\app\Controllers\Home.php(18): transformItemsToObjects(Object(CodeIgniter\Database\MySQLi\Result))
+#2 C:\Users\sebwa\Desktop\codeigniter4-CodeIgniter4-v4.1.9-0-g202f41a\rose_ecarlate_codeigniter4\system\CodeIgniter.php(832): App\Controllers\Home->index()
+#3 C:\Users\sebwa\Desktop\codeigniter4-CodeIgniter4-v4.1.9-0-g202f41a\rose_ecarlate_codeigniter4\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#4 C:\Users\sebwa\Desktop\codeigniter4-CodeIgniter4-v4.1.9-0-g202f41a\rose_ecarlate_codeigniter4\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 C:\Users\sebwa\Desktop\codeigniter4-CodeIgniter4-v4.1.9-0-g202f41a\rose_ecarlate_codeigniter4\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#6 C:\Users\sebwa\Desktop\codeigniter4-CodeIgniter4-v4.1.9-0-g202f41a\rose_ecarlate_codeigniter4\system\Commands\Server\rewrite.php(43): require_once('C:\\Users\\sebwa\\...')
+#7 {main}

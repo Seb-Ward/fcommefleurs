@@ -8,15 +8,10 @@ class Dashboard extends BaseController
 {
     public function index()
     {
-        $user = $this->session->get('user');
-        $isAdmin= $user != null && $user->admin == 1;
-        $data = array(
-            'title' => "Dashboard",
-            'page'=>"dashboard",
-            'content' => view(($isAdmin?"admin":"customer").'/dashboard', array()),
-            'connected' => $user != null,
-            'admin' => $isAdmin,
-        );
-        return view('application', $data);
+ 
+        $this->data['title'] = "Dashboard";
+        $this->data['page'] = "dashboard";
+        $this->data['content'] = view(($this->data['admin']?"admin":"customer").'/dashboard', array());
+        return view('application', $this->data);
     }
 }

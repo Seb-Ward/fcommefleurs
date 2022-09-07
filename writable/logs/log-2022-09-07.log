@@ -1,0 +1,385 @@
+ERROR - 2022-09-07 11:11:02 --> Error connecting to the database: Access denied for user '****'@'localhost' (using password: YES)
+CRITICAL - 2022-09-07 11:11:02 --> Unable to connect to the database.
+Main connection [MySQLi]: Access denied for user '****'@'localhost' (using password: YES)
+#0 C:\laragon\www\workspace\fcommefleurs\system\Database\BaseConnection.php(577): CodeIgniter\Database\BaseConnection->initialize()
+#1 C:\laragon\www\workspace\fcommefleurs\system\Database\BaseBuilder.php(1455): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#2 C:\laragon\www\workspace\fcommefleurs\app\Models\ProduitModel.php(38): CodeIgniter\Database\BaseBuilder->get()
+#3 C:\laragon\www\workspace\fcommefleurs\app\Controllers\Home.php(18): App\Models\ProduitModel->getProduit()
+#4 C:\laragon\www\workspace\fcommefleurs\system\CodeIgniter.php(832): App\Controllers\Home->index()
+#5 C:\laragon\www\workspace\fcommefleurs\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#6 C:\laragon\www\workspace\fcommefleurs\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 C:\laragon\www\workspace\fcommefleurs\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#8 C:\laragon\www\workspace\fcommefleurs\system\Commands\Server\rewrite.php(43): require_once('C:\\laragon\\www\\...')
+#9 {main}
+ERROR - 2022-09-07 11:12:02 --> Error connecting to the database: Host '88.174.216.21' is not allowed to connect to this MariaDB server
+CRITICAL - 2022-09-07 11:12:02 --> Unable to connect to the database.
+Main connection [MySQLi]: Host '88.174.216.21' is not allowed to connect to this MariaDB server
+#0 C:\laragon\www\workspace\fcommefleurs\system\Database\BaseConnection.php(577): CodeIgniter\Database\BaseConnection->initialize()
+#1 C:\laragon\www\workspace\fcommefleurs\system\Database\BaseBuilder.php(1455): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#2 C:\laragon\www\workspace\fcommefleurs\app\Models\ProduitModel.php(38): CodeIgniter\Database\BaseBuilder->get()
+#3 C:\laragon\www\workspace\fcommefleurs\app\Controllers\Home.php(18): App\Models\ProduitModel->getProduit()
+#4 C:\laragon\www\workspace\fcommefleurs\system\CodeIgniter.php(832): App\Controllers\Home->index()
+#5 C:\laragon\www\workspace\fcommefleurs\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#6 C:\laragon\www\workspace\fcommefleurs\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 C:\laragon\www\workspace\fcommefleurs\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#8 C:\laragon\www\workspace\fcommefleurs\system\Commands\Server\rewrite.php(43): require_once('C:\\laragon\\www\\...')
+#9 {main}
+ERROR - 2022-09-07 11:13:14 --> Error connecting to the database: MySQL server has gone away
+CRITICAL - 2022-09-07 11:13:14 --> Unable to connect to the database.
+Main connection [MySQLi]: MySQL server has gone away
+#0 C:\laragon\www\workspace\fcommefleurs\system\Database\BaseConnection.php(577): CodeIgniter\Database\BaseConnection->initialize()
+#1 C:\laragon\www\workspace\fcommefleurs\system\Database\BaseBuilder.php(1455): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#2 C:\laragon\www\workspace\fcommefleurs\app\Models\ProduitModel.php(38): CodeIgniter\Database\BaseBuilder->get()
+#3 C:\laragon\www\workspace\fcommefleurs\app\Controllers\Home.php(18): App\Models\ProduitModel->getProduit()
+#4 C:\laragon\www\workspace\fcommefleurs\system\CodeIgniter.php(832): App\Controllers\Home->index()
+#5 C:\laragon\www\workspace\fcommefleurs\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#6 C:\laragon\www\workspace\fcommefleurs\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 C:\laragon\www\workspace\fcommefleurs\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#8 C:\laragon\www\workspace\fcommefleurs\system\Commands\Server\rewrite.php(43): require_once('C:\\laragon\\www\\...')
+#9 {main}
+ERROR - 2022-09-07 11:13:45 --> Error connecting to the database: Host '88.174.216.21' is not allowed to connect to this MariaDB server
+CRITICAL - 2022-09-07 11:13:45 --> Unable to connect to the database.
+Main connection [MySQLi]: Host '88.174.216.21' is not allowed to connect to this MariaDB server
+#0 C:\laragon\www\workspace\fcommefleurs\system\Database\BaseConnection.php(577): CodeIgniter\Database\BaseConnection->initialize()
+#1 C:\laragon\www\workspace\fcommefleurs\system\Database\BaseBuilder.php(1455): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#2 C:\laragon\www\workspace\fcommefleurs\app\Models\ProduitModel.php(38): CodeIgniter\Database\BaseBuilder->get()
+#3 C:\laragon\www\workspace\fcommefleurs\app\Controllers\Home.php(18): App\Models\ProduitModel->getProduit()
+#4 C:\laragon\www\workspace\fcommefleurs\system\CodeIgniter.php(832): App\Controllers\Home->index()
+#5 C:\laragon\www\workspace\fcommefleurs\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#6 C:\laragon\www\workspace\fcommefleurs\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 C:\laragon\www\workspace\fcommefleurs\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#8 C:\laragon\www\workspace\fcommefleurs\system\Commands\Server\rewrite.php(43): require_once('C:\\laragon\\www\\...')
+#9 {main}
+ERROR - 2022-09-07 11:14:50 --> Error connecting to the database: MySQL server has gone away
+CRITICAL - 2022-09-07 11:14:50 --> Unable to connect to the database.
+Main connection [MySQLi]: MySQL server has gone away
+#0 C:\laragon\www\workspace\fcommefleurs\system\Database\BaseConnection.php(577): CodeIgniter\Database\BaseConnection->initialize()
+#1 C:\laragon\www\workspace\fcommefleurs\system\Database\BaseBuilder.php(1455): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#2 C:\laragon\www\workspace\fcommefleurs\app\Models\ProduitModel.php(38): CodeIgniter\Database\BaseBuilder->get()
+#3 C:\laragon\www\workspace\fcommefleurs\app\Controllers\Home.php(18): App\Models\ProduitModel->getProduit()
+#4 C:\laragon\www\workspace\fcommefleurs\system\CodeIgniter.php(832): App\Controllers\Home->index()
+#5 C:\laragon\www\workspace\fcommefleurs\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#6 C:\laragon\www\workspace\fcommefleurs\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 C:\laragon\www\workspace\fcommefleurs\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#8 C:\laragon\www\workspace\fcommefleurs\system\Commands\Server\rewrite.php(43): require_once('C:\\laragon\\www\\...')
+#9 {main}
+ERROR - 2022-09-07 11:15:33 --> Error connecting to the database: MySQL server has gone away
+CRITICAL - 2022-09-07 11:15:33 --> Unable to connect to the database.
+Main connection [MySQLi]: MySQL server has gone away
+#0 C:\laragon\www\workspace\fcommefleurs\system\Database\BaseConnection.php(577): CodeIgniter\Database\BaseConnection->initialize()
+#1 C:\laragon\www\workspace\fcommefleurs\system\Database\BaseBuilder.php(1455): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#2 C:\laragon\www\workspace\fcommefleurs\app\Models\ProduitModel.php(38): CodeIgniter\Database\BaseBuilder->get()
+#3 C:\laragon\www\workspace\fcommefleurs\app\Controllers\Home.php(18): App\Models\ProduitModel->getProduit()
+#4 C:\laragon\www\workspace\fcommefleurs\system\CodeIgniter.php(832): App\Controllers\Home->index()
+#5 C:\laragon\www\workspace\fcommefleurs\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#6 C:\laragon\www\workspace\fcommefleurs\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 C:\laragon\www\workspace\fcommefleurs\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#8 C:\laragon\www\workspace\fcommefleurs\system\Commands\Server\rewrite.php(43): require_once('C:\\laragon\\www\\...')
+#9 {main}
+CRITICAL - 2022-09-07 11:19:53 --> Class 'App\Models\ProduitModel' not found
+#0 C:\laragon\www\workspace\fcommefleurs\system\CodeIgniter.php(832): App\Controllers\Home->index()
+#1 C:\laragon\www\workspace\fcommefleurs\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#2 C:\laragon\www\workspace\fcommefleurs\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#3 C:\laragon\www\workspace\fcommefleurs\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#4 C:\laragon\www\workspace\fcommefleurs\system\Commands\Server\rewrite.php(43): require_once('C:\\laragon\\www\\...')
+#5 {main}
+CRITICAL - 2022-09-07 11:21:30 --> Class 'App\Models\ProduitModel' not found
+#0 C:\laragon\www\workspace\fcommefleurs\system\CodeIgniter.php(832): App\Controllers\Home->index()
+#1 C:\laragon\www\workspace\fcommefleurs\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#2 C:\laragon\www\workspace\fcommefleurs\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#3 C:\laragon\www\workspace\fcommefleurs\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#4 C:\laragon\www\workspace\fcommefleurs\system\Commands\Server\rewrite.php(43): require_once('C:\\laragon\\www\\...')
+#5 {main}
+CRITICAL - 2022-09-07 11:21:33 --> Class 'App\Models\ProduitModel' not found
+#0 C:\laragon\www\workspace\fcommefleurs\system\CodeIgniter.php(832): App\Controllers\Home->index()
+#1 C:\laragon\www\workspace\fcommefleurs\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#2 C:\laragon\www\workspace\fcommefleurs\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#3 C:\laragon\www\workspace\fcommefleurs\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#4 C:\laragon\www\workspace\fcommefleurs\system\Commands\Server\rewrite.php(43): require_once('C:\\laragon\\www\\...')
+#5 {main}
+CRITICAL - 2022-09-07 11:21:38 --> Class 'App\Models\ProduitModel' not found
+#0 C:\laragon\www\workspace\fcommefleurs\system\CodeIgniter.php(832): App\Controllers\Home->index()
+#1 C:\laragon\www\workspace\fcommefleurs\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#2 C:\laragon\www\workspace\fcommefleurs\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#3 C:\laragon\www\workspace\fcommefleurs\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#4 C:\laragon\www\workspace\fcommefleurs\system\Commands\Server\rewrite.php(43): require_once('C:\\laragon\\www\\...')
+#5 {main}
+CRITICAL - 2022-09-07 11:22:13 --> Class 'App\Models\ProductModel' not found
+#0 C:\laragon\www\workspace\fcommefleurs\system\CodeIgniter.php(832): App\Controllers\Home->index()
+#1 C:\laragon\www\workspace\fcommefleurs\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#2 C:\laragon\www\workspace\fcommefleurs\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#3 C:\laragon\www\workspace\fcommefleurs\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#4 C:\laragon\www\workspace\fcommefleurs\system\Commands\Server\rewrite.php(43): require_once('C:\\laragon\\www\\...')
+#5 {main}
+CRITICAL - 2022-09-07 11:22:15 --> Class 'App\Models\ProductModel' not found
+#0 C:\laragon\www\workspace\fcommefleurs\system\CodeIgniter.php(832): App\Controllers\Home->index()
+#1 C:\laragon\www\workspace\fcommefleurs\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#2 C:\laragon\www\workspace\fcommefleurs\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#3 C:\laragon\www\workspace\fcommefleurs\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#4 C:\laragon\www\workspace\fcommefleurs\system\Commands\Server\rewrite.php(43): require_once('C:\\laragon\\www\\...')
+#5 {main}
+ERROR - 2022-09-07 11:23:07 --> Error connecting to the database: MySQL server has gone away
+CRITICAL - 2022-09-07 11:23:07 --> Unable to connect to the database.
+Main connection [MySQLi]: MySQL server has gone away
+#0 C:\laragon\www\workspace\fcommefleurs\system\Database\BaseConnection.php(577): CodeIgniter\Database\BaseConnection->initialize()
+#1 C:\laragon\www\workspace\fcommefleurs\system\Database\BaseBuilder.php(1455): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#2 C:\laragon\www\workspace\fcommefleurs\app\Models\ProductModel.php(38): CodeIgniter\Database\BaseBuilder->get()
+#3 C:\laragon\www\workspace\fcommefleurs\app\Controllers\Home.php(18): App\Models\ProductModel->getProduct()
+#4 C:\laragon\www\workspace\fcommefleurs\system\CodeIgniter.php(832): App\Controllers\Home->index()
+#5 C:\laragon\www\workspace\fcommefleurs\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#6 C:\laragon\www\workspace\fcommefleurs\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 C:\laragon\www\workspace\fcommefleurs\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#8 C:\laragon\www\workspace\fcommefleurs\system\Commands\Server\rewrite.php(43): require_once('C:\\laragon\\www\\...')
+#9 {main}
+ERROR - 2022-09-07 11:25:37 --> Error connecting to the database: MySQL server has gone away
+CRITICAL - 2022-09-07 11:25:37 --> Unable to connect to the database.
+Main connection [MySQLi]: MySQL server has gone away
+#0 C:\laragon\www\workspace\fcommefleurs\system\Database\BaseConnection.php(577): CodeIgniter\Database\BaseConnection->initialize()
+#1 C:\laragon\www\workspace\fcommefleurs\system\Database\BaseBuilder.php(1455): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#2 C:\laragon\www\workspace\fcommefleurs\app\Models\ProductModel.php(38): CodeIgniter\Database\BaseBuilder->get()
+#3 C:\laragon\www\workspace\fcommefleurs\app\Controllers\Home.php(18): App\Models\ProductModel->getProduct()
+#4 C:\laragon\www\workspace\fcommefleurs\system\CodeIgniter.php(832): App\Controllers\Home->index()
+#5 C:\laragon\www\workspace\fcommefleurs\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#6 C:\laragon\www\workspace\fcommefleurs\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 C:\laragon\www\workspace\fcommefleurs\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#8 C:\laragon\www\workspace\fcommefleurs\system\Commands\Server\rewrite.php(43): require_once('C:\\laragon\\www\\...')
+#9 {main}
+ERROR - 2022-09-07 11:32:09 --> Error connecting to the database: MySQL server has gone away
+CRITICAL - 2022-09-07 11:32:09 --> Unable to connect to the database.
+Main connection [MySQLi]: MySQL server has gone away
+#0 C:\laragon\www\workspace\fcommefleurs\system\Database\BaseConnection.php(577): CodeIgniter\Database\BaseConnection->initialize()
+#1 C:\laragon\www\workspace\fcommefleurs\system\Database\BaseBuilder.php(1455): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#2 C:\laragon\www\workspace\fcommefleurs\app\Models\ProductModel.php(38): CodeIgniter\Database\BaseBuilder->get()
+#3 C:\laragon\www\workspace\fcommefleurs\app\Controllers\Home.php(18): App\Models\ProductModel->getProduct()
+#4 C:\laragon\www\workspace\fcommefleurs\system\CodeIgniter.php(832): App\Controllers\Home->index()
+#5 C:\laragon\www\workspace\fcommefleurs\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#6 C:\laragon\www\workspace\fcommefleurs\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 C:\laragon\www\workspace\fcommefleurs\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#8 C:\laragon\www\workspace\fcommefleurs\system\Commands\Server\rewrite.php(43): require_once('C:\\laragon\\www\\...')
+#9 {main}
+ERROR - 2022-09-07 11:32:50 --> Error connecting to the database: MySQL server has gone away
+CRITICAL - 2022-09-07 11:32:50 --> Unable to connect to the database.
+Main connection [MySQLi]: MySQL server has gone away
+#0 C:\laragon\www\workspace\fcommefleurs\system\Database\BaseConnection.php(577): CodeIgniter\Database\BaseConnection->initialize()
+#1 C:\laragon\www\workspace\fcommefleurs\system\Database\BaseBuilder.php(1455): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#2 C:\laragon\www\workspace\fcommefleurs\app\Models\ProductModel.php(38): CodeIgniter\Database\BaseBuilder->get()
+#3 C:\laragon\www\workspace\fcommefleurs\app\Controllers\Home.php(18): App\Models\ProductModel->getProduct()
+#4 C:\laragon\www\workspace\fcommefleurs\system\CodeIgniter.php(832): App\Controllers\Home->index()
+#5 C:\laragon\www\workspace\fcommefleurs\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#6 C:\laragon\www\workspace\fcommefleurs\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 C:\laragon\www\workspace\fcommefleurs\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#8 C:\laragon\www\workspace\fcommefleurs\system\Commands\Server\rewrite.php(43): require_once('C:\\laragon\\www\\...')
+#9 {main}
+ERROR - 2022-09-07 11:34:51 --> Error connecting to the database: Access denied for user '****'@'localhost' (using password: YES)
+CRITICAL - 2022-09-07 11:34:51 --> Unable to connect to the database.
+Main connection [MySQLi]: Access denied for user '****'@'localhost' (using password: YES)
+#0 C:\laragon\www\workspace\fcommefleurs\system\Database\BaseConnection.php(577): CodeIgniter\Database\BaseConnection->initialize()
+#1 C:\laragon\www\workspace\fcommefleurs\system\Database\BaseBuilder.php(1455): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#2 C:\laragon\www\workspace\fcommefleurs\app\Models\ProductModel.php(38): CodeIgniter\Database\BaseBuilder->get()
+#3 C:\laragon\www\workspace\fcommefleurs\app\Controllers\Home.php(18): App\Models\ProductModel->getProduct()
+#4 C:\laragon\www\workspace\fcommefleurs\system\CodeIgniter.php(832): App\Controllers\Home->index()
+#5 C:\laragon\www\workspace\fcommefleurs\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#6 C:\laragon\www\workspace\fcommefleurs\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 C:\laragon\www\workspace\fcommefleurs\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#8 C:\laragon\www\workspace\fcommefleurs\system\Commands\Server\rewrite.php(43): require_once('C:\\laragon\\www\\...')
+#9 {main}
+ERROR - 2022-09-07 11:38:48 --> Error connecting to the database: Access denied for user '****'@'localhost' (using password: YES)
+CRITICAL - 2022-09-07 11:38:48 --> Unable to connect to the database.
+Main connection [MySQLi]: Access denied for user '****'@'localhost' (using password: YES)
+#0 C:\laragon\www\workspace\fcommefleurs\system\Database\BaseConnection.php(577): CodeIgniter\Database\BaseConnection->initialize()
+#1 C:\laragon\www\workspace\fcommefleurs\system\Database\BaseBuilder.php(1455): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#2 C:\laragon\www\workspace\fcommefleurs\app\Models\ProductModel.php(38): CodeIgniter\Database\BaseBuilder->get()
+#3 C:\laragon\www\workspace\fcommefleurs\app\Controllers\Home.php(18): App\Models\ProductModel->getProduct()
+#4 C:\laragon\www\workspace\fcommefleurs\system\CodeIgniter.php(832): App\Controllers\Home->index()
+#5 C:\laragon\www\workspace\fcommefleurs\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#6 C:\laragon\www\workspace\fcommefleurs\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 C:\laragon\www\workspace\fcommefleurs\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#8 C:\laragon\www\workspace\fcommefleurs\system\Commands\Server\rewrite.php(43): require_once('C:\\laragon\\www\\...')
+#9 {main}
+ERROR - 2022-09-07 11:41:12 --> Error connecting to the database: Access denied for user '****'@'localhost' (using password: YES)
+CRITICAL - 2022-09-07 11:41:12 --> Unable to connect to the database.
+Main connection [MySQLi]: Access denied for user '****'@'localhost' (using password: YES)
+#0 C:\laragon\www\workspace\fcommefleurs\system\Database\BaseConnection.php(577): CodeIgniter\Database\BaseConnection->initialize()
+#1 C:\laragon\www\workspace\fcommefleurs\system\Database\BaseBuilder.php(1455): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#2 C:\laragon\www\workspace\fcommefleurs\app\Models\ProductModel.php(36): CodeIgniter\Database\BaseBuilder->get()
+#3 C:\laragon\www\workspace\fcommefleurs\app\Controllers\Home.php(18): App\Models\ProductModel->getProduct()
+#4 C:\laragon\www\workspace\fcommefleurs\system\CodeIgniter.php(832): App\Controllers\Home->index()
+#5 C:\laragon\www\workspace\fcommefleurs\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#6 C:\laragon\www\workspace\fcommefleurs\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 C:\laragon\www\workspace\fcommefleurs\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#8 C:\laragon\www\workspace\fcommefleurs\system\Commands\Server\rewrite.php(43): require_once('C:\\laragon\\www\\...')
+#9 {main}
+ERROR - 2022-09-07 11:41:13 --> Error connecting to the database: Access denied for user '****'@'localhost' (using password: YES)
+CRITICAL - 2022-09-07 11:41:13 --> Unable to connect to the database.
+Main connection [MySQLi]: Access denied for user '****'@'localhost' (using password: YES)
+#0 C:\laragon\www\workspace\fcommefleurs\system\Database\BaseConnection.php(577): CodeIgniter\Database\BaseConnection->initialize()
+#1 C:\laragon\www\workspace\fcommefleurs\system\Database\BaseBuilder.php(1455): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#2 C:\laragon\www\workspace\fcommefleurs\app\Models\ProductModel.php(36): CodeIgniter\Database\BaseBuilder->get()
+#3 C:\laragon\www\workspace\fcommefleurs\app\Controllers\Home.php(18): App\Models\ProductModel->getProduct()
+#4 C:\laragon\www\workspace\fcommefleurs\system\CodeIgniter.php(832): App\Controllers\Home->index()
+#5 C:\laragon\www\workspace\fcommefleurs\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#6 C:\laragon\www\workspace\fcommefleurs\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 C:\laragon\www\workspace\fcommefleurs\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#8 C:\laragon\www\workspace\fcommefleurs\system\Commands\Server\rewrite.php(43): require_once('C:\\laragon\\www\\...')
+#9 {main}
+ERROR - 2022-09-07 11:41:14 --> Error connecting to the database: Access denied for user '****'@'localhost' (using password: YES)
+CRITICAL - 2022-09-07 11:41:14 --> Unable to connect to the database.
+Main connection [MySQLi]: Access denied for user '****'@'localhost' (using password: YES)
+#0 C:\laragon\www\workspace\fcommefleurs\system\Database\BaseConnection.php(577): CodeIgniter\Database\BaseConnection->initialize()
+#1 C:\laragon\www\workspace\fcommefleurs\system\Database\BaseBuilder.php(1455): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#2 C:\laragon\www\workspace\fcommefleurs\app\Models\ProductModel.php(36): CodeIgniter\Database\BaseBuilder->get()
+#3 C:\laragon\www\workspace\fcommefleurs\app\Controllers\Home.php(18): App\Models\ProductModel->getProduct()
+#4 C:\laragon\www\workspace\fcommefleurs\system\CodeIgniter.php(832): App\Controllers\Home->index()
+#5 C:\laragon\www\workspace\fcommefleurs\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#6 C:\laragon\www\workspace\fcommefleurs\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 C:\laragon\www\workspace\fcommefleurs\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#8 C:\laragon\www\workspace\fcommefleurs\system\Commands\Server\rewrite.php(43): require_once('C:\\laragon\\www\\...')
+#9 {main}
+ERROR - 2022-09-07 11:41:15 --> Error connecting to the database: Access denied for user '****'@'localhost' (using password: YES)
+CRITICAL - 2022-09-07 11:41:15 --> Unable to connect to the database.
+Main connection [MySQLi]: Access denied for user '****'@'localhost' (using password: YES)
+#0 C:\laragon\www\workspace\fcommefleurs\system\Database\BaseConnection.php(577): CodeIgniter\Database\BaseConnection->initialize()
+#1 C:\laragon\www\workspace\fcommefleurs\system\Database\BaseBuilder.php(1455): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#2 C:\laragon\www\workspace\fcommefleurs\app\Models\ProductModel.php(36): CodeIgniter\Database\BaseBuilder->get()
+#3 C:\laragon\www\workspace\fcommefleurs\app\Controllers\Home.php(18): App\Models\ProductModel->getProduct()
+#4 C:\laragon\www\workspace\fcommefleurs\system\CodeIgniter.php(832): App\Controllers\Home->index()
+#5 C:\laragon\www\workspace\fcommefleurs\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#6 C:\laragon\www\workspace\fcommefleurs\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 C:\laragon\www\workspace\fcommefleurs\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#8 C:\laragon\www\workspace\fcommefleurs\system\Commands\Server\rewrite.php(43): require_once('C:\\laragon\\www\\...')
+#9 {main}
+ERROR - 2022-09-07 11:41:16 --> Error connecting to the database: Access denied for user '****'@'localhost' (using password: YES)
+CRITICAL - 2022-09-07 11:41:16 --> Unable to connect to the database.
+Main connection [MySQLi]: Access denied for user '****'@'localhost' (using password: YES)
+#0 C:\laragon\www\workspace\fcommefleurs\system\Database\BaseConnection.php(577): CodeIgniter\Database\BaseConnection->initialize()
+#1 C:\laragon\www\workspace\fcommefleurs\system\Database\BaseBuilder.php(1455): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#2 C:\laragon\www\workspace\fcommefleurs\app\Models\ProductModel.php(36): CodeIgniter\Database\BaseBuilder->get()
+#3 C:\laragon\www\workspace\fcommefleurs\app\Controllers\Home.php(18): App\Models\ProductModel->getProduct()
+#4 C:\laragon\www\workspace\fcommefleurs\system\CodeIgniter.php(832): App\Controllers\Home->index()
+#5 C:\laragon\www\workspace\fcommefleurs\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#6 C:\laragon\www\workspace\fcommefleurs\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 C:\laragon\www\workspace\fcommefleurs\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#8 C:\laragon\www\workspace\fcommefleurs\system\Commands\Server\rewrite.php(43): require_once('C:\\laragon\\www\\...')
+#9 {main}
+ERROR - 2022-09-07 11:43:33 --> Table 'fcommefleurs.product' doesn't exist
+CRITICAL - 2022-09-07 11:43:33 --> Call to a member function getResultArray() on bool
+#0 C:\laragon\www\workspace\fcommefleurs\app\Controllers\Home.php(18): App\Models\ProductModel->getProduct()
+#1 C:\laragon\www\workspace\fcommefleurs\system\CodeIgniter.php(832): App\Controllers\Home->index()
+#2 C:\laragon\www\workspace\fcommefleurs\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#3 C:\laragon\www\workspace\fcommefleurs\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\laragon\www\workspace\fcommefleurs\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 C:\laragon\www\workspace\fcommefleurs\system\Commands\Server\rewrite.php(43): require_once('C:\\laragon\\www\\...')
+#6 {main}
+ERROR - 2022-09-07 11:44:08 --> Error connecting to the database: Access denied for user '****'@'localhost' (using password: YES)
+CRITICAL - 2022-09-07 11:44:08 --> Unable to connect to the database.
+Main connection [MySQLi]: Access denied for user '****'@'localhost' (using password: YES)
+#0 C:\laragon\www\workspace\fcommefleurs\system\Database\BaseConnection.php(577): CodeIgniter\Database\BaseConnection->initialize()
+#1 C:\laragon\www\workspace\fcommefleurs\system\Database\BaseBuilder.php(1455): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#2 C:\laragon\www\workspace\fcommefleurs\app\Models\ProductModel.php(38): CodeIgniter\Database\BaseBuilder->get()
+#3 C:\laragon\www\workspace\fcommefleurs\app\Controllers\Home.php(18): App\Models\ProductModel->getProduct()
+#4 C:\laragon\www\workspace\fcommefleurs\system\CodeIgniter.php(832): App\Controllers\Home->index()
+#5 C:\laragon\www\workspace\fcommefleurs\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#6 C:\laragon\www\workspace\fcommefleurs\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 C:\laragon\www\workspace\fcommefleurs\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#8 C:\laragon\www\workspace\fcommefleurs\system\Commands\Server\rewrite.php(43): require_once('C:\\laragon\\www\\...')
+#9 {main}
+CRITICAL - 2022-09-07 11:47:06 --> Class 'CodeIgniter\Database\mysql\Connection' not found
+#0 C:\laragon\www\workspace\fcommefleurs\system\Database\Database.php(56): CodeIgniter\Database\Database->initDriver('mysql', 'CodeIgniter\\Dat...', Array)
+#1 C:\laragon\www\workspace\fcommefleurs\system\Database\Config.php(78): CodeIgniter\Database\Database->load(Array, 'default')
+#2 C:\laragon\www\workspace\fcommefleurs\system\Model.php(97): CodeIgniter\Database\Config::connect('default')
+#3 C:\laragon\www\workspace\fcommefleurs\app\Controllers\Home.php(12): CodeIgniter\Model->__construct()
+#4 C:\laragon\www\workspace\fcommefleurs\system\CodeIgniter.php(832): App\Controllers\Home->index()
+#5 C:\laragon\www\workspace\fcommefleurs\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#6 C:\laragon\www\workspace\fcommefleurs\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 C:\laragon\www\workspace\fcommefleurs\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#8 C:\laragon\www\workspace\fcommefleurs\system\Commands\Server\rewrite.php(43): require_once('C:\\laragon\\www\\...')
+#9 {main}
+CRITICAL - 2022-09-07 11:47:41 --> Class 'CodeIgniter\Database\MySQL\Connection' not found
+#0 C:\laragon\www\workspace\fcommefleurs\system\Database\Database.php(56): CodeIgniter\Database\Database->initDriver('MySQL', 'CodeIgniter\\Dat...', Array)
+#1 C:\laragon\www\workspace\fcommefleurs\system\Database\Config.php(78): CodeIgniter\Database\Database->load(Array, 'default')
+#2 C:\laragon\www\workspace\fcommefleurs\system\Model.php(97): CodeIgniter\Database\Config::connect('default')
+#3 C:\laragon\www\workspace\fcommefleurs\app\Controllers\Home.php(12): CodeIgniter\Model->__construct()
+#4 C:\laragon\www\workspace\fcommefleurs\system\CodeIgniter.php(832): App\Controllers\Home->index()
+#5 C:\laragon\www\workspace\fcommefleurs\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#6 C:\laragon\www\workspace\fcommefleurs\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 C:\laragon\www\workspace\fcommefleurs\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#8 C:\laragon\www\workspace\fcommefleurs\system\Commands\Server\rewrite.php(43): require_once('C:\\laragon\\www\\...')
+#9 {main}
+ERROR - 2022-09-07 11:47:50 --> Error connecting to the database: Access denied for user '****'@'localhost' (using password: YES)
+CRITICAL - 2022-09-07 11:47:50 --> Unable to connect to the database.
+Main connection [MySQLi]: Access denied for user '****'@'localhost' (using password: YES)
+#0 C:\laragon\www\workspace\fcommefleurs\system\Database\BaseConnection.php(577): CodeIgniter\Database\BaseConnection->initialize()
+#1 C:\laragon\www\workspace\fcommefleurs\system\Database\BaseBuilder.php(1455): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#2 C:\laragon\www\workspace\fcommefleurs\app\Models\ProductModel.php(38): CodeIgniter\Database\BaseBuilder->get()
+#3 C:\laragon\www\workspace\fcommefleurs\app\Controllers\Home.php(18): App\Models\ProductModel->getProduct()
+#4 C:\laragon\www\workspace\fcommefleurs\system\CodeIgniter.php(832): App\Controllers\Home->index()
+#5 C:\laragon\www\workspace\fcommefleurs\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#6 C:\laragon\www\workspace\fcommefleurs\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 C:\laragon\www\workspace\fcommefleurs\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#8 C:\laragon\www\workspace\fcommefleurs\system\Commands\Server\rewrite.php(43): require_once('C:\\laragon\\www\\...')
+#9 {main}
+ERROR - 2022-09-07 11:51:31 --> Error connecting to the database: Access denied for user '****'@'localhost' (using password: YES)
+CRITICAL - 2022-09-07 11:51:31 --> Unable to connect to the database.
+Main connection [MySQLi]: Access denied for user '****'@'localhost' (using password: YES)
+#0 C:\laragon\www\workspace\fcommefleurs\system\Database\BaseConnection.php(577): CodeIgniter\Database\BaseConnection->initialize()
+#1 C:\laragon\www\workspace\fcommefleurs\system\Database\BaseBuilder.php(1455): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#2 C:\laragon\www\workspace\fcommefleurs\app\Models\ProductModel.php(38): CodeIgniter\Database\BaseBuilder->get()
+#3 C:\laragon\www\workspace\fcommefleurs\app\Controllers\Home.php(18): App\Models\ProductModel->getProduct()
+#4 C:\laragon\www\workspace\fcommefleurs\system\CodeIgniter.php(832): App\Controllers\Home->index()
+#5 C:\laragon\www\workspace\fcommefleurs\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#6 C:\laragon\www\workspace\fcommefleurs\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 C:\laragon\www\workspace\fcommefleurs\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#8 C:\laragon\www\workspace\fcommefleurs\system\Commands\Server\rewrite.php(43): require_once('C:\\laragon\\www\\...')
+#9 {main}
+ERROR - 2022-09-07 11:51:34 --> Error connecting to the database: Access denied for user '****'@'localhost' (using password: YES)
+CRITICAL - 2022-09-07 11:51:34 --> Unable to connect to the database.
+Main connection [MySQLi]: Access denied for user '****'@'localhost' (using password: YES)
+#0 C:\laragon\www\workspace\fcommefleurs\system\Database\BaseConnection.php(577): CodeIgniter\Database\BaseConnection->initialize()
+#1 C:\laragon\www\workspace\fcommefleurs\system\Database\BaseBuilder.php(1455): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#2 C:\laragon\www\workspace\fcommefleurs\app\Models\ProductModel.php(38): CodeIgniter\Database\BaseBuilder->get()
+#3 C:\laragon\www\workspace\fcommefleurs\app\Controllers\Home.php(18): App\Models\ProductModel->getProduct()
+#4 C:\laragon\www\workspace\fcommefleurs\system\CodeIgniter.php(832): App\Controllers\Home->index()
+#5 C:\laragon\www\workspace\fcommefleurs\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#6 C:\laragon\www\workspace\fcommefleurs\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 C:\laragon\www\workspace\fcommefleurs\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#8 C:\laragon\www\workspace\fcommefleurs\system\Commands\Server\rewrite.php(43): require_once('C:\\laragon\\www\\...')
+#9 {main}
+ERROR - 2022-09-07 11:51:44 --> Error connecting to the database: Access denied for user '****'@'localhost' (using password: YES)
+CRITICAL - 2022-09-07 11:51:44 --> Unable to connect to the database.
+Main connection [MySQLi]: Access denied for user '****'@'localhost' (using password: YES)
+#0 C:\laragon\www\workspace\fcommefleurs\system\Database\BaseConnection.php(577): CodeIgniter\Database\BaseConnection->initialize()
+#1 C:\laragon\www\workspace\fcommefleurs\system\Database\BaseBuilder.php(1455): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#2 C:\laragon\www\workspace\fcommefleurs\app\Models\ProductModel.php(38): CodeIgniter\Database\BaseBuilder->get()
+#3 C:\laragon\www\workspace\fcommefleurs\app\Controllers\Home.php(18): App\Models\ProductModel->getProduct()
+#4 C:\laragon\www\workspace\fcommefleurs\system\CodeIgniter.php(832): App\Controllers\Home->index()
+#5 C:\laragon\www\workspace\fcommefleurs\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#6 C:\laragon\www\workspace\fcommefleurs\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 C:\laragon\www\workspace\fcommefleurs\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#8 C:\laragon\www\workspace\fcommefleurs\system\Commands\Server\rewrite.php(43): require_once('C:\\laragon\\www\\...')
+#9 {main}
+ERROR - 2022-09-07 11:53:19 --> Error connecting to the database: Access denied for user '****'@'localhost' (using password: YES)
+CRITICAL - 2022-09-07 11:53:19 --> Unable to connect to the database.
+Main connection [MySQLi]: Access denied for user '****'@'localhost' (using password: YES)
+#0 C:\laragon\www\workspace\fcommefleurs\system\Database\BaseConnection.php(577): CodeIgniter\Database\BaseConnection->initialize()
+#1 C:\laragon\www\workspace\fcommefleurs\system\Database\BaseBuilder.php(1455): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#2 C:\laragon\www\workspace\fcommefleurs\app\Models\ProductModel.php(38): CodeIgniter\Database\BaseBuilder->get()
+#3 C:\laragon\www\workspace\fcommefleurs\app\Controllers\Home.php(18): App\Models\ProductModel->getProduct()
+#4 C:\laragon\www\workspace\fcommefleurs\system\CodeIgniter.php(832): App\Controllers\Home->index()
+#5 C:\laragon\www\workspace\fcommefleurs\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#6 C:\laragon\www\workspace\fcommefleurs\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 C:\laragon\www\workspace\fcommefleurs\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#8 C:\laragon\www\workspace\fcommefleurs\system\Commands\Server\rewrite.php(43): require_once('C:\\laragon\\www\\...')
+#9 {main}
+ERROR - 2022-09-07 11:53:37 --> Error connecting to the database: Access denied for user '****'@'localhost' (using password: YES)
+CRITICAL - 2022-09-07 11:53:37 --> Unable to connect to the database.
+Main connection [MySQLi]: Access denied for user '****'@'localhost' (using password: YES)
+#0 C:\laragon\www\workspace\fcommefleurs\system\Database\BaseConnection.php(577): CodeIgniter\Database\BaseConnection->initialize()
+#1 C:\laragon\www\workspace\fcommefleurs\system\Database\BaseBuilder.php(1455): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#2 C:\laragon\www\workspace\fcommefleurs\app\Models\ProductModel.php(38): CodeIgniter\Database\BaseBuilder->get()
+#3 C:\laragon\www\workspace\fcommefleurs\app\Controllers\Home.php(18): App\Models\ProductModel->getProduct()
+#4 C:\laragon\www\workspace\fcommefleurs\system\CodeIgniter.php(832): App\Controllers\Home->index()
+#5 C:\laragon\www\workspace\fcommefleurs\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#6 C:\laragon\www\workspace\fcommefleurs\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 C:\laragon\www\workspace\fcommefleurs\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#8 C:\laragon\www\workspace\fcommefleurs\system\Commands\Server\rewrite.php(43): require_once('C:\\laragon\\www\\...')
+#9 {main}

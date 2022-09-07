@@ -37,6 +37,10 @@ class BaseController extends Controller
      */
     protected $helpers = [];
 
+    protected $data = [];
+
+    protected $user;
+
     /**
      * Constructor.
      */
@@ -48,5 +52,14 @@ class BaseController extends Controller
         // Preload any models, libraries, etc, here.
 
         $this->session = \Config\Services::session();
+
+        $this->user = $this->session->get('user');
+        $this->data = array(
+            'title' => "F comme Fleurs",
+            'page' => "home",
+            'content' => null,
+            'connected' => $this->user != null,
+            'admin' => $this->user != null && $this->user->admin == 1,
+        );
     }
 }

@@ -1,0 +1,101 @@
+CRITICAL - 2022-06-02 11:03:48 --> Call to undefined method CodeIgniter\Session\Session::session_start()
+#0 C:\Users\sebwa\Desktop\codeigniter4-CodeIgniter4-v4.1.9-0-g202f41a\rose_ecarlate_codeigniter4\system\CodeIgniter.php(832): App\Controllers\Connexion->connect()
+#1 C:\Users\sebwa\Desktop\codeigniter4-CodeIgniter4-v4.1.9-0-g202f41a\rose_ecarlate_codeigniter4\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Connexion))
+#2 C:\Users\sebwa\Desktop\codeigniter4-CodeIgniter4-v4.1.9-0-g202f41a\rose_ecarlate_codeigniter4\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#3 C:\Users\sebwa\Desktop\codeigniter4-CodeIgniter4-v4.1.9-0-g202f41a\rose_ecarlate_codeigniter4\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#4 C:\Users\sebwa\Desktop\codeigniter4-CodeIgniter4-v4.1.9-0-g202f41a\rose_ecarlate_codeigniter4\system\Commands\Server\rewrite.php(43): require_once('C:\\Users\\sebwa\\...')
+#5 {main}
+CRITICAL - 2022-06-02 11:09:30 -->  route cannot be found while reverse-routing.
+#0 C:\Users\sebwa\Desktop\codeigniter4-CodeIgniter4-v4.1.9-0-g202f41a\rose_ecarlate_codeigniter4\system\HTTP\RedirectResponse.php(56): CodeIgniter\HTTP\Exceptions\HTTPException::forInvalidRedirectRoute('')
+#1 C:\Users\sebwa\Desktop\codeigniter4-CodeIgniter4-v4.1.9-0-g202f41a\rose_ecarlate_codeigniter4\system\Common.php(832): CodeIgniter\HTTP\RedirectResponse->route(false)
+#2 C:\Users\sebwa\Desktop\codeigniter4-CodeIgniter4-v4.1.9-0-g202f41a\rose_ecarlate_codeigniter4\app\Controllers\Connexion.php(30): redirect('home', 'location')
+#3 C:\Users\sebwa\Desktop\codeigniter4-CodeIgniter4-v4.1.9-0-g202f41a\rose_ecarlate_codeigniter4\system\CodeIgniter.php(832): App\Controllers\Connexion->connect()
+#4 C:\Users\sebwa\Desktop\codeigniter4-CodeIgniter4-v4.1.9-0-g202f41a\rose_ecarlate_codeigniter4\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Connexion))
+#5 C:\Users\sebwa\Desktop\codeigniter4-CodeIgniter4-v4.1.9-0-g202f41a\rose_ecarlate_codeigniter4\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#6 C:\Users\sebwa\Desktop\codeigniter4-CodeIgniter4-v4.1.9-0-g202f41a\rose_ecarlate_codeigniter4\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#7 C:\Users\sebwa\Desktop\codeigniter4-CodeIgniter4-v4.1.9-0-g202f41a\rose_ecarlate_codeigniter4\system\Commands\Server\rewrite.php(43): require_once('C:\\Users\\sebwa\\...')
+#8 {main}
+CRITICAL - 2022-06-02 11:09:58 -->  route cannot be found while reverse-routing.
+#0 C:\Users\sebwa\Desktop\codeigniter4-CodeIgniter4-v4.1.9-0-g202f41a\rose_ecarlate_codeigniter4\system\HTTP\RedirectResponse.php(56): CodeIgniter\HTTP\Exceptions\HTTPException::forInvalidRedirectRoute('')
+#1 C:\Users\sebwa\Desktop\codeigniter4-CodeIgniter4-v4.1.9-0-g202f41a\rose_ecarlate_codeigniter4\system\Common.php(832): CodeIgniter\HTTP\RedirectResponse->route(false)
+#2 C:\Users\sebwa\Desktop\codeigniter4-CodeIgniter4-v4.1.9-0-g202f41a\rose_ecarlate_codeigniter4\app\Controllers\Connexion.php(30): redirect('home/index', 'location')
+#3 C:\Users\sebwa\Desktop\codeigniter4-CodeIgniter4-v4.1.9-0-g202f41a\rose_ecarlate_codeigniter4\system\CodeIgniter.php(832): App\Controllers\Connexion->connect()
+#4 C:\Users\sebwa\Desktop\codeigniter4-CodeIgniter4-v4.1.9-0-g202f41a\rose_ecarlate_codeigniter4\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Connexion))
+#5 C:\Users\sebwa\Desktop\codeigniter4-CodeIgniter4-v4.1.9-0-g202f41a\rose_ecarlate_codeigniter4\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#6 C:\Users\sebwa\Desktop\codeigniter4-CodeIgniter4-v4.1.9-0-g202f41a\rose_ecarlate_codeigniter4\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#7 C:\Users\sebwa\Desktop\codeigniter4-CodeIgniter4-v4.1.9-0-g202f41a\rose_ecarlate_codeigniter4\system\Commands\Server\rewrite.php(43): require_once('C:\\Users\\sebwa\\...')
+#8 {main}
+CRITICAL - 2022-06-02 11:10:41 -->  route cannot be found while reverse-routing.
+#0 C:\Users\sebwa\Desktop\codeigniter4-CodeIgniter4-v4.1.9-0-g202f41a\rose_ecarlate_codeigniter4\system\HTTP\RedirectResponse.php(56): CodeIgniter\HTTP\Exceptions\HTTPException::forInvalidRedirectRoute('')
+#1 C:\Users\sebwa\Desktop\codeigniter4-CodeIgniter4-v4.1.9-0-g202f41a\rose_ecarlate_codeigniter4\system\Common.php(832): CodeIgniter\HTTP\RedirectResponse->route(false)
+#2 C:\Users\sebwa\Desktop\codeigniter4-CodeIgniter4-v4.1.9-0-g202f41a\rose_ecarlate_codeigniter4\app\Controllers\Connexion.php(31): redirect('home/index', 'location')
+#3 C:\Users\sebwa\Desktop\codeigniter4-CodeIgniter4-v4.1.9-0-g202f41a\rose_ecarlate_codeigniter4\system\CodeIgniter.php(832): App\Controllers\Connexion->connect()
+#4 C:\Users\sebwa\Desktop\codeigniter4-CodeIgniter4-v4.1.9-0-g202f41a\rose_ecarlate_codeigniter4\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Connexion))
+#5 C:\Users\sebwa\Desktop\codeigniter4-CodeIgniter4-v4.1.9-0-g202f41a\rose_ecarlate_codeigniter4\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#6 C:\Users\sebwa\Desktop\codeigniter4-CodeIgniter4-v4.1.9-0-g202f41a\rose_ecarlate_codeigniter4\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#7 C:\Users\sebwa\Desktop\codeigniter4-CodeIgniter4-v4.1.9-0-g202f41a\rose_ecarlate_codeigniter4\system\Commands\Server\rewrite.php(43): require_once('C:\\Users\\sebwa\\...')
+#8 {main}
+CRITICAL - 2022-06-02 11:11:00 -->  route cannot be found while reverse-routing.
+#0 C:\Users\sebwa\Desktop\codeigniter4-CodeIgniter4-v4.1.9-0-g202f41a\rose_ecarlate_codeigniter4\system\HTTP\RedirectResponse.php(56): CodeIgniter\HTTP\Exceptions\HTTPException::forInvalidRedirectRoute('')
+#1 C:\Users\sebwa\Desktop\codeigniter4-CodeIgniter4-v4.1.9-0-g202f41a\rose_ecarlate_codeigniter4\system\Common.php(832): CodeIgniter\HTTP\RedirectResponse->route(false)
+#2 C:\Users\sebwa\Desktop\codeigniter4-CodeIgniter4-v4.1.9-0-g202f41a\rose_ecarlate_codeigniter4\app\Controllers\Connexion.php(31): redirect('home/index', 'location')
+#3 C:\Users\sebwa\Desktop\codeigniter4-CodeIgniter4-v4.1.9-0-g202f41a\rose_ecarlate_codeigniter4\system\CodeIgniter.php(832): App\Controllers\Connexion->connect()
+#4 C:\Users\sebwa\Desktop\codeigniter4-CodeIgniter4-v4.1.9-0-g202f41a\rose_ecarlate_codeigniter4\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Connexion))
+#5 C:\Users\sebwa\Desktop\codeigniter4-CodeIgniter4-v4.1.9-0-g202f41a\rose_ecarlate_codeigniter4\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#6 C:\Users\sebwa\Desktop\codeigniter4-CodeIgniter4-v4.1.9-0-g202f41a\rose_ecarlate_codeigniter4\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#7 C:\Users\sebwa\Desktop\codeigniter4-CodeIgniter4-v4.1.9-0-g202f41a\rose_ecarlate_codeigniter4\system\Commands\Server\rewrite.php(43): require_once('C:\\Users\\sebwa\\...')
+#8 {main}
+CRITICAL - 2022-06-02 11:11:57 -->  route cannot be found while reverse-routing.
+#0 C:\Users\sebwa\Desktop\codeigniter4-CodeIgniter4-v4.1.9-0-g202f41a\rose_ecarlate_codeigniter4\system\HTTP\RedirectResponse.php(56): CodeIgniter\HTTP\Exceptions\HTTPException::forInvalidRedirectRoute('')
+#1 C:\Users\sebwa\Desktop\codeigniter4-CodeIgniter4-v4.1.9-0-g202f41a\rose_ecarlate_codeigniter4\system\Common.php(832): CodeIgniter\HTTP\RedirectResponse->route(false)
+#2 C:\Users\sebwa\Desktop\codeigniter4-CodeIgniter4-v4.1.9-0-g202f41a\rose_ecarlate_codeigniter4\app\Controllers\Connexion.php(30): redirect('/home', 'location')
+#3 C:\Users\sebwa\Desktop\codeigniter4-CodeIgniter4-v4.1.9-0-g202f41a\rose_ecarlate_codeigniter4\system\CodeIgniter.php(832): App\Controllers\Connexion->connect()
+#4 C:\Users\sebwa\Desktop\codeigniter4-CodeIgniter4-v4.1.9-0-g202f41a\rose_ecarlate_codeigniter4\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Connexion))
+#5 C:\Users\sebwa\Desktop\codeigniter4-CodeIgniter4-v4.1.9-0-g202f41a\rose_ecarlate_codeigniter4\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#6 C:\Users\sebwa\Desktop\codeigniter4-CodeIgniter4-v4.1.9-0-g202f41a\rose_ecarlate_codeigniter4\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#7 C:\Users\sebwa\Desktop\codeigniter4-CodeIgniter4-v4.1.9-0-g202f41a\rose_ecarlate_codeigniter4\system\Commands\Server\rewrite.php(43): require_once('C:\\Users\\sebwa\\...')
+#8 {main}
+CRITICAL - 2022-06-02 11:12:14 -->  route cannot be found while reverse-routing.
+#0 C:\Users\sebwa\Desktop\codeigniter4-CodeIgniter4-v4.1.9-0-g202f41a\rose_ecarlate_codeigniter4\system\HTTP\RedirectResponse.php(56): CodeIgniter\HTTP\Exceptions\HTTPException::forInvalidRedirectRoute('')
+#1 C:\Users\sebwa\Desktop\codeigniter4-CodeIgniter4-v4.1.9-0-g202f41a\rose_ecarlate_codeigniter4\system\Common.php(832): CodeIgniter\HTTP\RedirectResponse->route(false)
+#2 C:\Users\sebwa\Desktop\codeigniter4-CodeIgniter4-v4.1.9-0-g202f41a\rose_ecarlate_codeigniter4\app\Controllers\Connexion.php(30): redirect('/home/index', 'location')
+#3 C:\Users\sebwa\Desktop\codeigniter4-CodeIgniter4-v4.1.9-0-g202f41a\rose_ecarlate_codeigniter4\system\CodeIgniter.php(832): App\Controllers\Connexion->connect()
+#4 C:\Users\sebwa\Desktop\codeigniter4-CodeIgniter4-v4.1.9-0-g202f41a\rose_ecarlate_codeigniter4\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Connexion))
+#5 C:\Users\sebwa\Desktop\codeigniter4-CodeIgniter4-v4.1.9-0-g202f41a\rose_ecarlate_codeigniter4\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#6 C:\Users\sebwa\Desktop\codeigniter4-CodeIgniter4-v4.1.9-0-g202f41a\rose_ecarlate_codeigniter4\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#7 C:\Users\sebwa\Desktop\codeigniter4-CodeIgniter4-v4.1.9-0-g202f41a\rose_ecarlate_codeigniter4\system\Commands\Server\rewrite.php(43): require_once('C:\\Users\\sebwa\\...')
+#8 {main}
+CRITICAL - 2022-06-02 11:17:48 -->  route cannot be found while reverse-routing.
+#0 C:\Users\sebwa\Desktop\codeigniter4-CodeIgniter4-v4.1.9-0-g202f41a\rose_ecarlate_codeigniter4\system\HTTP\RedirectResponse.php(56): CodeIgniter\HTTP\Exceptions\HTTPException::forInvalidRedirectRoute('')
+#1 C:\Users\sebwa\Desktop\codeigniter4-CodeIgniter4-v4.1.9-0-g202f41a\rose_ecarlate_codeigniter4\system\Common.php(832): CodeIgniter\HTTP\RedirectResponse->route(false)
+#2 C:\Users\sebwa\Desktop\codeigniter4-CodeIgniter4-v4.1.9-0-g202f41a\rose_ecarlate_codeigniter4\app\Controllers\Connexion.php(30): redirect('/home')
+#3 C:\Users\sebwa\Desktop\codeigniter4-CodeIgniter4-v4.1.9-0-g202f41a\rose_ecarlate_codeigniter4\system\CodeIgniter.php(832): App\Controllers\Connexion->connect()
+#4 C:\Users\sebwa\Desktop\codeigniter4-CodeIgniter4-v4.1.9-0-g202f41a\rose_ecarlate_codeigniter4\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Connexion))
+#5 C:\Users\sebwa\Desktop\codeigniter4-CodeIgniter4-v4.1.9-0-g202f41a\rose_ecarlate_codeigniter4\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#6 C:\Users\sebwa\Desktop\codeigniter4-CodeIgniter4-v4.1.9-0-g202f41a\rose_ecarlate_codeigniter4\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#7 C:\Users\sebwa\Desktop\codeigniter4-CodeIgniter4-v4.1.9-0-g202f41a\rose_ecarlate_codeigniter4\system\Commands\Server\rewrite.php(43): require_once('C:\\Users\\sebwa\\...')
+#8 {main}
+CRITICAL - 2022-06-02 11:50:11 --> Class 'App\Models\Produit' not found
+#0 C:\Users\sebwa\Desktop\codeigniter4-CodeIgniter4-v4.1.9-0-g202f41a\rose_ecarlate_codeigniter4\system\CodeIgniter.php(832): App\Controllers\Home->index()
+#1 C:\Users\sebwa\Desktop\codeigniter4-CodeIgniter4-v4.1.9-0-g202f41a\rose_ecarlate_codeigniter4\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#2 C:\Users\sebwa\Desktop\codeigniter4-CodeIgniter4-v4.1.9-0-g202f41a\rose_ecarlate_codeigniter4\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#3 C:\Users\sebwa\Desktop\codeigniter4-CodeIgniter4-v4.1.9-0-g202f41a\rose_ecarlate_codeigniter4\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#4 C:\Users\sebwa\Desktop\codeigniter4-CodeIgniter4-v4.1.9-0-g202f41a\rose_ecarlate_codeigniter4\system\Commands\Server\rewrite.php(43): require_once('C:\\Users\\sebwa\\...')
+#5 {main}
+CRITICAL - 2022-06-02 11:50:17 --> Class 'App\Models\Produit' not found
+#0 C:\Users\sebwa\Desktop\codeigniter4-CodeIgniter4-v4.1.9-0-g202f41a\rose_ecarlate_codeigniter4\system\CodeIgniter.php(832): App\Controllers\Home->index()
+#1 C:\Users\sebwa\Desktop\codeigniter4-CodeIgniter4-v4.1.9-0-g202f41a\rose_ecarlate_codeigniter4\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#2 C:\Users\sebwa\Desktop\codeigniter4-CodeIgniter4-v4.1.9-0-g202f41a\rose_ecarlate_codeigniter4\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#3 C:\Users\sebwa\Desktop\codeigniter4-CodeIgniter4-v4.1.9-0-g202f41a\rose_ecarlate_codeigniter4\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#4 C:\Users\sebwa\Desktop\codeigniter4-CodeIgniter4-v4.1.9-0-g202f41a\rose_ecarlate_codeigniter4\system\Commands\Server\rewrite.php(43): require_once('C:\\Users\\sebwa\\...')
+#5 {main}
+CRITICAL - 2022-06-02 12:19:26 --> Invalid file: accueil.php
+#0 C:\Users\sebwa\Desktop\codeigniter4-CodeIgniter4-v4.1.9-0-g202f41a\rose_ecarlate_codeigniter4\system\View\View.php(198): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('accueil.php')
+#1 C:\Users\sebwa\Desktop\codeigniter4-CodeIgniter4-v4.1.9-0-g202f41a\rose_ecarlate_codeigniter4\system\Common.php(1089): CodeIgniter\View\View->render('accueil', Array, true)
+#2 C:\Users\sebwa\Desktop\codeigniter4-CodeIgniter4-v4.1.9-0-g202f41a\rose_ecarlate_codeigniter4\app\Controllers\Home.php(19): view('accueil', Array)
+#3 C:\Users\sebwa\Desktop\codeigniter4-CodeIgniter4-v4.1.9-0-g202f41a\rose_ecarlate_codeigniter4\system\CodeIgniter.php(832): App\Controllers\Home->index()
+#4 C:\Users\sebwa\Desktop\codeigniter4-CodeIgniter4-v4.1.9-0-g202f41a\rose_ecarlate_codeigniter4\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#5 C:\Users\sebwa\Desktop\codeigniter4-CodeIgniter4-v4.1.9-0-g202f41a\rose_ecarlate_codeigniter4\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#6 C:\Users\sebwa\Desktop\codeigniter4-CodeIgniter4-v4.1.9-0-g202f41a\rose_ecarlate_codeigniter4\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#7 C:\Users\sebwa\Desktop\codeigniter4-CodeIgniter4-v4.1.9-0-g202f41a\rose_ecarlate_codeigniter4\system\Commands\Server\rewrite.php(43): require_once('C:\\Users\\sebwa\\...')
+#8 {main}

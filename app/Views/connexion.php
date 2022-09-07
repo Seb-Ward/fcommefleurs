@@ -1,7 +1,8 @@
 
     <div class="row justify-content-center">
         <div class="col-md-7 col-lg-5">
-            <div class="wrap">   
+            <div class="wrap">  
+                <div class="sign_in_image"></div>
                 <div class="login-wrap p-4 p-md-5">
                     <div class="d-flex">
                         <div class="w-100">
