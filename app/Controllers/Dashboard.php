@@ -6,6 +6,7 @@ use App\Models\ProduitModel;
 
 class Dashboard extends BaseController
 {
+
     public function index()
     {
  

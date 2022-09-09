@@ -15,7 +15,7 @@
                                     <fieldset>
                                         <legend>Tableau de board de mes possibilitées.</legend>
                                             <br>
-                                            <button><a href="/message">Consulter les messages reçus.</a></button>
+                                            <button><a href="/messages">Consulter les messages reçus.</a></button>
                                             <br>
                                             <br>
                                             <button><a href="/product">Consulter la liste des produits en bdd (Modifier/Supprimer)</a></button>

@@ -58,7 +58,7 @@ class Database extends Config
         'hostname' => 'localhost',
         'username' => 'root',
         'password' => 'root',
-        'database' => 'fcommefleurs',
+        'database' => 'rose_ecarlate',
         'DBDriver' => 'MySQLi',
         'DBPrefix' => '',
         'pConnect' => false,

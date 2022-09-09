@@ -23,7 +23,7 @@ class Connexion extends BaseController{
             $email=htmlspecialchars($postParam['email']);//I configure my $email as $_post['email']
             $password=htmlspecialchars($postParam['password']);//I configure my $password as $_post['password']
             $userModel=new UserModel();
-            $userToVerify = $userModel->getUser(null, array("email" => $email));
+            $userToVerify = $userModel->getUser(null, array("email" => $email))[0] ?? null;
             if($userToVerify!=null && password_verify($password,$userToVerify->password_user)){//If the Password_user matches the password and the user via the function password_verify then he is ok and his session_starts
                 $this->session = session();
                 $user = new User();
@@ -34,6 +34,9 @@ class Connexion extends BaseController{
                 $user->setAdmin($userToVerify->admin);
 
                 $this->session->set('user', $user);
+                if ($userToVerify->admin == 1) {
+                    return redirect()->to('/dashboard');
+                }
                 return redirect()->to('/home');
             }
         }

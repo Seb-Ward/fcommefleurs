@@ -6,7 +6,7 @@ use CodeIgniter\Model;
  
 class UserModel extends Model {
 
-        protected $DBGroup = 'default';
+        protected $DBGroup = 'testing';
 
         protected $table = 'user';
         protected $primaryKey = 'user_id';
@@ -17,15 +17,16 @@ class UserModel extends Model {
 
         public function getUser($id=null,$data=array()){
             $dbQuery = $this->db->table($this->table);
+            $dbQuery->select("*");
             if ($id != null) {
-                $dbQuery->where('user_id', $id);
+                return $dbQuery->where($this->primaryKey, $id)
+                               ->get()
+                               ->getRowObject();
             } else if (!empty($data)) {
                 foreach ($data as $key => $value) {
                     $dbQuery->where($key, $value);
                 }
             }
-            return $dbQuery->select("*")->get()->getRowObject();
-
+            return $dbQuery->get()->getResultObject();
         }
-
 }

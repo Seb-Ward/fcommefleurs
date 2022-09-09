@@ -19,7 +19,7 @@
                                         </p>
                     </div>
                 </div>    
-                    <form action="connexion/connect" method= "post"><!--Here we use the $_POST method-->
+                    <form action="/connexion/connect" method= "post"><!--Here we use the $_POST method-->
                         <div class="form-group mt-3">
                                 <input class="form-control" type="text" name="email" id="emailinput" required>
                                 <label class="form-control-placeholder" for="emailinput">e-mail</label>

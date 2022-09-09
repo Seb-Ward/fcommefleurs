@@ -10,8 +10,7 @@
             <link rel="stylesheet" href="../assets/bootstrap-5.2.0/dist/css/bootstrap.css">
             <script src="https://kit.fontawesome.com/92c3f0e192.js" crossorigin="anonymous"></script>
             <script src="../assets/bootstrap-5.2.0/dist/js/bootstrap.bundle.min.js"></script>
-
-            
+            <link rel="stylesheet" href="https://cdn.datatables.net/1.12.1/css/dataTables.bootstrap5.min.css">
         </head>
         <body>
         <div class="container">
@@ -45,6 +44,8 @@
                                 <li><a class="dropdown-item" href="/dashboard">dashboard</a></li>
                                 <li><a class="dropdown-item" href="/messages">Consulter les messages</a></li>
                                 <li><a class="dropdown-item" href="/product">Consulter les produits</a></li>
+                                <li><a class="dropdown-item" href="/user/customer">Gestion des clients</a></li>
+                                <li><a class="dropdown-item" href="/user/admin">Gestion des administrateurs</a></li>
                             </ul>
                             </div>
                         <?php }
@@ -95,6 +96,9 @@
         </footer>        
         </div>
 
-       
+        <script src="../assets/js/jquery-3.6.0.min.js"></script>
+        <script src="https://cdn.datatables.net/1.12.1/js/jquery.dataTables.min.js"></script>
+            <script src="https://cdn.datatables.net/1.12.1/js/dataTables.bootstrap5.min.js"></script>
+            <script src="../assets/js/application.js"></script>
     </body>   
 </html>

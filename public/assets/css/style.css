@@ -35,10 +35,7 @@ h3 ~ p ~ ul
 {
     color: black;
 }
-tr :nth-child(1n)
-{
-    background: lightgray
-}
+
 .header
 {
     background-image:url(../images/logo2.jpg);
@@ -282,3 +279,4 @@ a:hover, a:active, a:focus {
 .wrap .sign_in_image{
     height: 250px;
 }
+

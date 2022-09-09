@@ -6,7 +6,7 @@ use CodeIgniter\Model;
  
 class MessageModel extends Model {
 
-        protected $DBGroup = 'default';
+        protected $DBGroup = 'testing';
 
         protected $table = 'message';
         protected $primaryKey = 'message_id';
