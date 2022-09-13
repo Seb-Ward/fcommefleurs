@@ -32,7 +32,7 @@ class Database extends Config
      */
     public $default = [
         'DSN'      => '',
-        'hostname' => 'localhost',
+        'hostname' => 'fcommefleurs.fr',
         'username' => 'jvbx7270_fcommefleursadmin',
         'password' => 'mi[?I@BDHT*m[4n+NQ',
         'database' => 'jvbx7270_fcommefleurs',

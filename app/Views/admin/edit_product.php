@@ -1,4 +1,4 @@
-<form action="../controleur/ajout_produit_bdd.php" method="POST" enctype="multipart/form-data"><!--on top of ussing the $_POST method we also use enctype ="multipart" to insert a picture in a form--> 
+<form action="/product/add" method="POST" enctype="multipart/form-data"><!--on top of ussing the $_POST method we also use enctype ="multipart" to insert a picture in a form--> 
                         <fieldset>
                             <h5 class="card-tittle text-center text-secondary">Ajout d'un nouveau produit à la boutique</h5>
                                 <div><!--Here we insert a new product to the data base-->

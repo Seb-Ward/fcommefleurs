@@ -1,6 +1,8 @@
 <h3>
                     Listing
                 </h3>
+                <a class='btn btn-warning'href="/product/edit">Ajouter un nouveau produit</a>
+
                     <div class="table-responsive">
                         <table class="table table-striped">
                             <thead>
@@ -39,6 +41,5 @@
        
                                 </tbody>
                         </table>
-                            <a class='btn btn-warning'href="../vue/form_ajout_produit.php">Ajouter un nouveau produit</a>
 
                     </div>

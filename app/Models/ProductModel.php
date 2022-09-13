@@ -6,7 +6,7 @@ use CodeIgniter\Model;
  
 class ProductModel extends Model {
 
-        protected $DBGroup = 'testing';
+        protected $DBGroup = 'default';
 
         protected $table = 'product';
         protected $primaryKey = 'id';

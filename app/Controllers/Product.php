@@ -27,4 +27,10 @@ class Product extends AdminController{
         $this->data['content'] = view('admin/edit_product',array());
         return view('application', $this->data);
     }
+    public function add(){
+        
+        $data = $this->request->getPost(); 
+var_dump($data);
+        //return redirect()->to('/product');
+    }
 }

@@ -1,4 +1,57 @@
- 
+        <section class="ftco-section"> 
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-md-6 text-center mb-5"></div>
+                </div>
+                <div class="row justify-content-center">
+                 <div class="col-md-12">
+                  <div class="wrapper">
+                   <div class="row no-gutters mb-5">
+                    <div class="col-md-7">
+                    <div class="contact-wrap w-100 p-md-5 p-4">
+                        <h3 class="mb-4">Contactez-nous</h3>
+                        <form id="contactForm" class="contactForm" method="POST"           name="contactForm" novalidate="novalidate">
+                            <div class="row">
+                            <div class="col-md-6">
+                            <div class="form-group">
+                                <label class="label" for="name">Nom</label>
+                                <input id="name" class="form-control" type="text" name="name" placeholder="Nom">
+                            </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label class="label" for="name">Prénom</label>
+                                        <input id="name" class="form-control" type="text" name="name" placeholder="Prénom">
+                                </div>
+                            </div>
+                            <div class="col-md-12">
+                                <div class="form-group">
+                                    <label class="label" for="name">Email</label>
+                                        <input id="email" class="form-control" type="text" name="email" placeholder="email">
+                                </div>
+                            </div>
+                            <div class="col-md-12">
+                                <div class="form-group">
+                                    <label class="label" for="#">Message</label>
+                                        <textarea id="message" class="form-control" name="form-control" cols="30" rows="4" placeholder="Message"></textarea>
+                                </div>
+                            </div>
+                                <div class="col-md-12">
+                                    <div class="form-group">
+                                        <input class="btn btn-primary" type="submit" value="sendmessage">
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                <div class="col-md-5 d-flex align-items-stretch">
+                  <div id="map" style="position: relative; overflow: hidden;">
+                  
+                  </div>  
+                </div>
+                        
+        
         <form action="controleur/Contact" method="POST"> <!--Here we use the $_POST method-->   
         <legend>Nous contacter</legend>
         <div><!--With this form a user can contact the admin for special request-->
