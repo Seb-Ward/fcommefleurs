@@ -11,10 +11,10 @@ class Shop extends BaseController
         helper('produit');
         $produitModel=new ProductModel();
 
-        $this->data['title'] = "boutique";
-        $this->data['page'] = "shop";
+        $this->data['title'] = "blog";
+        $this->data['page'] = "blog";
 
-        $this->data['content'] = view('shop',array(
+        $this->data['content'] = view('blog',array(
             'produit_list'=> transformItemsToObjects($produitModel->getProduct())
         ));
         return view('application', $this->data);
