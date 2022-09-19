@@ -68,8 +68,8 @@
             <main>
             <div class="container">
                     <div class="row">
-                        <div style = "position:relative; left:1800px;">
-                            <img width="110" height="30" src="../assets/images/logo_interflora_min.png">
+                        <div style = "position:relative; left:1170px;">
+                            <img width="100" height="28" src="../assets/images/logo_interflora_min.png">
                         </div>
                     </div>
                 </div>

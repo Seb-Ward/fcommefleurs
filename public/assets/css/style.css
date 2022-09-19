@@ -279,4 +279,8 @@ a:hover, a:active, a:focus {
 .wrap .sign_in_image{
     height: 250px;
 }
+#map{
+    height:550px;
+    width:100%;
 
+}
