@@ -66,6 +66,13 @@
                 BY FREDERIC
             </h5>
             <main>
+            <div class="container">
+                    <div class="row">
+                        <div style = "position:relative; left:1800px;">
+                            <img width="110" height="30" src="../assets/images/logo_interflora_min.png">
+                        </div>
+                    </div>
+                </div>
                 <?= $content
                 ?>
             </main>

@@ -4,7 +4,7 @@ namespace App\Controllers;
 use App\Models\ProductModel;
 
 
-class Shop extends BaseController
+class Blog extends BaseController
 {
     public function index()
     {

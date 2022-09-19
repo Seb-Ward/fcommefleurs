@@ -1,4 +1,4 @@
-<form method="POST" action="connexion/change_password">
+<form method="POST" >
     <section class="ftco-section"> 
     <div class="container">
         <div class="row justify-content-center">
@@ -11,7 +11,7 @@
                         <div class="col-md-7">
                             <div class="contact-wrap w-100 p-md-5 p-4">
                                 <h3 class="mb-4">Entrez votre nouveau mot de passe</h3>
-                                    <form id="contactForm" class="contactForm" method="POST"           name="contactForm" novalidate="novalidate">
+                                    <form id="contactForm" class="contactForm" method="POST" action="connexion/change_password" name="contactForm" novalidate="novalidate">
                                         <div class="row">
                                             <div class="col-md-6">
                                                 <div class="form-group">
@@ -28,12 +28,12 @@
                                         
                                     
                                 
+                                        </div>
+                                    </form>
                                 </div>
                             </div>
-                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </section>
-</form>
