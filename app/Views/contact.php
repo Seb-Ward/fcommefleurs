@@ -38,7 +38,7 @@
                                         </div>
                                         <div class="col-md-12">
                                             <div class="form-group">
-                                                <input class="btn btn-primary" type="submit" value="sendmessage">
+                                                <input class="btn btn-primary" type="submit" value="Envoyer message">
                                             </div>
                                         </div>
                                     </div>
@@ -48,12 +48,13 @@
                         <div class="col-md-5 d-flex align-items-stretch">
                             <div id="map"></div>
                         </div>
+                        <div class="sign_in_image"></div>
                         <div class="row">
                             <div class="col-md-3">
                                 <div class="dbox w-100 text-center">
                                     <div class="icon d-flex align-items-center justify-centent-center">
                                         <span class="fa fa-phone">
-
+                                       
                                         </span>
                                     </div>
                                     <div class="text">
@@ -67,7 +68,7 @@
                                     <div class="dbox w-100 text-center">
                                         <div class="icon d-flex align-items-center justify-centent-center">
                                             <span class="fa fa-map-marker">
-                                            ::before
+                                            
                                             </span>
                                         </div>
                                         <div class="text">

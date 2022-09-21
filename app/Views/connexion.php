@@ -30,7 +30,7 @@
                                 <label class="form-control-placeholder" for="password">Password (4      characters minimum):</label>
                         </div>
                         <div class="form-group">
-                            <button class="form-control btn btn-primary rounded px-3">Sign-in</button>
+                            <button class="form-control btn btn-outline-primary rounded px-3">Sign-in</button>
                         </div>
                         <div class="form-group d-md-flex">
                             <div class="w-50 text-left">
