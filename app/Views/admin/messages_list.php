@@ -9,8 +9,8 @@
                                         <th>Email</th>
                                         <th>Téléphone</th>
                                         <th>Message</th>
-                                        <th>Réponse</th>
-                                        <th>Supprimer</th>
+                                        <th></th>
+                                        <th></th>
                                     </tr>
                                 </thead>
                                     <tbody>

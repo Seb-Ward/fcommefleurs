@@ -19,11 +19,6 @@
            
                                 </div>
                                 <div>
-                                Quantitée de produits en stock
-                                <input type="quantity_of_product_in_stock" name="quantity_of_product_in_stock"id="quantity_of_product_in_stock">
-                                Produit limité<input type="checkbox" id="product_limited" name="product_limited">
-                                </div>
-                                <div>
                                     <input type="checkbox" id="produit_publish_accueil" name="produit_publish_accueil" >
                                     <label for="produit_publish_accueil">Afficher le produit sur la page d'accueil
                                     </label>

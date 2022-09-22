@@ -66,6 +66,13 @@
                 BY FREDERIC
             </h5>
             <main>
+            <div class="container">
+                    <div class="row">
+                        <div style = "position:relative; left:1170px;">
+                        <img width="92" height="23" src="../assets/images/logo_interflora_min.png">
+                        </div>
+                    </div>
+                </div>
                 <?= $content
                 ?>
             </main>
@@ -78,7 +85,10 @@
                     <span class="text-muted">
                         &copy; 2022 FcommeFLEURS by Fréderic <em>Antibes</em>
                     </span>
+                  
                 </div>
+                
+                
                 <ul class="social-media nav col-md-4 justify-content-end list-unstyled d-flex">
                     <li class="ms-3">
                         <a class="text-decoration-none social-icon social-icon-footer d-flex align-items-center justify-content-center" href="https://www.instagram.com/fcommefleursantibes/">
