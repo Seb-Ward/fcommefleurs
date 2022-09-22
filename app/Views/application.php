@@ -7,7 +7,7 @@
             <meta name="description" content="Fcommefleurs est un magasin de ventes de fleurs en ligne.">
             <meta name="keywords" content="Ventes de fleurs">
             <link rel="stylesheet" href="../assets/css/style.css"><!--Here I have my link to my css-->
-            <link rel="stylesheet" href="../assets/bootstrap-5.2.0/dist/css/bootstrap.css">
+            <link rel="stylesheet" href="../assets/css/main.css"><!--Here I have my link to my css-->
             <script src="https://kit.fontawesome.com/92c3f0e192.js" crossorigin="anonymous"></script>
             <script src="../assets/bootstrap-5.2.0/dist/js/bootstrap.bundle.min.js"></script>
             <link rel="stylesheet" href="https://cdn.datatables.net/1.12.1/css/dataTables.bootstrap5.min.css">
