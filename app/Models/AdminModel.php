@@ -29,4 +29,9 @@ class AdminModel extends Model {
             }
             return $dbQuery->get()->getResultObject();
         }
+
+        public function update_password($id, $password) {
+            $dbQuery = $this->db->table($this->table);
+            return $dbQuery->update(array('password' => $password, 'reset_password' => false), array($this->primaryKey => $id));
+        }
 }

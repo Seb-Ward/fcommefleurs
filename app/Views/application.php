@@ -6,11 +6,12 @@
             <meta name="viewport" content="width=device-width, initial-scale=1.0">
             <meta name="description" content="Fcommefleurs est un magasin de ventes de fleurs en ligne.">
             <meta name="keywords" content="Ventes de fleurs">
-            <link rel="stylesheet" href="../assets/css/style.css"><!--Here I have my link to my css-->
-            <link rel="stylesheet" href="../assets/css/main.css"><!--Here I have my link to my css-->
+            <link rel="shortcut icon" type="image/png" href="/favicon.ico"/>
+            <link rel="stylesheet" href="/assets/css/style.css"><!--Here I have my link to my css-->
+            <link rel="stylesheet" href="/assets/css/main.css">
+            <link rel="stylesheet" href="/node_modules/datatables.net-dt/css/jquery.dataTables.min.css">
+            <script src="/node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
             <script src="https://kit.fontawesome.com/92c3f0e192.js" crossorigin="anonymous"></script>
-            <script src="../assets/bootstrap-5.2.0/dist/js/bootstrap.bundle.min.js"></script>
-            <link rel="stylesheet" href="https://cdn.datatables.net/1.12.1/css/dataTables.bootstrap5.min.css">
         </head>
         <body>
         <div class="container">
@@ -50,12 +51,12 @@
                             </div>
                         <?php }
                         ?>
-                         <a href="/connexion/deconnect"><button class='btn btn-warning'>Logout</button></a>
+                         <a href="/connection/deconnect"><button class='btn btn-warning'>Logout</button></a>
                          <?php
                         }else{
 
                         ?>
-                            <a class="me-2" href="/connexion"><button class='btn btn-outline-primary'>Login</button></a>
+                            <a class="me-2" href="/connection"><button class='btn btn-outline-primary'>Login</button></a>
                             <a href="/user"><button class='btn btn-primary'>Sign-up</button></a></div>
      
                         <?php
@@ -106,9 +107,8 @@
         </footer>        
         </div>
 
-        <script src="../assets/js/jquery-3.6.0.min.js"></script>
-        <script src="https://cdn.datatables.net/1.12.1/js/jquery.dataTables.min.js"></script>
-            <script src="https://cdn.datatables.net/1.12.1/js/dataTables.bootstrap5.min.js"></script>
-            <script src="../assets/js/application.js"></script>
+        <script src="/node_modules/jquery/dist/jquery.min.js"></script>
+        <script src="/node_modules/datatables.net/js/jquery.dataTables.min.js"></script>
+        <script src="/assets/js/application.js"></script>
     </body>   
 </html>

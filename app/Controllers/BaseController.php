@@ -50,16 +50,22 @@ class BaseController extends Controller
         parent::initController($request, $response, $logger);
 
         // Preload any models, libraries, etc, here.
-
         $this->session = \Config\Services::session();
-
         $this->user = $this->session->get('user');
+        $connected = $this->user != null;
         $this->data = array(
             'title' => "F comme Fleurs",
             'page' => "home",
             'content' => null,
-            'connected' => $this->user != null,
-            'admin' => $this->user != null && $this->user->admin == 1,
+            'connected' => $connected,
+            'admin' => false,
         );
+        if ($connected) {
+            $this->data['admin'] = $this->user->getPrivilege() != null && $this->user->getPrivilege()->getId() >= 3;
+            if ($this->user->isResetPassword()) {
+                return redirect()->to('/connection/reset_password');
+            }
+        }
+
     }
 }

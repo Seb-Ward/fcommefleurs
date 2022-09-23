@@ -1,39 +1,33 @@
-<form method="POST" >
-    <section class="ftco-section"> 
-    <div class="container">
-        <div class="row justify-content-center">
-            <div class="col-md-6 text-center mb-5"></div>
-        </div>
-        <div class="row justify-content-center">
-            <div class="col-md-12">
-                <div class="wrapper">
-                   <div class="row no-gutters mb-5">
-                        <div class="col-md-7">
-                            <div class="contact-wrap w-100 p-md-5 p-4">
-                                <h3 class="mb-4">Entrez votre nouveau mot de passe</h3>
-                                    <form id="contactForm" class="contactForm" method="POST" action="connexion/change_password" name="contactForm" novalidate="novalidate">
-                                        <div class="row">
-                                            <div class="col-md-6">
-                                                <div class="form-group">
-                                                    <label class="label" for="new_password">Nouveau mot de passe</label>
-                                                        <input id="new_password" class="form-control" type="text" name="new_password" placeholder="new_password">
-                                                </div>
-                                            </div>
-                                                <div class="col-md-6">
-                                                    <div class="form-group">
-                                                        <label class="label" for="confirm_password">Confirmer votre mot de passe</label>
-                                                            <input id="confirm_password" class="form-control" type="text" name="confirm_password" placeholder="confirm_password">
-                                                    </div>
-                                                </div>
-                                        
-                                    
-                                
-                                        </div>
-                                    </form>
-                                </div>
-                            </div>
+<div class="row justify-content-center">
+    <div class="col-md-7 col-lg-5">
+        <div class="wrap">
+            <div class="sign_in_image"></div>
+            <div class="login-wrap p-4 p-md-5">
+                <form method="POST" action="/connection/change_password">
+                    <div class="form-group mt-3">
+                        <h3 class="card-title text-center">Réinitialiser votre mot de passe</h3>
                     </div>
-                </div>
+                    <div class="form-group mt-3">
+                        <input class="form-control" type="password" name="new_password"
+                               id="new_password" required>
+                        <label class="form-control-placeholder" for="new_password">Nouveau mot de
+                            passe</label>
+                    </div>
+                    <div class="form-group">
+                        <input class="form-control" type="password" id="confirm_password"
+                               name="confirm_password"
+                               minlength="4" required>
+                        <label class="form-control-placeholder" for="confirm_password">Confirmer votre
+                            mot de
+                            passe</label>
+                    </div>
+                    <div class="form-group">
+                        <button class="form-control btn btn-outline-primary rounded px-3">Valider le mot
+                            de passe
+                        </button>
+                    </div>
+                </form>
             </div>
         </div>
-    </section>
+    </div>
+</div>

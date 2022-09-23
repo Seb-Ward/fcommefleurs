@@ -5,29 +5,59 @@ namespace App\Entities;
 use CodeIgniter\Entity\Entity;
 
 
-class Taxe extends Entity{//Name of my class
-    private $id;//Propreties who will define my objet
-    private $description;//Propreties who will define my objet
-    private $pourcentage;//Propreties who will define my objet
+class Taxe extends Entity{
+    private int $id;
+    private string $description;
+    private float $percent;
 
-    public function getId(){//Function
+    /**
+     * @return int
+     */
+    public function getId(): int
+    {
         return $this->id;
     }
-    public function setId(int $id){//Function + Type
-        $this->id= $id;
+
+    /**
+     * @param int $id
+     */
+    public function setId(int $id): void
+    {
+        $this->id = $id;
     }
-    public function getDescription(){//Function
+
+    /**
+     * @return string
+     */
+    public function getDescription(): string
+    {
         return $this->description;
     }
-    public function setDescription($description){//Function + Type
-        $this->description= $description;
+
+    /**
+     * @param string $description
+     */
+    public function setDescription(string $description): void
+    {
+        $this->description = $description;
     }
-    public function getPourcentage(){//Function
-        return $this->pourcentage;
+
+    /**
+     * @return float
+     */
+    public function getPercent(): float
+    {
+        return $this->percent;
     }
-    public function setPourcentage($pourcentage){//Function + Type
-        $this->pourcentage= $pourcentage;
+
+    /**
+     * @param float $percent
+     */
+    public function setPercent(float $percent): void
+    {
+        $this->percent = $percent;
     }
+
 }
 
 

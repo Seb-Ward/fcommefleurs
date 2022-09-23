@@ -5,44 +5,90 @@ namespace App\Entities;
 use CodeIgniter\Entity\Entity;
 
 class User extends Entity {//Name of my class
-    private $user_id;//Propreties who will define my objet
-    private $nom;//Propreties who will define my objet
-    private $prenom;//Propreties who will define my objet
-    private $email;//Propreties who will define my objet
-    private $admin;//Propreties who will define my objet
+    private int $id;
+    private string $name;
+    private string $surname;
+    private bool $reset_password;
+    private ?Privilege $privilege;
 
-    public function getId(){//Function
-        return $this->user_id;
-    }
-    public function setId(int $user_id){//Function + Type
-        $this->user_id= $user_id;
-    }
-
-    public function getNom(){//Function
-        return $this->nom;
-    }
-    public function setNom(string $nom){//Function + Type
-        $this->nom= $nom;
+    /**
+     * @return int
+     */
+    public function getId(): int
+    {
+        return $this->id;
     }
 
-    public function getPrenom(){//Function
-        return $this->prenom;
-    }
-    public function setPrenom(string $prenom){//Function + Type
-        $this->prenom= $prenom;
+    /**
+     * @param int $id
+     */
+    public function setId(int $id): void
+    {
+        $this->id = $id;
     }
 
-    public function getEmail(){//Function
-        return $this->email;
+    /**
+     * @return string
+     */
+    public function getName(): string
+    {
+        return $this->name;
     }
-    public function setEmail(string $email){//Function + Type
-        $this->email= $email;
+
+    /**
+     * @param string $name
+     */
+    public function setName(string $name): void
+    {
+        $this->name = $name;
     }
-    public function getAdmin(){//Function
-        return $this->admin;
+
+    /**
+     * @return string
+     */
+    public function getSurname(): string
+    {
+        return $this->surname;
     }
-    public function setAdmin(string $admin){//Function + Type
-        $this->admin= $admin;
+
+    /**
+     * @param string $surname
+     */
+    public function setSurname(string $surname): void
+    {
+        $this->surname = $surname;
+    }
+
+    /**
+     * @return bool
+     */
+    public function isResetPassword(): bool
+    {
+        return $this->reset_password;
+    }
+
+    /**
+     * @param bool $reset_password
+     */
+    public function setResetPassword(bool $reset_password): void
+    {
+        $this->reset_password = $reset_password;
+    }
+
+    /**
+     * @return Privilege
+     */
+    public function getPrivilege(): Privilege
+    {
+        return $this->privilege;
+    }
+
+    /**
+     * @param Privilege $privilege
+     */
+    public function setPrivilege(Privilege $privilege): void
+    {
+        $this->privilege = $privilege;
     }
 
 }
