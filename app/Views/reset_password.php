@@ -11,7 +11,7 @@
                         <input class="form-control" type="password" name="new_password"
                                id="new_password" required>
                         <label class="form-control-placeholder" for="new_password">Nouveau mot de
-                            passe</label>
+                            passe*</label>
                     </div>
                     <div class="form-group">
                         <input class="form-control" type="password" id="confirm_password"
@@ -19,7 +19,7 @@
                                minlength="4" required>
                         <label class="form-control-placeholder" for="confirm_password">Confirmer votre
                             mot de
-                            passe</label>
+                            passe*</label>
                     </div>
                     <div class="form-group">
                         <button class="form-control btn btn-outline-primary rounded px-3">Valider le mot

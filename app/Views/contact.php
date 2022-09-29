@@ -6,6 +6,7 @@
         <div class="row justify-content-center">
             <div class="col-md-12">
                 <div class="wrapper">
+                <div class="row">
                     <div class="row no-gutters mb-5">
                         <div class="col-md-7">
                             <div class="contact-wrap w-100 p-md-5 p-4">
@@ -14,25 +15,25 @@
                                     <div class="row">
                                         <div class="col-md-6">
                                             <div class="form-group">
-                                                <label class="label" for="name">Nom</label>
+                                                <label class="label" for="name">Nom*</label>
                                                 <input id="name" class="form-control" type="text" name="name" placeholder="Nom">
                                             </div>
                                         </div>
                                         <div class="col-md-6">
                                             <div class="form-group">
-                                                <label class="label" for="name">Prénom</label>
+                                                <label class="label" for="name">Prénom*</label>
                                                 <input id="name" class="form-control" type="text" name="name" placeholder="Prénom">
                                             </div>
                                         </div>
                                         <div class="col-md-12">
                                             <div class="form-group">
-                                                <label class="label" for="name">Email</label>
+                                                <label class="label" for="name">Email*</label>
                                                 <input id="email" class="form-control" type="text" name="email" placeholder="email">
                                             </div>
                                         </div>
                                         <div class="col-md-12">
                                             <div class="form-group">
-                                                <label class="label" for="#">Message</label>
+                                                <label class="label" for="#">Message*</label>
                                                 <textarea id="message" class="form-control" name="form-control" cols="30" rows="4" placeholder="Message"></textarea>
                                             </div>
                                         </div>
@@ -52,7 +53,7 @@
                         <div class="row">
                             <div class="col-md-3">
                                 <div class="dbox w-100 text-center">
-                                    <div class="icon d-flex align-items-center justify-centent-center">
+                                    <div class="icon d-flex align-items-center justify-content-center">
                                         <span class="fa fa-phone">
                                        
                                         </span>
@@ -81,11 +82,14 @@
                                 </div>
                             </div>
                         </div>
+                        </div>
                     </div>
+                    <div><img src="/assets/images/devanture_3.png" width="1250px" height="740px" alt="photo_devanture"></div>
                 </div>
             </div>
         </div>
     </div>
+   
     <script
       src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB41DRUbKWJHPxaFjMAwdrzWzbVKartNGg&callback=initMap&v=weekly"
       defer
