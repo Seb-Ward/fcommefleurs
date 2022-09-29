@@ -6,37 +6,42 @@ use CodeIgniter\Model;
  
 class ProductModel extends Model {
 
-        protected $DBGroup = 'default';
+    protected $DBGroup = 'default';
 
-        protected $table = 'product';
-        protected $primaryKey = 'id';
-        protected $returnType = 'array';
-        protected $allowedFields = ['name','description','price','taxe_id','image_id','publish_home_page','publish_shop_page'];
-        protected $createdField = null;
-        protected $updatedField = null;
+    protected $table = 'product';
+    protected $primaryKey = 'id';
+    protected $returnType = 'array';
+    protected $allowedFields = ['name','description','price','tax_id', 'quantity', 'trendy_collection','monthly_offer'];
+    protected $createdField = null;
+    protected $updatedField = null;
 
-
-
-  function insertProduct($data){
-        $this->db->table($this->table)->insert($data);//new way to insert a product in the data base
-        return $this->db->insertID();
-  }      
-  function updateProduct($data){
-        $this->db->table($this->table)->update($data);//new way to update a product in the data base
-  }  
-  function deleteProduct($data){
-        $this->db->table($this->table)->delete($data);//new way to delete a product in the data base
-  }  
-  
-  function getProduct($id = null){
+    function insertProduct($data){
         $dbQuery = $this->db->table($this->table);
-          if ($id != null) {
-                  $dbQuery->where($this->primaryKey, $id);
-          }
-          return $dbQuery->select("*")
-                ->join("taxe","product.taxe_id=taxe.id")
-                ->join("image","product.image_id=image.id")->get()->getResultArray();
+        return $dbQuery->insert($data);
+    }
 
+    function updateProduct($id, $data){
+        $dbQuery = $this->db->table($this->table);
+        return $dbQuery->update($data, array($this->primaryKey => $id));
+    }
 
-  }
+    function deleteProduct($id){
+        $dbQuery = $this->db->table($this->table);
+        return $dbQuery->delete(array($this->primaryKey => $id));
+    }
+
+    function getProduct($id = null, $data = array()){
+        $dbQuery = $this->db->table($this->table);
+        $dbQuery->select("product.*, tax.description AS tax_description, tax.percentage, image.id AS image_id,
+                image.name AS image_name, image.size AS image_size, image.type AS image_type, image.bin AS image_bin")
+            ->join("tax","product.tax_id = tax.id",  "inner")
+            ->join("image","product.id = image.product_id", "left");
+        if ($id != null) {
+            $dbQuery->where("$this->table.$this->primaryKey", $id);
+            return $dbQuery->get()->getRowObject();
+        } else if (!empty($data)) {
+            $dbQuery->where($data);
+        }
+        return $dbQuery->get()->getResultObject();
+    }
 }

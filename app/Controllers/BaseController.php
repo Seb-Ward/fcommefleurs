@@ -39,6 +39,12 @@ class BaseController extends Controller
 
     protected $data = [];
 
+    protected $ajax_response = array(
+        'success' => false,
+        'message' => null,
+        'data' => null
+    );
+
     protected $user;
 
     /**
@@ -66,6 +72,9 @@ class BaseController extends Controller
                 return redirect()->to('/connection/reset_password');
             }
         }
+    }
 
+    protected function isAdminConnected() {
+        return $this->user != null && $this->user->getPrivilege() != null && $this->user->getPrivilege()->getId() >= 3;
     }
 }

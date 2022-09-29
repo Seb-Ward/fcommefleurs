@@ -5,46 +5,92 @@ use CodeIgniter\Entity\Entity;
 
 
 class Image extends Entity{//Name of my class
-    private $image_id;//Propreties who will define my objet
-    private $image_nom;//Propreties who will define my objet
-    private $image_taille;//Propreties who will define my objet
-    private $image_type;//Propreties who will define my objet
-    private $image_bin;//Propreties who will define my objet
+    private int $id;
+    private string $name;
+    private string $type;
+    private int $size;
+    private $bin;
 
+    /**
+     * @return int
+     */
+    public function getId(): int
+    {
+        return $this->id;
+    }
 
-    public function getImage_id(){//Function
-        return $this->image_id;
+    /**
+     * @param int $id
+     */
+    public function setId(int $id): void
+    {
+        $this->id = $id;
     }
-    public function setImage_id(int $image_id){//Function + Type
-        $this->image_id= $image_id;
+
+    /**
+     * @return string
+     */
+    public function getName(): string
+    {
+        return $this->name;
     }
-    public function getImage_nom(){//Function
-        return $this->image_nom;
+
+    /**
+     * @param string $name
+     */
+    public function setName(string $name): void
+    {
+        $this->name = $name;
     }
-    public function setImage_nom(string $image_nom){//Function + Type
-        $this->image_nom= $image_nom;
-    } 
-    public function getImage_taille(){//Function
-        return $this->image_taille;
+
+    /**
+     * @return string
+     */
+    public function getType(): string
+    {
+        return $this->type;
     }
-    public function setImage_taille(string $image_taille){//Function + Type
-        $this->image_taille= $image_taille;
-    } 
-    public function getImage_type(){//Function
-        return $this->image_type;
+
+    /**
+     * @param string $type
+     */
+    public function setType(string $type): void
+    {
+        $this->type = $type;
     }
-    public function setImage_type(string $image_type){//Function + Type
-        $this->image_type= $image_type;
-    } 
-    public function getImage_bin(){//Function
-        return $this->image_bin;
+
+    /**
+     * @return int
+     */
+    public function getSize(): int
+    {
+        return $this->size;
     }
-    public function setImage_bin(string $image_bin){//Function + Type
-        $this->image_bin= $image_bin;
-    } 
-  
-    
- 
+
+    /**
+     * @param int $size
+     */
+    public function setSize(int $size): void
+    {
+        $this->size = $size;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getBin()
+    {
+        return $this->bin;
+    }
+
+    /**
+     * @param mixed $bin
+     */
+    public function setBin($bin): void
+    {
+        $this->bin = $bin;
+    }
+
 }
 
 

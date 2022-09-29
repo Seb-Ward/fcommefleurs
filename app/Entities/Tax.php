@@ -5,10 +5,10 @@ namespace App\Entities;
 use CodeIgniter\Entity\Entity;
 
 
-class Taxe extends Entity{
+class Tax extends Entity{
     private int $id;
     private string $description;
-    private float $percent;
+    private float $percentage;
 
     /**
      * @return int
@@ -45,17 +45,17 @@ class Taxe extends Entity{
     /**
      * @return float
      */
-    public function getPercent(): float
+    public function getPercentage(): float
     {
-        return $this->percent;
+        return $this->percentage;
     }
 
     /**
-     * @param float $percent
+     * @param float $percentage
      */
-    public function setPercent(float $percent): void
+    public function setPercentage(float $percentage): void
     {
-        $this->percent = $percent;
+        $this->percentage = $percentage;
     }
 
 }

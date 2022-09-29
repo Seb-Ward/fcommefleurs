@@ -3,7 +3,7 @@
         <div class="wrap">
             <div class="sign_in_image"></div>
             <div class="login-wrap p-4 p-md-5">
-                <form method="POST" action="/connection/change_password">
+                <form method="POST" id="reset_password" action="/connection/change_password">
                     <div class="form-group mt-3">
                         <h3 class="card-title text-center">Réinitialiser votre mot de passe</h3>
                     </div>

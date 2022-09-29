@@ -6,18 +6,17 @@
     
                     <div class="row row-cols-1 row-cols-md-3 mb-5 g-5 text-center">
                         <?php  
-                        foreach($produit_list as $produit){
+                        foreach($product_list as $product){
                         //Here I do a request to my data base without doing a prepare because it isn't gonna change it is solid.(She display all the questions given) 
                         ?>    
-                        <div class="col <?=$produit->getProduit_id()?>">
+                        <div class="col">
                             <div class="card shadow-sm">
-                                <a href="article.php?produit_id=<?=$produit->getProduit_id()?>" >
-                                <img src="data:image/jpeg;base64,<?=base64_encode($produit->getImage()->getImage_bin())?>" alt="<?=$produit->getProduit_description()?>" width="100%" height="400">
+                                <a href="/shop/<?=$product->getId()?>" >
+                                <!--<img src="data:image/jpeg;base64,<?php //base64_encode($product->getImageList()[0]->getBin())?>" alt="<?=$product->getDescription()?>" width="100%" height="400">-->
                             </a>
                                     <div class="card-body text-center">
-                                        <a class="produit-name" href="article.php?produit_id=<?=$produit->getProduit_id()?>" >
-                                        <?=$produit->getProduit_nom()?></a>
-                                        <p class="gy-2"><?=$produit->getProduit_prix()?>€</p>
+                                        <a class="produit-name" href="/shop/<?=$product->getId()?>" ><?=$product->getName()?></a>
+                                        <p class="gy-2"><?= str_replace(".", ",", $product->getPrice()) ?> &euro;</p>
                               
                                     </div>   
                             </div>

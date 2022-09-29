@@ -30,26 +30,28 @@ class Connection extends BaseController
         if (isset($postParam['login']) && (isset($postParam['password']) && !empty($postParam['login']) && !empty($postParam['password']))) { //Here I check that my fillings are existing and are not empty otherwise I redirect towards my header.
             $login = htmlspecialchars($postParam['login']); //I configure my $email as $_post['email']
             $password = htmlspecialchars($postParam['password']); //I configure my $password as $_post['password']
-            
+
             if (filter_var($login, FILTER_VALIDATE_EMAIL)) {
                 $userModel = new UserModel();
                 $userToVerify = $userModel->getUser(null, array("email" => $login))[0] ?? null;
                 if ($userToVerify != null && password_verify($password, $userToVerify->password_user)) { //If the Password_user matches the password and the user via the function password_verify then he is ok and his session_starts
-                    return $this->connection_succeed(new Customer(), $userToVerify);
+                    $this->ajax_response['success'] = $this->validateConnection(new Customer(), $userToVerify);
                 }
             } else {
                 $adminModel = new AdminModel();
                 $adminToVerify = $adminModel->getAdmin(null, array("nickname" => $login))[0] ?? null;
                 if ($adminToVerify != null && password_verify($password, $adminToVerify->password)) { //If the Password_user matches the password and the user via the function password_verify then he is ok and his session_starts
                     if (!$adminToVerify->actif) {
-                        // Account not actif
-                        return redirect()->to("/connection");
+                        $this->ajax_response['message'] = "Compte désactivé, contactez le support";
+                    } else {
+                        $this->ajax_response['success'] = $this->validateConnection(new Admin(), $adminToVerify, true);
                     }
-                    return $this->connection_succeed(new Admin(), $adminToVerify, true);
+                } else {
+                    $this->ajax_response['message'] = "Identifiant invalide";
                 }
             }
         }
-        return redirect()->to("/connection");
+        echo json_encode($this->ajax_response);
     }
 
     public function deconnect()
@@ -82,14 +84,21 @@ class Connection extends BaseController
                     $model = new UserModel();
                 }
                 if (!$model->update_password($this->user->getId(), password_hash($postParam['new_password'], PASSWORD_DEFAULT))) {
-                    return redirect()->to('/connection/reset_password');
-                } else if ($this->user->getPrivilege() != null && $this->user->getPrivilege()->getId() >= 3) {
-                    return redirect()->to('/dashboard');
+                    $this->ajax_response['message'] = "Une erreur lors de la sauvegarde du nouveau mot de passe est survenue, contactez le support";
+                } else {
+                    $this->ajax_response['success'] = true;
+                    $this->ajax_response['data']['redirect'] = "/home";
+                    if ($this->user->getPrivilege() != null && $this->user->getPrivilege()->getId() >= 3) {
+                        $this->ajax_response['data']['redirect'] = "/dashboard";
+                    }
                 }
-                return redirect()->to('/home');
+            } else {
+                $this->ajax_response['message'] = "Le mot de passe n'est pas identique";
             }
+        } else {
+            $this->ajax_response['message'] = "Problème technique, contactez le support";
         }
-        return redirect()->to('/connection/');
+        echo json_encode($this->ajax_response);
     }
 
     public function sign_up() {
@@ -102,7 +111,7 @@ class Connection extends BaseController
         return view('application', $this->data);
     }
 
-    private function connection_succeed($object, $user, $isAdmin = false) {
+    private function validateConnection($object, $user, $isAdmin = false) {
         $object->setId($user->id);
         $object->setName($user->name);
         $object->setSurname($user->surname);
@@ -113,8 +122,8 @@ class Connection extends BaseController
                 $privileges = new Privilege($tmp->id, $tmp->role);
                 $object->setPrivilege($privileges);
             } else {
-                // Error Privileges unknow
-                return redirect()->to('/connection');
+                $this->ajax_response['message'] = "Privilege inconnu, veuillez prendre contact avec le support";
+                return false;
             }
         } else {
             $object->setPrivilege(null);
@@ -133,13 +142,14 @@ class Connection extends BaseController
             $object->setCity($user->city);
         }
         $this->session->set('user', $object);
-        $privileges = $object->getPrivilege();
         if ($object->isResetPassword()) {
-            return redirect()->to('/connection/reset_password');
-        } else if ($privileges != null && $privileges->id >= 3) {
-            return redirect()->to('/dashboard');
+            $this->ajax_response['data']['redirect'] = "/connection/reset_password";
+        } else if ($object->getPrivilege() != null && $object->getPrivilege()->id >= 3) {
+            $this->ajax_response['data']['redirect'] = "/dashboard";
+        } else  {
+            $this->ajax_response['data']['redirect'] = "/home";
         }
-        return redirect()->to('/home');
+        return true;
     }
           
 }

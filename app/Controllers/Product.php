@@ -3,15 +3,17 @@
 namespace App\Controllers;
 use App\Models\ProductModel;
 
-class Product extends AdminController{
+class Product extends BaseController {
 
     public function index(){
-        
-        helper('produit');
-        $produitModel=new ProductModel();
-        $productList=transformItemsToObjects($produitModel->getProduct());
-                
-        $this->data['title'] = "Product";
+        if (!$this->isAdminConnected()) {
+            return redirect()->to("/connection/");
+        }
+        helper('product');
+        $produitModel = new ProductModel();
+        $productList = transformItemsToObjects($produitModel->getProduct());
+
+        $this->data['title'] = "Produit";
         $this->data['page'] = "product_list";
 
         $this->data['content'] = view('admin/product_list',array(
@@ -19,18 +21,29 @@ class Product extends AdminController{
         ));
         return view('application', $this->data);
     }
-    public function edit($id = 0){
-        
+
+    public function edit($id = null) {
+        if (!$this->isAdminConnected()) {
+            return redirect()->to("/connection/");
+        }
+
         $this->data['title'] = "Edition produit";
         $this->data['page'] = "edit_product";
-
-        $this->data['content'] = view('admin/edit_product',array());
+        $product = null;
+        if ($id != null && $id > 0) {
+            helper('product');
+            $produitModel = new ProductModel();
+            $product = transformItemToObject($produitModel->getProduct($id));
+        }
+        $this->data['content'] = view('admin/edit_product', array(
+            "product" => $product
+        ));
         return view('application', $this->data);
     }
-    public function add(){
-        
-        $data = $this->request->getPost(); 
-var_dump($data);
-        //return redirect()->to('/product');
+
+    public function remove() {
+        $this->ajax_response['success'] = true;
+        $this->ajax_response['message'] = "Le produit a bien été supprimé";
+        echo json_encode($this->ajax_response);
     }
 }
