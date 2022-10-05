@@ -48,6 +48,31 @@ $(document).ready(function () {
         event.preventDefault();
     });
 
+    $("#edit_product").submit(function (event) {
+        const formData = {
+            produit_nom: $("#produit_nom").val(),
+            produit_description: $("#produit_description").val(),
+            produit_prix: $("#produit_prix").val()
+
+        };
+        $("#spinner-div").show();
+        $.ajax({
+            type: "POST",
+            url: "/product/add",
+            data: formData,
+            dataType: "json",
+            encode: true,
+        }).done(function (connection) {
+            if (connection.success === true) {
+                window.location.replace("/product");
+            } else {
+                alertError(connection.message);
+            }
+            $("#spinner-div").hide();
+        });
+        event.preventDefault();
+    });
+
     $(".product-remove").click(function(event) {
         const formData = {
             id: event.currentTarget.dataset.id

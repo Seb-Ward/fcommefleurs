@@ -1,4 +1,4 @@
-<form action="/product/add" method="POST" enctype="multipart/form-data">
+<form action="/product/add" method="POST" enctype="multipart/form-data" id="edit_product">
     <!--on top of ussing the $_POST method we also use enctype ="multipart" to insert a picture in a form-->
     <fieldset>
         <h5 class="card-tittle text-center text-secondary">Ajout d'un nouveau produit à la boutique</h5>

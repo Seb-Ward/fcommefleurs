@@ -46,4 +46,26 @@ class Product extends BaseController {
         $this->ajax_response['message'] = "Le produit a bien été supprimé";
         echo json_encode($this->ajax_response);
     }
+    public function add() {
+        $postParam = $this->request->getPost();
+        if (isset($postParam['produit_nom']) && isset($postParam['produit_description']) && isset($postParam['produit_prix']) && !empty($postParam['produit_nom']) && !empty($postParam['produit_description'])&& !empty($postParam['produit_prix'])) {
+            $data=array(
+                "name" => $postParam['produit_nom'], 
+                "description" => $postParam['produit_description'], 
+                "price" => $postParam['produit_prix'], 
+            );
+            $produitModel = new ProductModel();
+            if (!$produitModel->insertProduct($data)){
+                $this->ajax_response['message']  = "Problème technique, contacter le support. Merci";  
+            }
+            else{
+                $this->ajax_response['success']  = true;  
+            }
+        }
+        else{
+          $this->ajax_response['message']  = "veuillez remplir tous les champs requis";
+        } 
+
+        echo json_encode($this->ajax_response);
+    } 
 }
