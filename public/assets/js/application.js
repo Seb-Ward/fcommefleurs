@@ -50,15 +50,19 @@ $(document).ready(function () {
 
     $("#edit_product").submit(function (event) {
         const formData = {
-            produit_nom: $("#produit_nom").val(),
-            produit_description: $("#produit_description").val(),
-            produit_prix: $("#produit_prix").val()
-
+            product_id: $("#product_id").val(),
+            product_name: $("#product_name").val(),
+            product_description: $("#product_description").val(),
+            product_price: $("#product_price").val(),
+            quantity: $("#quantity").val() != "" ? $("#quantity").val() : -1,
+            trendy_collection: $("#trendy_collection").val(),
+            monthly_offer: $("#monthly_offer").val(),
+            image: $("#image").val()
         };
         $("#spinner-div").show();
         $.ajax({
             type: "POST",
-            url: "/product/add",
+            url: "/product/edit_process",
             data: formData,
             dataType: "json",
             encode: true,
@@ -74,8 +78,9 @@ $(document).ready(function () {
     });
 
     $(".product-remove").click(function(event) {
+        const product_id = event.currentTarget.dataset.id;
         const formData = {
-            id: event.currentTarget.dataset.id
+            product_id: product_id
         };
         $("#spinner-div").show();
         $.ajax({
@@ -86,6 +91,7 @@ $(document).ready(function () {
             encode: true,
         }).done(function (remove) {
             if (remove.success === true) {
+                $("#product_"+product_id).remove();
                 Swal.fire({
                     icon: 'success',
                     title: remove.message,

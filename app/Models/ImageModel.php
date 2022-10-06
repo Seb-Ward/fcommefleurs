@@ -4,41 +4,35 @@ namespace App\Models;
 use CodeIgniter\Model;
 
  
-class ProductModel extends Model {
+class ImageModel extends Model {
 
     protected $DBGroup = 'default';
 
-    protected $table = 'product';
+    protected $table = 'image';
     protected $primaryKey = 'id';
     protected $returnType = 'array';
-    protected $allowedFields = ['name','description','price','tax_id', 'quantity', 'trendy_collection','monthly_offer'];
+    protected $allowedFields = ['name','size','type','product_id','bin'];
     protected $createdField = null;
     protected $updatedField = null;
 
-    function insertProduct($data){
+    function insertImage($data){
         $dbQuery = $this->db->table($this->table);
-        if (!$dbQuery->insert($data)) {
-            return false;
-        }
-        return $this->db->insertID();
+        return $dbQuery->insert($data);
     }
 
-    function updateProduct($id, $data){
+    function updateImage($id, $data){
         $dbQuery = $this->db->table($this->table);
         return $dbQuery->update($data, array($this->primaryKey => $id));
     }
 
-    function deleteProduct($id){
+    function deleteImage($id){
         $dbQuery = $this->db->table($this->table);
         return $dbQuery->delete(array($this->primaryKey => $id));
     }
 
-    function getProduct($id = null, $data = array()){
+    function getImage($id = null, $data = array()){
         $dbQuery = $this->db->table($this->table);
-        $dbQuery->select("product.*, tax.description AS tax_description, tax.percentage, image.id AS image_id,
-                image.name AS image_name, image.size AS image_size, image.type AS image_type, image.bin AS image_bin")
-            ->join("tax","product.tax_id = tax.id",  "inner")
-            ->join("image","product.id = image.product_id", "left");
+        $dbQuery->select("*");
         if ($id != null) {
             $dbQuery->where("$this->table.$this->primaryKey", $id);
             return $dbQuery->get()->getRowObject();

@@ -23,11 +23,12 @@
         <?php foreach ($product_list as $product) { ?>
             <tr id="product_<?= $product->getId() ?>">
                 <td>
-                    <!--<img src="data:image/jpeg;base64,<?php // base64_encode($product->getImageList()[0]->getBin()) ?>" alt="<?= $product->getDescription() ?>" width="100" height="100" class="rounded mx-auto d-block">-->
+                    <i class="fa-regular fa-image"></i>
+                        <!--<img src="data:image/jpeg;base64,<?php //base64_encode($product->getImageList()[0]->getBin()) ?>" alt="<?= $product->getDescription() ?>" width="100" height="100" class="rounded mx-auto d-block">-->
                 </td>
                 <td><?= $product->getName() ?></td>
                 <td><?= str_replace(".", ",", $product->getPrice()) ?> &euro;</td>
-                <td><?= $product->getQuantity() ?? 'Illimité <i class="fa-solid fa-infinity"></i>' ?></td>
+                <td><?= $product->getQuantity() != null && $product->getQuantity() >= 0 ? $product->getQuantity() : 'Illimité <i class="fa-solid fa-infinity"></i>' ?></td>
                 <td><?= $product->isTrendyCollection() ? "Oui" : "Non" ?></td>
                 <td><?= $product->isMonthlyOffer() ? "Oui" : "Non" ?></td>
                 <td>
