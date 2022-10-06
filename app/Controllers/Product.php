@@ -104,7 +104,6 @@ class Product extends BaseController {
 
     private function processImage($product_id, $update = false) {
         $file = $this->request->getFile('image');
-        var_dump($file);
         if ($file != null) {
             $dataImage = array(
                 "name" => $file->getRandomName(),
