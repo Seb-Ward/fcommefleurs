@@ -20,7 +20,7 @@
                         </p>
                     </div>
                 </div>
-                <form action="/connection/connect" id="sign_in" method="post"><!--Here we use the $_POST method-->
+                <form action="/connection/connect/" id="sign_in" method="post"><!--Here we use the $_POST method-->
                     <div class="form-group mt-3">
                         <input class="form-control" type="text" name="login" id="login" required>
                         <label class="form-control-placeholder" for="login">Login*</label>

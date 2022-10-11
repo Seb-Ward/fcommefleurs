@@ -17,7 +17,10 @@ class ProductModel extends Model {
 
     function insertProduct($data){
         $dbQuery = $this->db->table($this->table);
-        return $dbQuery->insert($data);
+        if (!$dbQuery->insert($data)) {
+            return false;
+        }
+        return $this->db->insertID();
     }
 
     function updateProduct($id, $data){

@@ -48,9 +48,39 @@ $(document).ready(function () {
         event.preventDefault();
     });
 
-    $(".product-remove").click(function(event) {
+    $("#edit_product").submit(function (event) {
         const formData = {
-            id: event.currentTarget.dataset.id
+            product_id: $("#product_id").val(),
+            product_name: $("#product_name").val(),
+            product_description: $("#product_description").val(),
+            product_price: $("#product_price").val(),
+            quantity: $("#quantity").val() != "" ? $("#quantity").val() : -1,
+            trendy_collection: $("#trendy_collection").val(),
+            monthly_offer: $("#monthly_offer").val(),
+            image: $("#image").val()
+        };
+        $("#spinner-div").show();
+        $.ajax({
+            type: "POST",
+            url: "/product/edit_process",
+            data: formData,
+            dataType: "json",
+            encode: true,
+        }).done(function (connection) {
+            if (connection.success === true) {
+                window.location.replace("/product");
+            } else {
+                alertError(connection.message);
+            }
+            $("#spinner-div").hide();
+        });
+        event.preventDefault();
+    });
+
+    $(".product-remove").click(function(event) {
+        const product_id = event.currentTarget.dataset.id;
+        const formData = {
+            product_id: product_id
         };
         $("#spinner-div").show();
         $.ajax({
@@ -61,6 +91,7 @@ $(document).ready(function () {
             encode: true,
         }).done(function (remove) {
             if (remove.success === true) {
+                $("#product_"+product_id).remove();
                 Swal.fire({
                     icon: 'success',
                     title: remove.message,
