@@ -6,14 +6,9 @@ class Contact extends BaseController
 {
     public function index()
     {
-
-        $user = $this->session->get('user');
-        $data = array(
-            'title' => "Nous contacter",
-            'page'=>"contact",
-            'content' => view('contact', array("user"=>$user)),
-            'connected' => $user != null,
-            'admin' => $user != null && $user->admin == 1  );
-        return view('application', $data);
+        $this->data['title'] = "Nous contacter";
+        $this->data['page'] = "contact";
+        $this->data['content'] = view('contact', array("user" => $this->user));
+        return view('application', $this->data);
     }
 }

@@ -22,9 +22,13 @@
         <tbody>
         <?php foreach ($product_list as $product) { ?>
             <tr id="product_<?= $product->getId() ?>">
-                <td>
-                    <i class="fa-regular fa-image"></i>
-                        <!--<img src="data:image/jpeg;base64,<?php //base64_encode($product->getImageList()[0]->getBin()) ?>" alt="<?= $product->getDescription() ?>" width="100" height="100" class="rounded mx-auto d-block">-->
+
+                <td class="image_product">
+                    <?php if (!empty($product->getImageList())) { ?>
+                        <img src="data:image/<?= $product->getImageList()[0]->getType() ?>;base64,<?= base64_encode($product->getImageList()[0]->getBin()) ?>" alt="<?= $product->getDescription() ?>" width="100" height="100" class="rounded mx-auto d-block">
+                    <?php } else { ?>
+                        <i class="fa-regular fa-image"></i>
+                    <?php } ?>
                 </td>
                 <td><?= $product->getName() ?></td>
                 <td><?= str_replace(".", ",", $product->getPrice()) ?> &euro;</td>

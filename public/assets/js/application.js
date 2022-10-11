@@ -49,28 +49,20 @@ $(document).ready(function () {
     });
 
     $("#edit_product").submit(function (event) {
-        const formData = {
-            product_id: $("#product_id").val(),
-            product_name: $("#product_name").val(),
-            product_description: $("#product_description").val(),
-            product_price: $("#product_price").val(),
-            quantity: $("#quantity").val() != "" ? $("#quantity").val() : -1,
-            trendy_collection: $("#trendy_collection").val(),
-            monthly_offer: $("#monthly_offer").val(),
-            image: $("#image").val()
-        };
         $("#spinner-div").show();
         $.ajax({
-            type: "POST",
             url: "/product/edit_process",
-            data: formData,
-            dataType: "json",
-            encode: true,
-        }).done(function (connection) {
-            if (connection.success === true) {
+            method: "POST",
+            data: new FormData(this),
+            processData: false,
+            contentType: false,
+            cache: false,
+            dataType: "json"
+        }).done(function (edit) {
+            if (edit.success === true) {
                 window.location.replace("/product");
             } else {
-                alertError(connection.message);
+                alertError(edit.message);
             }
             $("#spinner-div").hide();
         });

@@ -364,8 +364,13 @@ a:hover, a:active, a:focus {
     justify-content: center !important;
 }
 .d-flex{
-    display: webkit box !important;
+    display: -webkit-box !important;
     display: -ms-flexbox !important;
     display: flex !important;
-    
+}
+.table td {
+    vertical-align: middle;
+}
+.table td.image_product {
+    text-align: center;
 }

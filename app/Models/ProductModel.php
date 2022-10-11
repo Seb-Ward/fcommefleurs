@@ -33,7 +33,7 @@ class ProductModel extends Model {
         return $dbQuery->delete(array($this->primaryKey => $id));
     }
 
-    function getProduct($id = null, $data = array()){
+    function getProduct($id = null, $data = array(), $limit = null){
         $dbQuery = $this->db->table($this->table);
         $dbQuery->select("product.*, tax.description AS tax_description, tax.percentage, image.id AS image_id,
                 image.name AS image_name, image.size AS image_size, image.type AS image_type, image.bin AS image_bin")
