@@ -77,13 +77,13 @@
                 <ul class="social-media nav col-md-4 justify-content-end list-unstyled d-flex">
                     <li class="ms-3">
                         <a class="text-decoration-none social-icon social-icon-footer d-flex align-items-center justify-content-center"
-                           href="https://www.instagram.com/fcommefleursantibes/">
+                           href="https://www.instagram.com/fcommefleursantibes/" target="_blank">
                             <i class="fa-brands fa-instagram"></i>
                         </a>
                     </li>
                     <li class="ms-3">
                         <a class="text-decoration-none social-icon social-icon-footer d-flex align-items-center justify-content-center"
-                           href="https://www.facebook.com/F-comme-Fleurs-Antibes-107206567645326">
+                           href="https://www.facebook.com/F-comme-Fleurs-Antibes-107206567645326" target="_blank">
                             <i class="fa-brands fa-facebook"></i>
                         </a>
                     </li>

@@ -17,7 +17,7 @@
             </div>
         </div>
         <div>
-            <label for="produit_prix">Prix ttc</label>
+            <label for="produit_prix">Prix TTC</label>
             <input type="text" name="produit_prix" id="produit_prix" value="<?= ($product != null && $product->getPrice() != null) ? $product->getPrice() : "" ?>" required>
         </div>
         <div>
