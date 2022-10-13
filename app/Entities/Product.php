@@ -15,6 +15,7 @@ class Product extends Entity
     private ?int $quantity;
     private bool $trendy_collection;
     private bool $monthly_offer;
+    private bool $home_page;
 
     /**
      * @return int
@@ -158,6 +159,22 @@ class Product extends Entity
     public function setMonthlyOffer(bool $monthly_offer): void
     {
         $this->monthly_offer = $monthly_offer;
+    }
+
+    /**
+     * @return bool
+     */
+    public function isHomePage(): bool
+    {
+        return $this->home_page;
+    }
+
+    /**
+     * @param bool $home_page
+     */
+    public function setHomePage(bool $home_page): void
+    {
+        $this->home_page = $home_page;
     }
 
 }

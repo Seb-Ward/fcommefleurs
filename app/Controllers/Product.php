@@ -67,7 +67,8 @@ class Product extends BaseController {
                 "tax_id" => 1,
                 "quantity" => $postParam['quantity'] ?? null,
                 "trendy_collection" => isset($postParam['trendy_collection']),
-                "monthly_offer" => isset($postParam['monthly_offer'])
+                "monthly_offer" => isset($postParam['monthly_offer']),
+                "home_page" => isset($postParam['home_page']) ? true : false
             );
             $update = (isset($postParam['product_id']) && $postParam['product_id'] != 0);
             $productModel = new ProductModel();

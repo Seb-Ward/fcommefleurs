@@ -32,6 +32,10 @@
             <input type="checkbox" id="monthly_offer" name="monthly_offer" <?= ($product != null && $product->isMonthlyOffer()) ? "checked" : "" ?>>
             <label for="monthly_offer">Offre du mois</label>
         </div>
+        <div>
+            <input type="checkbox" id="home_page" name="home_page" <?= ($product != null && $product->isHomePage()) ? "checked" : "" ?>>
+            <label for="home_page">Afficher sur la page d'accueil</label>
+        </div>
         <input type="submit" value="enregistrer">
     </fieldset>
 </form>

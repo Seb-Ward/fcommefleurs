@@ -36,6 +36,8 @@ function transformItemToObject($item) {
     $product->setImageList($image_list);
     $product->setTrendyCollection($item->trendy_collection);
     $product->setMonthlyOffer($item->monthly_offer);
+    $product->setHomePage($item->home_page);
+
 
     return $product;
 }

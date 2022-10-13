@@ -338,7 +338,7 @@ a:hover, a:active, a:focus {
     width: 60px;
     height:60px;
     border-radius: 50%;
-    background: #2553b8;
+    background: #3d7546;
     margin: 0auto;
        margin-bottom: 0px;
     margin-bottom: 20px;
@@ -374,3 +374,4 @@ a:hover, a:active, a:focus {
 .table td.image_product {
     text-align: center;
 }
+
