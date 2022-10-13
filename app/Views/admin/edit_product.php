@@ -24,18 +24,24 @@
             <label for="quantity">Quantité</label>
             <input type="number" name="quantity" id="quantity" value="<?= ($product != null && $product->getQuantity() != null) ? $product->getQuantity() : "" ?>">
         </div>
-        <div>
-            <input type="checkbox" id="trendy_collection" name="trendy_collection" <?= ($product != null && $product->isTrendyCollection()) ? "checked" : "" ?>>
-            <label for="trendy_collection">Selection du moment</label>
+        
+        <div class="form-check">
+            <input class="form-check-input" type="radio" id="trendy_collection" name="trendy_or_monthly" value="trendy" <?= ($product != null && $product->isTrendyCollection()) ? "checked" : "" ?>>
+            <label class="form-check-label" for="trendy_collection">Selection du moment</label>
         </div>
-        <div>
-            <input type="checkbox" id="monthly_offer" name="monthly_offer" <?= ($product != null && $product->isMonthlyOffer()) ? "checked" : "" ?>>
-            <label for="monthly_offer">Offre du mois</label>
+        <div class="form-check">
+            <input class="form-check-input" type="radio" id="monthly_offer" name="trendy_or_monthly" value="monthly"  <?= ($product != null && $product->isMonthlyOffer()) ? "checked" : "" ?>>
+            <label class="form-check-label" for="monthly_offer">Offre du mois</label>
         </div>
-        <div>
-            <input type="checkbox" id="home_page" name="home_page" <?= ($product != null && $product->isHomePage()) ? "checked" : "" ?>>
-            <label for="home_page">Afficher sur la page d'accueil</label>
+        <div class="form-check">
+            <input class="form-check-input" type="radio" id="other" name="trendy_or_monthly" value="other" <?= ($product != null && (!$product->isTrendyCollection()&&!$product->isMonthlyOffer())) ? "checked" : "" ?>>
+            <label class="form-check-label" for="trendy_collection">Autres</label>
         </div>
+        <div class="form-check form-switch">
+            <input class="form-check-input" type="checkbox" id="home_page" name="home_page" <?= ($product != null && $product->isHomePage()) ? "checked" : "" ?>>
+            <label class="form-check-label" for="home_page">Afficher sur la page d'accueil</label>
+        </div>
+       
         <input type="submit" value="enregistrer">
     </fieldset>
 </form>

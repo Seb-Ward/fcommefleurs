@@ -60,15 +60,16 @@ class Product extends BaseController {
     public function edit_process() {
         $postParam = $this->request->getPost();
         if (isset($postParam['product_name']) && isset($postParam['product_description']) && isset($postParam['product_price']) && !empty($postParam['product_name']) && !empty($postParam['product_description']) && !empty($postParam['product_price'])) {
+            $home_page=isset($postParam['home_page'])&& ($postParam['trendy_or_monthly']=="trendy"||$postParam['trendy_or_monthly']=="monthly");
             $data = array(
                 "name" => $postParam['product_name'], 
                 "description" => $postParam['product_description'], 
                 "price" => (float) $postParam['product_price'], 
                 "tax_id" => 1,
                 "quantity" => $postParam['quantity'] ?? null,
-                "trendy_collection" => isset($postParam['trendy_collection']),
-                "monthly_offer" => isset($postParam['monthly_offer']),
-                "home_page" => isset($postParam['home_page']) ? true : false
+                "trendy_collection" => $postParam['trendy_or_monthly']=="trendy",
+                "monthly_offer" => $postParam['trendy_or_monthly']=="monthly",
+                "home_page" => $home_page
             );
             $update = (isset($postParam['product_id']) && $postParam['product_id'] != 0);
             $productModel = new ProductModel();
