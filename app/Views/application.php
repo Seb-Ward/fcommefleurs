@@ -6,7 +6,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta name="description" content="Fcommefleurs est un magasin de ventes de fleurs en ligne.">
         <meta name="keywords" content="Ventes de fleurs">
-        <link rel="shortcut icon" type="image/png" href="/favicon.ico"/>
+        <link rel="shortcut icon" type="image/jpeg" href="/favicon.ico"/>
         <link rel="stylesheet" href="/assets/css/style.css"><!--Here I have my link to my css-->
         <link rel="stylesheet" href="/assets/css/main.css">
         <link rel="stylesheet" href="/node_modules/datatables.net-dt/css/jquery.dataTables.min.css">
