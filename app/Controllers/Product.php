@@ -63,7 +63,7 @@ class Product extends BaseController {
     public function edit_process() {
         $postParam = $this->request->getPost();
         if (isset($postParam['product_name']) && isset($postParam['product_description']) && isset($postParam['product_price']) && !empty($postParam['product_name']) && !empty($postParam['product_description']) && !empty($postParam['product_price'])) {
-            $home_page=isset($postParam['home_page'])&& ($postParam['trendy_or_monthly']=="trendy"||$postParam['trendy_or_monthly']=="monthly");
+            $home_page = isset($postParam['home_page']) && ($postParam['categorie'] == 1 || $postParam['categorie'] == 2);
             $data = array(
                 "name" => $postParam['product_name'], 
                 "description" => $postParam['product_description'], 
