@@ -40,7 +40,6 @@
                                                             <input type="number" name="quantity" id="quantity" value="<?= ($product != null && $product->getQuantity() != null) ? $product->getQuantity() : "" ?>">
                                                     </div>
                                                 </div>
-
                                                 <?php foreach ($categories_list as $categorie) { ?>
                                                     <div class="col-md-12">
                                                         <div class="form-check">

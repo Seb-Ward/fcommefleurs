@@ -38,6 +38,6 @@ class CategorieModel extends Model {
             $dbQuery->where($this->primaryKey, $id);
             return $dbQuery->get()->getRowObject();
         }
-        return $dbQuery->get()->getResultObject();
+        return $dbQuery->orderBy("name", "DESC")->get()->getResultObject();
     }
 }
