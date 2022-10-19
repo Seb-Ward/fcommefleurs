@@ -25,7 +25,7 @@
                                                 <div class="col-md-12">
                                                     <div class="form-group">
                                                         <label for="image" class="form-label">Choisir des photos:</label>
-                                                            <input type="file" name="image" id="image" class="form-control" />
+                                                        <input type="file" name="image" id="image" class="form-control" multiple accept="image/png, image/jpg, image/jpeg" onchange="loadFile(event)" />
                                                     </div>
                                                 </div>
                                                 <div class="col-md-12">
@@ -62,9 +62,24 @@
                                         <div class="row">
                                             <div class="form-group">
                                                 <label for="product_description"></label>
-                                                    <textarea name="product_description" id="product_description" cols="40" rows="20"
+                                                    <textarea name="product_description" id="product_description" cols="40" rows="7"
                                                     placeholder="description"><?= ($product != null && $product->getDescription() != null) ? $product->getDescription() : "" ?></textarea>    
                                             </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-12">
+                                                <div class="form-group" id="product_image">
+                                                    <?php foreach ($product->getImageList() as $image) { ?>
+                                                        <div class="item">
+                                                            <a href="#">
+                                                                <span class="delete-badge"><i class="fa-regular fa-trash-can"></i></span>
+                                                            </a>
+                                                            <img src="data:image/<?= $image->getType() ?>;base64,<?= base64_encode($image->getBin()) ?>" width="100" height="100" class="rounded mx-auto d-block"  alt=""/>
+                                                        </div>
+                                                    <?php } ?>
+                                                </div>
+                                            </div>
+
                                         </div>
                                     </div>
                                 </div>

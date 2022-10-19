@@ -97,6 +97,7 @@ $(document).ready(function () {
         });
     });
 
+
 });
 
 function ajaxRequest(url, dataRequest) {
@@ -161,5 +162,30 @@ function initMap() {
         map: map,
     });
 }
+
+const loadFile = function (event) {
+    const display_image = document.getElementById('product_image');
+    const upload_image = display_image.querySelectorAll('.upload');
+    upload_image.forEach(image => {
+        image.remove();
+    });
+    for (let i = 0; event.target.files[i] != null; i++) {
+        const icon = document.createElement("i");
+        icon.className = "fa-regular fa-trash-can";
+        const span = document.createElement("span");
+        span.className = "delete-badge";
+        span.appendChild(icon);
+        const img = document.createElement('img');
+        img.src = URL.createObjectURL(event.target.files[i]);
+        img.className = "rounded mx-auto d-block";
+        img.width = 100;
+        img.height = 100;
+        const item = document.createElement("div");
+        item.className = "product_item upload";
+        item.appendChild(span);
+        item.appendChild(img);
+        display_image.appendChild(item);
+    }
+};
 
 window.initMap = initMap;

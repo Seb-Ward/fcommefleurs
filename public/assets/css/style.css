@@ -339,8 +339,7 @@ a:hover, a:active, a:focus {
     height:60px;
     border-radius: 50%;
     background: #3d7546;
-    margin: 0auto;
-       margin-bottom: 0px;
+    margin: 0 auto;
     margin-bottom: 20px;
 }
 .text-center{
@@ -374,4 +373,23 @@ a:hover, a:active, a:focus {
 .table td.image_product {
     text-align: center;
 }
-
+#product_image .product_item {
+    margin: 15px
+}
+.product_item {
+    position:relative;
+    padding-top:20px;
+    display:inline-block;
+}
+.delete-badge{
+    position: absolute;
+    right:-10px;
+    top:10px;
+    background: dimgray;
+    text-align: center;
+    border-radius: 30px 30px 30px 30px;
+    color:white;
+    padding:4px 8px;
+    font-size:15px;
+    cursor: pointer;
+}
