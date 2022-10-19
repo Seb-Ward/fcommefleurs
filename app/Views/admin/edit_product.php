@@ -44,8 +44,8 @@
                                                 <?php foreach ($categories_list as $categorie) { ?>
                                                     <div class="col-md-12">
                                                         <div class="form-check">
-                                                            <input class="form-check-input" type="radio" id="categorie<?= $categorie->getId() ?>" name="categorie" value="<?= $categorie->getId() ?>>" <?= ($product != null && $product->getCategorie()->getId() == $categorie->getId()) ? "checked" : "" ?>>
-                                                            <label class="form-check-label" for="categorie<?= $categorie->getId() ?>"><?= $categorie->getName() ?></label>
+                                                            <input class="form-check-input" type="radio" id="categorie<?= $categorie->id ?>" name="categorie" value="<?= $categorie->id ?>>" <?= ($product != null && $product->getCategorie()->getId() == $categorie->id) ? "checked" : "" ?>>
+                                                            <label class="form-check-label" for="categorie<?= $categorie->id ?>"><?= $categorie->name ?></label>
                                                         </div>
                                                     </div>
                                                 <?php } ?>
