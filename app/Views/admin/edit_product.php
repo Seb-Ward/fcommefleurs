@@ -70,10 +70,8 @@
                                             <div class="col-md-12">
                                                 <div class="form-group" id="product_image">
                                                     <?php foreach ($product->getImageList() as $image) { ?>
-                                                        <div class="item">
-                                                            <a href="#">
-                                                                <span class="delete-badge"><i class="fa-regular fa-trash-can"></i></span>
-                                                            </a>
+                                                        <div class="product_item">
+                                                            <span class="delete-badge"><i class="fa-regular fa-trash-can"></i></span>
                                                             <img src="data:image/<?= $image->getType() ?>;base64,<?= base64_encode($image->getBin()) ?>" width="100" height="100" class="rounded mx-auto d-block"  alt=""/>
                                                         </div>
                                                     <?php } ?>
