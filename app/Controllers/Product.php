@@ -70,7 +70,7 @@ class Product extends BaseController {
                 "price" => (float) $postParam['product_price'], 
                 "tax_id" => 1,
                 "quantity" => $postParam['quantity'] ?? null,
-                "categorie_id" => $postParam['categorie'],
+                "categorie_id" => $postParam['categorie'] ?? 4,
                 "home_page" => $home_page
             );
             $update = (isset($postParam['product_id']) && $postParam['product_id'] != 0);
