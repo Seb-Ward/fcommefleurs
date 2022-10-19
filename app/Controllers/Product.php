@@ -63,7 +63,6 @@ class Product extends BaseController {
     public function edit_process() {
         $postParam = $this->request->getPost();
         if (isset($postParam['product_name']) && isset($postParam['product_description']) && isset($postParam['product_price']) && !empty($postParam['product_name']) && !empty($postParam['product_description']) && !empty($postParam['product_price'])) {
-            $home_page = isset($postParam['home_page']) && ($postParam['categorie'] == 1 || $postParam['categorie'] == 2);
             $data = array(
                 "name" => $postParam['product_name'], 
                 "description" => $postParam['product_description'], 
@@ -71,7 +70,7 @@ class Product extends BaseController {
                 "tax_id" => 1,
                 "quantity" => $postParam['quantity'] ?? null,
                 "categorie_id" => $postParam['categorie'] ?? 4,
-                "home_page" => $home_page
+                "home_page" => isset($postParam['home_page'])
             );
             $update = (isset($postParam['product_id']) && $postParam['product_id'] != 0);
             $productModel = new ProductModel();
