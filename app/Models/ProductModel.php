@@ -11,7 +11,7 @@ class ProductModel extends Model {
     protected $table = 'product';
     protected $primaryKey = 'id';
     protected $returnType = 'array';
-    protected $allowedFields = ['name','description','price','tax_id', 'quantity', 'trendy_collection','monthly_offer'];
+    protected $allowedFields = ['name','description','price','tax_id', 'quantity', 'categorie_id', 'home_page'];
     protected $createdField = null;
     protected $updatedField = null;
 
@@ -35,10 +35,11 @@ class ProductModel extends Model {
 
     function getProduct($id = null, $data = array(), $limit = null){
         $dbQuery = $this->db->table($this->table);
-        $dbQuery->select("product.*, tax.description AS tax_description, tax.percentage, image.id AS image_id,
-                image.name AS image_name, image.size AS image_size, image.type AS image_type, image.bin AS image_bin")
+        $dbQuery->select("product.*, tax.description AS tax_description, tax.percentage, categorie.name AS categorie_name,
+                image.id AS image_id, image.name AS image_name, image.size AS image_size, image.type AS image_type, image.bin AS image_bin")
             ->join("tax","product.tax_id = tax.id",  "inner")
-            ->join("image","product.id = image.product_id", "left");
+            ->join("image","product.id = image.product_id", "left")
+            ->join("categorie", "categorie.id = product.categorie_id", "inner");
         if ($id != null) {
             $dbQuery->where("$this->table.$this->primaryKey", $id);
             return $dbQuery->get()->getRowObject();

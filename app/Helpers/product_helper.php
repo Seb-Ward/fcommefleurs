@@ -1,4 +1,6 @@
 <?php
+
+use App\Entities\Categorie;
 use App\Entities\Product;
 use App\Entities\Tax;
 use App\Entities\Image;
@@ -33,11 +35,12 @@ function transformItemToObject($item) {
     if (($image = createImageObject($item)) != null) {
         $image_list[] = $image;
     }
+    $categorie = new Categorie();
+    $categorie->setId($item->categorie_id);
+    $categorie->setName($item->categorie_name);
     $product->setImageList($image_list);
-    $product->setTrendyCollection($item->trendy_collection);
-    $product->setMonthlyOffer($item->monthly_offer);
+    $product->setCategorie($categorie);
     $product->setHomePage($item->home_page);
-
 
     return $product;
 }

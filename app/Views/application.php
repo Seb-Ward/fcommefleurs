@@ -2,15 +2,15 @@
 <html lang="fr">
     <head>
         <title><?= $title; ?></title>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <meta name="description" content="Fcommefleurs est un magasin de ventes de fleurs en ligne.">
-        <meta name="keywords" content="Ventes de fleurs">
+        <meta charset="UTF-8"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+        <meta name="description" content="Fcommefleurs est un magasin de ventes de fleurs en ligne."/>
+        <meta name="keywords" content="Ventes de fleurs"/>
         <link rel="shortcut icon" type="image/jpeg" href="/favicon.ico"/>
-        <link rel="stylesheet" href="/assets/css/style.css"><!--Here I have my link to my css-->
-        <link rel="stylesheet" href="/assets/css/main.css">
-        <link rel="stylesheet" href="/node_modules/datatables.net-dt/css/jquery.dataTables.min.css">
-        <link rel="stylesheet" href="/node_modules/sweetalert2/dist/sweetalert2.min.css">
+        <link rel="stylesheet" href="/assets/css/style.css"/>
+        <link rel="stylesheet" href="/assets/css/main.css"/>
+        <link rel="stylesheet" href="/node_modules/datatables.net-dt/css/jquery.dataTables.min.css"/>
+        <link rel="stylesheet" href="/node_modules/sweetalert2/dist/sweetalert2.min.css"/>
         <script src="/node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
         <script src="/node_modules/sweetalert2/dist/sweetalert2.min.js"></script>
         <script src="https://kit.fontawesome.com/92c3f0e192.js" crossorigin="anonymous"></script>
@@ -26,11 +26,10 @@
                         <a class='nav-link px-2 link-<?= $page == 'accueil' ? "secondary" : "dark" ?>' href="/Home">Accueil</a>
                     </li>
                     <li>
-                        <a class='nav-link px-2 link-<?= $page == 'boutique' ? "secondary" : "dark" ?>'
-                           href="/shop">Boutique</a>
+                        <a class='nav-link px-2 link-<?= $page == 'boutique' ? "secondary" : "dark" ?>' href="/shop">Boutique</a>
                     </li>
                     <li>
-                        <a class='nav-link px-2 link-<?= $page == 'equipe' ? "secondary" : "dark" ?>' href="/team"> L'équipe</a>
+                        <a class='nav-link px-2 link-<?= $page == 'equipe' ? "secondary" : "dark" ?>' href="/team">L'équipe</a>
                     </li>
                     <li>
                         <a class='nav-link px-2 link-<?= $page == 'contact' ? "secondary" : "dark" ?>' href="/contact">Nous contacter</a>

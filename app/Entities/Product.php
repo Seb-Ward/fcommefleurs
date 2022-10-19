@@ -13,8 +13,7 @@ class Product extends Entity
     private Tax $tax;
     private ?array $image_list;
     private ?int $quantity;
-    private bool $trendy_collection;
-    private bool $monthly_offer;
+    private Categorie $categorie;
     private bool $home_page;
 
     /**
@@ -130,35 +129,19 @@ class Product extends Entity
     }
 
     /**
-     * @return bool
+     * @return Categorie
      */
-    public function isTrendyCollection(): bool
+    public function getCategorie(): Categorie
     {
-        return $this->trendy_collection;
+        return $this->categorie;
     }
 
     /**
-     * @param bool $trendy_collection
+     * @param Categorie $categorie
      */
-    public function setTrendyCollection(bool $trendy_collection): void
+    public function setCategorie(Categorie $categorie): void
     {
-        $this->trendy_collection = $trendy_collection;
-    }
-
-    /**
-     * @return bool
-     */
-    public function isMonthlyOffer(): bool
-    {
-        return $this->monthly_offer;
-    }
-
-    /**
-     * @param bool $monthly_offer
-     */
-    public function setMonthlyOffer(bool $monthly_offer): void
-    {
-        $this->monthly_offer = $monthly_offer;
+        $this->categorie = $categorie;
     }
 
     /**

@@ -14,8 +14,7 @@
             <th>Nom du produit</th>
             <th>Prix TTC</th>
             <th>Quantité</th>
-            <th>Selection du moment</th>
-            <th>Offre du mois</th>
+            <th>Catégorie</th>
             <th>Visibilité</th>
             <th>Action</th>
         </tr>
@@ -34,8 +33,7 @@
                 <td><?= $product->getName() ?></td>
                 <td><?= str_replace(".", ",", $product->getPrice()) ?> &euro;</td>
                 <td><?= $product->getQuantity() != null && $product->getQuantity() >= 0 ? $product->getQuantity() : 'Illimité <i class="fa-solid fa-infinity"></i>' ?></td>
-                <td><?= $product->isTrendyCollection() ? "Oui" : "Non" ?></td>
-                <td><?= $product->isMonthlyOffer() ? "Oui" : "Non" ?></td>
+                <td><?= $product->getCategorie()->getName() ?></td>
                 <td><?= $product->isHomePage() ? "Accueil" : "Boutique" ?></td>
                 <td>
                     <a class="btn btn-primary" href="/product/edit/<?= $product->getId() ?>"><i class="fa-solid fa-pen"></i></a>

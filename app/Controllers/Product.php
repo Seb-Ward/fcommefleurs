@@ -2,6 +2,7 @@
 
 namespace App\Controllers;
 
+use App\Models\CategorieModel;
 use App\Models\ImageModel;
 use App\Models\ProductModel;
 
@@ -37,8 +38,10 @@ class Product extends BaseController {
             $productModel = new ProductModel();
             $product = transformItemToObject($productModel->getProduct($id));
         }
+        $categorieModel = new CategorieModel();
         $this->data['content'] = view('admin/edit_product', array(
-            "product" => $product
+            "product" => $product,
+            "categories_list" => $categorieModel->getCategorie()
         ));
         return view('application', $this->data);
     }
@@ -67,8 +70,7 @@ class Product extends BaseController {
                 "price" => (float) $postParam['product_price'], 
                 "tax_id" => 1,
                 "quantity" => $postParam['quantity'] ?? null,
-                "trendy_collection" => $postParam['trendy_or_monthly']=="trendy",
-                "monthly_offer" => $postParam['trendy_or_monthly']=="monthly",
+                "categorie_id" => $postParam['categorie'],
                 "home_page" => $home_page
             );
             $update = (isset($postParam['product_id']) && $postParam['product_id'] != 0);

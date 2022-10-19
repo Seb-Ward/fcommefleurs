@@ -40,24 +40,15 @@
                                                             <input type="number" name="quantity" id="quantity" value="<?= ($product != null && $product->getQuantity() != null) ? $product->getQuantity() : "" ?>">
                                                     </div>
                                                 </div>
-                                                <div class="col-md-12">
-                                                    <div class="form-check">
-                                                        <input class="form-check-input" type="radio" id="trendy_collection" name="trendy_or_monthly" value="trendy" <?= ($product != null && $product->isTrendyCollection()) ? "checked" : "" ?>>
-                                                            <label class="form-check-label" for="trendy_collection">Selection du moment</label>
+
+                                                <?php foreach ($categories_list as $categorie) { ?>
+                                                    <div class="col-md-12">
+                                                        <div class="form-check">
+                                                            <input class="form-check-input" type="radio" id="categorie<?= $categorie->getId() ?>" name="categorie" value="<?= $categorie->getId() ?>>" <?= ($product != null && $product->getCategorie()->getId() == $categorie->getId()) ? "checked" : "" ?>>
+                                                            <label class="form-check-label" for="categorie<?= $categorie->getId() ?>"><?= $categorie->getName() ?></label>
+                                                        </div>
                                                     </div>
-                                                </div>
-                                                <div class="col-md-12">
-                                                    <div class="form-check">
-                                                        <input class="form-check-input" type="radio" id="monthly_offer" name="trendy_or_monthly" value="monthly"  <?= ($product != null && $product->isMonthlyOffer()) ? "checked" : "" ?>>
-                                                        <label class="form-check-label" for="monthly_offer">Offre du mois</label> 
-                                                    </div>
-                                                </div>
-                                                <div class="col-md-12">
-                                                    <div class="form-check">
-                                                        <input class="form-check-input" type="radio" id="other" name="trendy_or_monthly" value="other" <?= ($product != null && (!$product->isTrendyCollection()&&!$product->isMonthlyOffer())) ? "checked" : "" ?>>
-                                                        <label class="form-check-label" for="other">Autres</label>
-                                                    </div>
-                                                </div> 
+                                                <?php } ?>
                                                 <div class="col-md-12">
                                                     <div class="form-check form-switch">
                                                         <input class="form-check-input" type="checkbox" id="home_page" name="home_page" <?= ($product != null && $product->isHomePage()) ? "checked" : "" ?>>
