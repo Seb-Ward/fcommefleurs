@@ -27,18 +27,16 @@
                     </li>
                     <li>
                     <div class="col-md-3 text-end">
-                        <a class='nav-link px-2 link-<?= $page == 'boutique' ? "secondary" : "dark" ?>' href="/shop">Boutique</a>
-                        <div class="dropdown col-md-3 text-end dropdown-dashboard">
-                                <a class='btn btn-primary dropdown-toggle' href="#" role="button" id="dropdownMenuLink"
-                                   data-bs-toggle="dropdown" aria-expanded="trendy_products">Selection du moment</a>
+                        <a class='nav-link dropdown-toggle px-2 link-<?= $page == 'boutique' ? "secondary" : "dark" ?>' href="#" role="button" data-bs-toggle="dropdown"   aria-expanded="false">Boutique</a>
+                        
                                 <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-                                    <li><a class="dropdown-item" href="/monthly_offer">Offres du mois</a></li>
+                                    <li><a class="dropdown-item" href="/shop/">Offres du mois</a></li>
                                     <li><a class="dropdown-item" href="/love">Pour les amoureux</a></li>
                                     <li><a class="dropdown-item" href="/blog">Blog</a></li>
                                     <li><a class="dropdown-item" href="/funeral">Funérailles</a></li>
                                     <li><a class="dropdown-item" href="/christmas">Noël</a></li>
                                 </ul>
-                            </div>
+                            
                         </div>
                     </li>
                     <li>
