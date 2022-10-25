@@ -273,7 +273,7 @@ a:hover, a:active, a:focus {
     background-size: cover ;
     background-repeat: no-repeat;
     background-position: center center;
-    background-image:url(../images/sign_in_image.jpg);
+    background-image:url(../images/sign_in_image_min.jpg);
 }
 .wrap .sign_in_image{
     height: 250px;

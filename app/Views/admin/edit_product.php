@@ -54,7 +54,11 @@
                                                             <label class="form-check-label" for="home_page">Afficher sur la page d'accueil</label>
                                                     </div>  
                                                 </div> 
-                                                <input type="submit" value="enregistrer">
+                                                <div class="col-md-12">
+                                                    <div class="form-group">
+                                                        <input class="btn btn-outline-primary" type="submit" value="Enregistrer">
+                                                    </div>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
