@@ -6,16 +6,16 @@ use App\Models\ProductModel;
 
 class Shop extends BaseController
 {
-    public function index()
+    public function index($categorieId)
     {
         helper('product');
-        $productModel=new ProductModel();
+        $productModel = new ProductModel();
 
         $this->data['title'] = "Boutique";
         $this->data['page'] = "shop";
 
         $this->data['content'] = view('shop',array(
-            'product_list'=> transformItemsToObjects($productModel->getProduct())
+            'product_list'=> transformItemsToObjects($productModel->getProduct(null, array("categorie_id" => $categorieId)))
         ));
         return view('application', $this->data);
     }

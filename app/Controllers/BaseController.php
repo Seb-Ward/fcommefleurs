@@ -2,6 +2,8 @@
 
 namespace App\Controllers;
 
+use App\Entities\Categorie;
+use App\Models\CategorieModel;
 use CodeIgniter\Controller;
 use CodeIgniter\HTTP\CLIRequest;
 use CodeIgniter\HTTP\IncomingRequest;
@@ -59,12 +61,14 @@ class BaseController extends Controller
         $this->session = \Config\Services::session();
         $this->user = $this->session->get('user');
         $connected = $this->user != null;
+        $categorieModel = new CategorieModel();
         $this->data = array(
             'title' => "F comme Fleurs",
             'page' => "home",
             'content' => null,
             'connected' => $connected,
             'admin' => false,
+            'shopCategorie' => $categorieModel->getCategorie()
         );
         if ($connected) {
             $this->data['admin'] = $this->user->getPrivilege() != null && $this->user->getPrivilege()->getId() >= 3;
