@@ -19,17 +19,12 @@ function transformItemsToObjects($items){
     return  $objectlist;
 }
 function transformItemToObject($item) {
-    $tax = new Tax();
-    $tax->setId($item->tax_id);
-    $tax->setDescription($item->tax_description);
-    $tax->setPercentage($item->percentage);
-
     $product = new Product();
     $product->setId($item->id);
     $product->setName($item->name);
     $product->setDescription($item->description);
     $product->setPrice($item->price);
-    $product->setTax($tax);
+    $product->setTax(createTaxObject($item));
     $product->setQuantity($item->quantity);
     $image_list = array();
     if (($image = createImageObject($item)) != null) {
@@ -43,6 +38,14 @@ function transformItemToObject($item) {
     $product->setHomePage($item->home_page);
 
     return $product;
+}
+
+function createTaxObject($item) {
+    $tax = new Tax();
+    $tax->setId($item->tax_id);
+    $tax->setDescription($item->tax_description);
+    $tax->setPercentage($item->percentage);
+    return $tax;
 }
 
 function createImageObject($item) {

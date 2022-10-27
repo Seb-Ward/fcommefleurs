@@ -24,8 +24,8 @@
                                                 </div>
                                                 <div class="col-md-12">
                                                     <div class="form-group">
-                                                        <label for="image" class="form-label">Choisir des photos:</label>
-                                                        <input type="file" name="image" id="image" class="form-control" multiple accept="image/png, image/jpg, image/jpeg" onchange="loadFile(event)" />
+                                                        <label for="images" class="form-label">Choisir des photos:</label>
+                                                        <input type="file" name="images[]" id="images" class="form-control" multiple accept="image/png, image/jpg, image/jpeg" onchange="loadFile(event)" />
                                                     </div>
                                                 </div>
                                                 <div class="col-md-12">
@@ -73,11 +73,13 @@
                                         <div class="row">
                                             <div class="col-md-12">
                                                 <div class="form-group" id="product_image">
-                                                    <?php foreach ($product->getImageList() as $image) { ?>
-                                                        <div class="product_item">
-                                                            <span class="delete-badge"><i class="fa-regular fa-trash-can"></i></span>
-                                                            <img src="data:image/<?= $image->getType() ?>;base64,<?= base64_encode($image->getBin()) ?>" width="100" height="100" class="rounded mx-auto d-block"  alt=""/>
-                                                        </div>
+                                                    <?php if ($product != null) { ?>
+                                                        <?php foreach ($product->getImageList() as $image) { ?>
+                                                            <div class="product_item" data-id="<?= $image->getId() ?>">
+                                                                <span class="notif delete-notif" onclick="removeImage(event)"><i class="fa-regular fa-trash-can"></i></span>
+                                                                <img src="data:image/<?= $image->getType() ?>;base64,<?= base64_encode($image->getBin()) ?>" width="100" height="100" class="rounded mx-auto d-block"  alt=""/>
+                                                            </div>
+                                                        <?php } ?>
                                                     <?php } ?>
                                                 </div>
                                             </div>

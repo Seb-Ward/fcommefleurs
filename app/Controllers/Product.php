@@ -15,7 +15,6 @@ class Product extends BaseController {
         helper('product');
         $productModel = new ProductModel();
         $productList = transformItemsToObjects($productModel->getProduct());
-
         $this->data['title'] = "Produit";
         $this->data['page'] = "product_list";
 
@@ -29,14 +28,13 @@ class Product extends BaseController {
         if (!$this->isAdminConnected()) {
             return redirect()->to("/connection/");
         }
-
         $this->data['title'] = "Edition produit";
         $this->data['page'] = "edit_product";
         $product = null;
         if ($id != null && $id > 0) {
             helper('product');
             $productModel = new ProductModel();
-            $product = transformItemToObject($productModel->getProduct($id));
+            $product = transformItemsToObjects($productModel->getProduct($id))[$id];
         }
         $categorieModel = new CategorieModel();
         $this->data['content'] = view('admin/edit_product', array(
@@ -72,47 +70,80 @@ class Product extends BaseController {
                 "categorie_id" => $postParam['categorie'] ?? 4,
                 "home_page" => isset($postParam['home_page'])
             );
-            $update = (isset($postParam['product_id']) && $postParam['product_id'] != 0);
             $productModel = new ProductModel();
-            if ($update) {
+            if (isset($postParam['product_id']) && $postParam['product_id'] != 0) {
                 if (!$productModel->updateProduct($postParam['product_id'], $data)){
-                    $this->ajax_response['message']  = "Une erreur à été rencontré lors de la mise à jour du produit, veuillez contacter le support.";  
+                    $this->ajax_response['message'] = "Une erreur à été rencontré lors de la mise à jour du produit, veuillez contacter le support.";
                 } else{
-                    if (!$this->processImage($postParam['product_id'], $update)) {
-                        $this->ajax_response['message']  = "Une erreur à été rencontré lors de la mise à jour de l'image du produit, veuillez contacter le support.";
+                    if (!$this->processImage($postParam['product_id'])) {
+                        $this->ajax_response['message'] = "Une erreur à été rencontré lors de la mise à jour de l'image du produit, veuillez contacter le support.";
                     } else {
-                        $this->ajax_response['success']  = true;    
+                        $this->ajax_response['success'] = true;
+                        $this->ajax_response['message'] = "OUIOUI";
                     }
                 }
             } else {
                 if (($product_id = $productModel->insertProduct($data)) != false){
                     if (!$this->processImage($product_id)) {
-                        $this->ajax_response['message']  = "Une erreur à été rencontré lors de l'ajout de l'image du produit, veuillez contacter le support.";
+                        $this->ajax_response['message'] = "Une erreur à été rencontré lors de l'ajout de l'image du produit, veuillez contacter le support.";
                     } else {
-                        $this->ajax_response['success']  = true;    
+                        $this->ajax_response['success'] = true;
                     }
                 } else{
-                    $this->ajax_response['message']  = "Une erreur à été rencontré lors de l'ajout du produit, veuillez contacter le support.";
+                    $this->ajax_response['message'] = "Une erreur à été rencontré lors de l'ajout du produit, veuillez contacter le support.";
                 }
             }
         } else{
-          $this->ajax_response['message']  = "Veuillez remplir tous les champs requis";
+          $this->ajax_response['message'] = "Veuillez remplir tous les champs requis";
         }
         echo json_encode($this->ajax_response);
-    } 
+    }
 
-    private function processImage($product_id, $update = false) {
-        $file = $this->request->getFile('image');
-        if ($file != null && !empty($file->getClientName())) {
-            $dataImage = array(
-                "name" => $file->getRandomName(),
-                "size" => $file->getSize(),
-                "type" => $file->guessExtension(),
-                "bin" => file_get_contents($file->getTempName()),
-                "product_id" => $product_id
-            );
+    public function remove_image() {
+        $postParam = $this->request->getPost();
+        if (isset($postParam['id'])) {
             $imageModel = new ImageModel();
-            return $imageModel->insertImage($dataImage);
+            if ($imageModel->deleteImage($postParam['id'])) {
+                $this->ajax_response['success'] = true;
+                $this->ajax_response['message'] = "L'image à bien été supprimés";
+            } else {
+                $this->ajax_response['message'] = "Une erreur est survenu lors de la suppression de l'image";
+            }
+        } else {
+            $this->ajax_response['message'] = "Identifiant de l'image inconnu, veuillez contacter le support";
+        }
+        echo json_encode($this->ajax_response);
+    }
+
+    private function checkImage() {
+        $files = $this->request->getFiles();
+        foreach ($files as $file) {
+            if (empty($file->getClientName())
+                || $file->getSize() > 1024
+                || !in_array($file->guessExtension(), array('png', 'jpg', 'jpeg'))) {
+                return false;
+            }
+        }
+        return true;
+    }
+
+    private function processImage($product_id) {
+        if ($imagefile = $this->request->getFiles()) {
+            $imageModel = new ImageModel();
+            foreach ($imagefile['images'] as $image) {
+                if ($image->isValid()) {
+                    $dataImage = array(
+                        "name" => $image->getRandomName(),
+                        "size" => $image->getSize(),
+                        "type" => $image->guessExtension(),
+                        "bin" => file_get_contents($image->getTempName()),
+                        "product_id" => $product_id
+                    );
+                    if (!$imageModel->insertImage($dataImage)) {
+                        return false;
+                    }
+                }
+            }
         }
         return true;
     }

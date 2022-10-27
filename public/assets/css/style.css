@@ -381,7 +381,7 @@ a:hover, a:active, a:focus {
     padding-top:20px;
     display:inline-block;
 }
-.delete-badge{
+.notif{
     position: absolute;
     right:-10px;
     top:10px;
@@ -392,4 +392,10 @@ a:hover, a:active, a:focus {
     padding:4px 8px;
     font-size:15px;
     cursor: pointer;
+}
+.delete-notif{
+    background: #dc3545;
+}
+.add-notif{
+    background: #3d7546;
 }

@@ -3,23 +3,19 @@
         <div class="row">
             <div class="d-none d-md-block col-md-2 pe-0">
                 <div class="owl-thumbs" data-slider-id="1">
-                    <?php if (!empty($product->getImageList())) { ?>
-                            <img src="data:image/<?= $product->getImageList()[0]->getType() ?>;base64,<?= base64_encode($product->getImageList()[0]->getBin()) ?>"
-                                 alt="<?= $product->getDescription() ?>" width="100%" height="400"
-                                 class="img-fluid rounded mx-auto d-block mb-2">
-                        <?php } else { ?>
-                            <i class="fa-regular fa-image"></i>
-                        <?php } ?>
+                    <?php foreach ($product->getImageList() as $image) { ?>
+                        <img src="data:image/<?= $image->getType() ?>;base64,<?= base64_encode($image->getBin()) ?>"
+                             alt="<?= $product->getDescription() ?>" width="100%" height="auto"
+                             class="img-fluid rounded mx-auto d-block mb-2">
+                    <?php } ?>
                 </div>
             </div>
             <div class="col-12 col-md-10 detail-carousel">
                 <?php if (!empty($product->getImageList())) { ?>
-                            <img src="data:image/<?= $product->getImageList()[0]->getType() ?>;base64,<?= base64_encode($product->getImageList()[0]->getBin()) ?>"
-                                 alt="<?= $product->getDescription() ?>" width="400" height="400"
-                                 class="rounded mx-auto d-block">
-                        <?php } else { ?>
-                            <i class="fa-regular fa-image"></i>
-                        <?php } ?>
+                    <img src="data:image/<?= $product->getImageList()[0]->getType() ?>;base64,<?= base64_encode($product->getImageList()[0]->getBin()) ?>"
+                         alt="<?= $product->getDescription() ?>" width="400" height="400"
+                         class="rounded mx-auto d-block">
+                <?php } ?>
             </div>
         </div>
     </div>

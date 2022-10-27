@@ -97,7 +97,6 @@ $(document).ready(function () {
         });
     });
 
-
 });
 
 function ajaxRequest(url, dataRequest) {
@@ -171,9 +170,12 @@ const loadFile = function (event) {
     });
     for (let i = 0; event.target.files[i] != null; i++) {
         const icon = document.createElement("i");
-        icon.className = "fa-regular fa-trash-can";
+        icon.className = "fa-solid fa-plus";
         const span = document.createElement("span");
-        span.className = "delete-badge";
+        span.className = "notif add-notif";
+        span.addEventListener('click', function(e) {
+            $("#image").click();
+        })
         span.appendChild(icon);
         const img = document.createElement('img');
         img.src = URL.createObjectURL(event.target.files[i]);
@@ -187,5 +189,30 @@ const loadFile = function (event) {
         display_image.appendChild(item);
     }
 };
+
+const removeImage = function(event) {
+    const parentElement = event.currentTarget.parentElement;
+    const image_id = parentElement.dataset.id;
+    if (image_id !== undefined) {
+        $("#spinner-div").show();
+        $.ajax({
+            type: "POST",
+            url: "/product/remove_image",
+            data: { id: image_id },
+            dataType: "json",
+            encode: true,
+        }).done(function (data) {
+            if (data.success === false) {
+                alertError(data.message);
+            } else {
+                parentElement.remove();
+                alertSuccess(data.message);
+            }
+            $("#spinner-div").hide();
+        });
+    } else {
+        alertError("Identifiant de l'image inconnu, veuillez contacter le support")
+    }
+}
 
 window.initMap = initMap;

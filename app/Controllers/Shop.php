@@ -22,18 +22,15 @@ class Shop extends BaseController
 
     public function product(int $id) {
         helper('product');
-        $productModel=new ProductModel();
-        $product = transformItemToObject($productModel->getProduct($id));
+        $productModel = new ProductModel();
+        $this->data['page'] = "product_page";
+        $product = transformItemsToObjects($productModel->getProduct($id))[$id];
         if ($product != null) {
             $this->data['title'] = $product->getName();
-            $this->data['page'] = "product_page";
-    
             $this->data['content'] = view('product_page',array(
                 'product'=> $product
             ));
-            return view('application', $this->data);
-        } else {
-
         }
+        return view('application', $this->data);
     }
 }

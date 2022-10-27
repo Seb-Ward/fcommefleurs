@@ -42,7 +42,7 @@ class ProductModel extends Model {
             ->join("categorie", "categorie.id = product.categorie_id", "inner");
         if ($id != null) {
             $dbQuery->where("$this->table.$this->primaryKey", $id);
-            return $dbQuery->get()->getRowObject();
+            return $dbQuery->get()->getResultObject();
         } else if (!empty($data)) {
             $dbQuery->where($data);
         }
