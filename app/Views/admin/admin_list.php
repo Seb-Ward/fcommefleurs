@@ -1,4 +1,7 @@
 <h3>Listing</h3>
+<div class="col-md-6 text-end">
+    <a class='btn btn-outline-primary' href="/admin/edit">Ajouter un administrateur</a>
+</div>
 <div class="table-responsive">
     <table class="table table-striped" id="message_table">
         <thead>

@@ -47,7 +47,16 @@ $(document).ready(function () {
         });
         event.preventDefault();
     });
-
+    $("#contactForm").submit(function (event) {
+        event.preventDefault();
+        const formData = {
+            first_name: $("#first_name").val(),
+            last_name: $("#last_name").val(),
+            email: $("#email").val(),
+            message: $("#message").val()
+        };
+        ajaxRequest("/messages/add",formData);
+    });
     $("#edit_product").submit(function (event) {
         $("#spinner-div").show();
         $.ajax({

@@ -6,12 +6,12 @@ use CodeIgniter\Model;
  
 class MessageModel extends Model {
 
-        protected $DBGroup = 'testing';
+        protected $DBGroup = 'default';
 
         protected $table = 'message';
-        protected $primaryKey = 'message_id';
+        protected $primaryKey = 'id';
         protected $returnType = 'array';
-        protected $allowedFields = ['message_nom_expediteur','message_genre_expediteur','message_email_expediteur','message_telephone_expediteur','message_text_expediteur'];
+        protected $allowedFields = ['name_sender','email_sender','text_sender'];
         protected $createdField = null;
         protected $updatedField = null;
 

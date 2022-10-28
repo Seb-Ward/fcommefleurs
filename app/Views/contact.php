@@ -16,13 +16,13 @@
                                         <div class="col-md-6">
                                             <div class="form-group">
                                                 <label class="label" for="name">Nom*</label>
-                                                <input id="name" class="form-control" type="text" name="name" placeholder="Nom">
+                                                <input id="last_name" class="form-control" type="text" name="name" placeholder="Nom">
                                             </div>
                                         </div>
                                         <div class="col-md-6">
                                             <div class="form-group">
                                                 <label class="label" for="name">Prénom*</label>
-                                                <input id="name" class="form-control" type="text" name="name" placeholder="Prénom">
+                                                <input id="first_name" class="form-control" type="text" name="name" placeholder="Prénom">
                                             </div>
                                         </div>
                                         <div class="col-md-12">
@@ -34,7 +34,7 @@
                                         <div class="col-md-12">
                                             <div class="form-group">
                                                 <label class="label" for="#">Message*</label>
-                                                <textarea id="message" class="form-control" name="form-control" cols="30" rows="4" placeholder="Message"></textarea>
+                                                <textarea id="message" class="form-control" name="message" cols="30" rows="4" placeholder="Message"></textarea>
                                             </div>
                                         </div>
                                         <div class="col-md-12">

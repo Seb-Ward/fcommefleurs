@@ -180,7 +180,7 @@ a{
 a:hover, a:active, a:focus {
     outline: none !important;
     text-decoration: none !important;
-    color: #fff !important;
+    color: #3d7546;
 }
 .form-control-placeholder{
     position:absolute;
