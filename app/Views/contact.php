@@ -15,26 +15,26 @@
                                     <div class="row">
                                         <div class="col-md-6">
                                             <div class="form-group">
-                                                <label class="label" for="name">Nom*</label>
+                                                <label class="form-label" for="last_name">Nom*</label>
                                                 <input id="last_name" class="form-control" type="text" name="name" placeholder="Nom">
                                             </div>
                                         </div>
                                         <div class="col-md-6">
                                             <div class="form-group">
-                                                <label class="label" for="name">Prénom*</label>
+                                                <label class="form-label" for="first_name">Prénom*</label>
                                                 <input id="first_name" class="form-control" type="text" name="name" placeholder="Prénom">
                                             </div>
                                         </div>
                                         <div class="col-md-12">
                                             <div class="form-group">
-                                                <label class="label" for="name">Email*</label>
+                                                <label class="form-label" for="email">Email*</label>
                                                 <input id="email" class="form-control" type="text" name="email" placeholder="email">
                                             </div>
                                         </div>
                                         <div class="col-md-12">
                                             <div class="form-group">
-                                                <label class="label" for="#">Message*</label>
-                                                <textarea id="message" class="form-control" name="message" cols="30" rows="4" placeholder="Message"></textarea>
+                                                <label for="message" class="form-label">Message*</label>
+                                                <textarea id="message" class="form-control" name="form-control" cols="30" rows="4" placeholder="Message"></textarea>
                                             </div>
                                         </div>
                                         <div class="col-md-12">

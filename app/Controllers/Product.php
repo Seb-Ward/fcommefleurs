@@ -36,10 +36,9 @@ class Product extends BaseController {
             $productModel = new ProductModel();
             $product = transformItemsToObjects($productModel->getProduct($id))[$id];
         }
-        $categorieModel = new CategorieModel();
         $this->data['content'] = view('admin/edit_product', array(
             "product" => $product,
-            "categories_list" => $categorieModel->getCategorie()
+            "categories_list" => $this->data["shopCategorie"]
         ));
         return view('application', $this->data);
     }
@@ -48,7 +47,7 @@ class Product extends BaseController {
         $postParam = $this->request->getPost();
         if (isset($postParam['product_id']) && $postParam['product_id'] > 0) {
             $productModel = new ProductModel();
-            if (!$productModel->deleteProduct($postParam['product_id'])) {
+            if (!$productModel->deleteData($postParam['product_id'])) {
                 $this->ajax_response['message'] = "Une erreur est survenu lors de la suppression du produit, veuillez contacter le support";                
             } else {
                 $this->ajax_response['success'] = true;
@@ -72,7 +71,7 @@ class Product extends BaseController {
             );
             $productModel = new ProductModel();
             if (isset($postParam['product_id']) && $postParam['product_id'] != 0) {
-                if (!$productModel->updateProduct($postParam['product_id'], $data)){
+                if (!$productModel->updateData($postParam['product_id'], $data)){
                     $this->ajax_response['message'] = "Une erreur à été rencontré lors de la mise à jour du produit, veuillez contacter le support.";
                 } else{
                     if (!$this->processImage($postParam['product_id'])) {
@@ -83,7 +82,7 @@ class Product extends BaseController {
                     }
                 }
             } else {
-                if (($product_id = $productModel->insertProduct($data)) != false){
+                if (($product_id = $productModel->insertData($data))){
                     if (!$this->processImage($product_id)) {
                         $this->ajax_response['message'] = "Une erreur à été rencontré lors de l'ajout de l'image du produit, veuillez contacter le support.";
                     } else {
@@ -103,9 +102,9 @@ class Product extends BaseController {
         $postParam = $this->request->getPost();
         if (isset($postParam['id'])) {
             $imageModel = new ImageModel();
-            if ($imageModel->deleteImage($postParam['id'])) {
+            if ($imageModel->deleteData($postParam['id'])) {
                 $this->ajax_response['success'] = true;
-                $this->ajax_response['message'] = "L'image à bien été supprimés";
+                $this->ajax_response['message'] = "L'image à bien été supprimées";
             } else {
                 $this->ajax_response['message'] = "Une erreur est survenu lors de la suppression de l'image";
             }
@@ -139,7 +138,7 @@ class Product extends BaseController {
                         "bin" => file_get_contents($image->getTempName()),
                         "product_id" => $product_id
                     );
-                    if (!$imageModel->insertImage($dataImage)) {
+                    if (!$imageModel->insertData($dataImage)) {
                         return false;
                     }
                 }

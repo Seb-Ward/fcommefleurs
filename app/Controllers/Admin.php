@@ -12,7 +12,10 @@ class Admin extends BaseController {
         }
         helper("admin");
         $adminModel = new AdminModel();
-        $adminList = transformItemsToObjects($adminModel->getAdmin());
+        $join = array(
+            array("table" => "privileges", "cond" => "privileges_id = privileges.id", "type" => "inner")
+        );
+        $adminList = transformItemsToObjects($adminModel->getData(null, null, "admin.*, privileges.role", $join));
         $this->data['title'] = "Gestion des administrateurs";
         $this->data['page'] = "admin_list";
 

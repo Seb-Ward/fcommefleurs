@@ -68,7 +68,7 @@ class BaseController extends Controller
             'content' => null,
             'connected' => $connected,
             'admin' => false,
-            'shopCategorie' => $categorieModel->getCategorie()
+            'shopCategorie' => $categorieModel->getData(null, null, "*", null, array("name" => "DESC"))
         );
         if ($connected) {
             $this->data['admin'] = $this->user->getPrivilege() != null && $this->user->getPrivilege()->getId() >= 3;
