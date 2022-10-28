@@ -56,8 +56,8 @@
                                     <li><a class="dropdown-item" href="/dashboard">dashboard</a></li>
                                     <li><a class="dropdown-item" href="/messages">Consulter les messages</a></li>
                                     <li><a class="dropdown-item" href="/product">Consulter les produits</a></li>
-                                    <li><a class="dropdown-item" href="/user/customer">Gestion des clients</a></li>
-                                    <li><a class="dropdown-item" href="/user/admin">Gestion des administrateurs</a></li>
+                                    <li><a class="dropdown-item" href="/customer">Gestion des clients</a></li>
+                                    <li><a class="dropdown-item" href="/admin">Gestion des administrateurs</a></li>
                                 </ul>
                             </div>
                         <?php } ?>

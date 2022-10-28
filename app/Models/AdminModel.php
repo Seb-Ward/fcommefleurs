@@ -17,7 +17,8 @@ class AdminModel extends Model {
 
         public function getAdmin($id=null,$data=array()){
             $dbQuery = $this->db->table($this->table);
-            $dbQuery->select("*");
+            $dbQuery->select("admin.*, privileges.role")
+                    ->join('privileges', "privileges_id = privileges.id", "inner");
             if ($id != null) {
                 return $dbQuery->where($this->primaryKey, $id)
                                ->get()
