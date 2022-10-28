@@ -32,7 +32,7 @@ class Messages extends BaseController{
                 "email_sender" => $postParam['email'], 
                 "text_sender" => $postParam['message'], 
             ); 
-            if (!$messagesModel->insertMessage($data)){
+            if (!$messagesModel->insertData($data)){
                 $this->ajax_response['message'] = "Une erreur à été rencontré lors de l'ajout du message, veuillez contacter le support.";
             } else {
                 $this->ajax_response['success'] = true;

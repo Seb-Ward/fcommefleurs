@@ -15,7 +15,7 @@ class ParentModel extends Model {
     protected $createdField = null;
     protected $updatedField = null;
 
-    function insertData($data): bool|int|string {
+    function insertData($data) {
         $dbQuery = $this->db->table($this->table);
         if (!$dbQuery->insert($data)) {
             return false;
@@ -23,12 +23,12 @@ class ParentModel extends Model {
         return $this->db->insertID();
     }
 
-    function updateData($id, $data): bool {
+    function updateData($id, $data) {
         $dbQuery = $this->db->table($this->table);
         return $dbQuery->update($data, array($this->primaryKey => $id));
     }
 
-    function deleteData($id): bool|string {
+    function deleteData($id) {
         $dbQuery = $this->db->table($this->table);
         return $dbQuery->delete(array($this->primaryKey => $id));
     }
