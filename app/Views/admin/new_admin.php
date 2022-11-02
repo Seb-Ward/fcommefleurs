@@ -18,14 +18,23 @@
                         <label class="form-control-placeholder" for="lastname_admin">Nom*</label>
                     </div>
                     <div class="form-group">
+                        <select class="form-control form-select" name="privilege" id="privilege" required>
+                            <option></option>
+                            <?php foreach ($privilege_list as $privilege) { ?>
+                                <option value="<?= $privilege->id ?>"><?= $privilege->role ?></option>
+                            <?php } ?>
+                        </select>
+                        <label class="form-control-placeholder" for="privilege">Privilége:*</label>
+                    </div>
+                    <div class="form-group">
                         <input class="form-control" type="password" id="password" name="password"
                                minlength="4" required>
                         <label class="form-control-placeholder" for="password">Mot de passe (4 characters minimum):*</label>
                     </div>
                     <div class="form-group">
-                        <input class="form-control" type="password" id="password" name="password"
+                        <input class="form-control" type="password" id="confirm_password" name="confirm_password"
                                minlength="4" required>
-                        <label class="form-control-placeholder" for="password">Confirmer Mot de passe:*</label>
+                        <label class="form-control-placeholder" for="confirm_password">Confirmer Mot de passe:*</label>
                     </div>
                     <div class="form-group">
                         <button class="form-control btn btn-outline-primary rounded px-3">Enregistrer</button>

@@ -1,6 +1,6 @@
 <h3>Listing</h3>
 <div class="col-md-6 text-end">
-    <a class='btn btn-outline-primary' href="/admin/edit">Ajouter un administrateur</a>
+    <a class='btn btn-outline-primary' href="/admin/create">Ajouter un administrateur</a>
 </div>
 <div class="table-responsive">
     <table class="table table-striped" id="message_table">
@@ -21,8 +21,8 @@
                         <td><?=$admin->getNickname()?></td>
                         <td><?= $admin->isActif() ? "Activé" : "Désactivé" ?></td>
                         <td>
-                            <a class="btn btn-warning" href="/user/admin_reset_password/<?=$admin->getId()?>">Reinitialiser mot de passe</a>
-                            <a class="btn btn-primary" href="/user/admin/<?=$admin->getId()?>">Editer</a>
+                            <a class="btn btn-warning" href="/admin_reset_password/<?=$admin->getId()?>">Reinitialiser mot de passe</a>
+                            <a class="btn btn-primary" href="/admin/profil/<?=$admin->getId()?>"><i class="fa-regular fa-eye"></i></a>
                         </td>
                     </tr>
                 <?php } ?>

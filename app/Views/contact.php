@@ -39,7 +39,7 @@
                                         </div>
                                         <div class="col-md-12">
                                             <div class="form-group">
-                                                <div class="g_recaptcha" data-sitekey=""></div>
+                                                <div class="g_recaptcha" data-sitekey="CHANGE_BY_MY_KEY"></div>
                                             </div>
                                         </div>
                                         <div class="col-md-12">

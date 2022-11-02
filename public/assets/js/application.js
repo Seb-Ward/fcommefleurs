@@ -47,6 +47,7 @@ $(document).ready(function () {
         });
         event.preventDefault();
     });
+
     $("#contactForm").submit(function (event) {
         event.preventDefault();
         const formData = {
@@ -57,6 +58,7 @@ $(document).ready(function () {
         };
         ajaxRequest("/messages/add",formData);
     });
+
     $("#edit_product").submit(function (event) {
         $("#spinner-div").show();
         $.ajax({

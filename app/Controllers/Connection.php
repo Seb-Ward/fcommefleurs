@@ -6,7 +6,6 @@ use App\Entities\Customer;
 use App\Entities\Privilege;
 use App\Models\GenderModel;
 use App\Models\PrivilegeModel;
-use App\Models\UserModel;
 use App\Models\AdminModel;
 use App\Entities\Admin;
 
@@ -28,18 +27,18 @@ class Connection extends BaseController
     {
         $postParam = $this->request->getPost();
         if (isset($postParam['login']) && (isset($postParam['password']) && !empty($postParam['login']) && !empty($postParam['password']))) { //Here I check that my fillings are existing and are not empty otherwise I redirect towards my header.
-            $login = htmlspecialchars($postParam['login']); //I configure my $email as $_post['email']
-            $password = htmlspecialchars($postParam['password']); //I configure my $password as $_post['password']
+            $login = htmlspecialchars($postParam['login']);
+            $password = htmlspecialchars($postParam['password']);
 
             if (filter_var($login, FILTER_VALIDATE_EMAIL)) {
-                $userModel = new UserModel();
-                $userToVerify = $userModel->getUser(null, array("email" => $login))[0] ?? null;
+                /*$userModel = new AdminModel();
+                $userToVerify = $userModel->getData(null, array("email" => $login))[0] ?? null;
                 if ($userToVerify != null && password_verify($password, $userToVerify->password_user)) { //If the Password_user matches the password and the user via the function password_verify then he is ok and his session_starts
                     $this->ajax_response['success'] = $this->validateConnection(new Customer(), $userToVerify);
-                }
+                }*/
             } else {
                 $adminModel = new AdminModel();
-                $adminToVerify = $adminModel->getAdmin(null, array("nickname" => $login))[0] ?? null;
+                $adminToVerify = $adminModel->getData(null, array("nickname" => $login))[0] ?? null;
                 if ($adminToVerify != null && password_verify($password, $adminToVerify->password)) { //If the Password_user matches the password and the user via the function password_verify then he is ok and his session_starts
                     if (!$adminToVerify->actif) {
                         $this->ajax_response['message'] = "Compte désactivé, contactez le support";
@@ -50,6 +49,8 @@ class Connection extends BaseController
                     $this->ajax_response['message'] = "Identifiant invalide";
                 }
             }
+        } else {
+            $this->ajax_response['message'] = "Paramètres manquants";
         }
         echo json_encode($this->ajax_response);
     }
@@ -81,7 +82,7 @@ class Connection extends BaseController
                 if ($this->user->getPrivilege() != null && $this->user->getPrivilege()->getId() >= 3) {
                     $model = new AdminModel();
                 } else {
-                    $model = new UserModel();
+                    $model = new AdminModel();
                 }
                 if (!$model->update_password($this->user->getId(), password_hash($postParam['new_password'], PASSWORD_DEFAULT))) {
                     $this->ajax_response['message'] = "Une erreur lors de la sauvegarde du nouveau mot de passe est survenue, contactez le support";
@@ -118,7 +119,7 @@ class Connection extends BaseController
         $object->setResetPassword($user->reset_password);
         if (!empty($user->privileges_id)) {
             $privilegeModel = new PrivilegeModel();
-            if (($tmp = $privilegeModel->getPrivilege($user->privileges_id)) != null) {
+            if (($tmp = $privilegeModel->getData($user->privileges_id)) != null) {
                 $privileges = new Privilege($tmp->id, $tmp->role);
                 $object->setPrivilege($privileges);
             } else {
@@ -133,7 +134,7 @@ class Connection extends BaseController
             $object->setActif($user->actif);
         } else {
             $genderModel = new GenderModel();
-            $object->setGender($genderModel->getGender($user->gender_id));
+            $object->setGender($genderModel->getData($user->gender_id));
             $object->setEmail($user->email);
             $object->setPhone($user->phone);
             $object->setAddress($user->address);

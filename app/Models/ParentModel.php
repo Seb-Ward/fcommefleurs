@@ -44,7 +44,7 @@ class ParentModel extends Model {
             }
         }
         if ($id != null) {
-            return $dbQuery->where($this->table.$this->primaryKey, $id)->get()->getRowObject();
+            return $dbQuery->where("$this->table.$this->primaryKey", $id)->get()->getRowObject();
         } elseif (!empty($where)) {
             $dbQuery->where($where);
         }

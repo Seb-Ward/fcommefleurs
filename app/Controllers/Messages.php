@@ -9,7 +9,7 @@ class Messages extends BaseController{
         
         helper('message');
         $messagesModel=new MessageModel();
-        $messagesList=transformItemsToObjects($messagesModel->getMessage());    
+        $messagesList=transformItemsToObjects($messagesModel->getData());
         $this->data['title'] = "Messages";
         $this->data['page'] = "messages_list";
         $this->data['content'] = view('admin/messages_list',array(

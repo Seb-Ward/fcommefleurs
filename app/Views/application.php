@@ -102,7 +102,6 @@
                 <div class="spinner-border text-primary" role="status"></div>
             </div>
         </div>
-        <form method="post" action="<?php echo base_url(); ?>captcha/validation"></form>
         <script src="/node_modules/jquery/dist/jquery.min.js"></script>
         <script src="/node_modules/datatables.net/js/jquery.dataTables.min.js"></script>
         <script src="/assets/js/application.js"></script>
