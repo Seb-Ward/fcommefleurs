@@ -39,6 +39,11 @@
                                         </div>
                                         <div class="col-md-12">
                                             <div class="form-group">
+                                                <div class="g_recaptcha" data-sitekey=""></div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-12">
+                                            <div class="form-group">
                                                 <input class="btn btn-primary" type="submit" value="Envoyer message">
                                             </div>
                                         </div>

@@ -14,6 +14,7 @@
         <script src="/node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
         <script src="/node_modules/sweetalert2/dist/sweetalert2.min.js"></script>
         <script src="https://kit.fontawesome.com/92c3f0e192.js" crossorigin="anonymous"></script>
+        <script src="https://www.google.com/recaptcha/api.js"></script>
     </head>
     <body>
         <div class="container">
@@ -101,6 +102,7 @@
                 <div class="spinner-border text-primary" role="status"></div>
             </div>
         </div>
+        <form method="post" action="<?php echo base_url(); ?>captcha/validation"></form>
         <script src="/node_modules/jquery/dist/jquery.min.js"></script>
         <script src="/node_modules/datatables.net/js/jquery.dataTables.min.js"></script>
         <script src="/assets/js/application.js"></script>
