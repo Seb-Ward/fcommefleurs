@@ -14,7 +14,7 @@
         <script src="/node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
         <script src="/node_modules/sweetalert2/dist/sweetalert2.min.js"></script>
         <script src="https://kit.fontawesome.com/92c3f0e192.js" crossorigin="anonymous"></script>
-        <script src="https://www.google.com/recaptcha/api.js"></script>
+        <script src="https://www.google.com/recaptcha/api.js?render=6Lc76e0iAAAAAP1NPOQdXfn769_bBu8qBGLZSFw5"></script>
     </head>
     <body>
         <div class="container">

@@ -16,30 +16,25 @@
                                         <div class="col-md-6">
                                             <div class="form-group">
                                                 <label class="form-label" for="last_name">Nom*</label>
-                                                <input id="last_name" class="form-control" type="text" name="name" placeholder="Nom">
+                                                <input id="last_name" class="form-control" type="text" name="name" placeholder="Nom" required>
                                             </div>
                                         </div>
                                         <div class="col-md-6">
                                             <div class="form-group">
                                                 <label class="form-label" for="first_name">Prénom*</label>
-                                                <input id="first_name" class="form-control" type="text" name="name" placeholder="Prénom">
+                                                <input id="first_name" class="form-control" type="text" name="name" placeholder="Prénom" required>
                                             </div>
                                         </div>
                                         <div class="col-md-12">
                                             <div class="form-group">
                                                 <label class="form-label" for="email">Email*</label>
-                                                <input id="email" class="form-control" type="text" name="email" placeholder="email">
+                                                <input id="email" class="form-control" type="text" name="email" placeholder="email" required>
                                             </div>
                                         </div>
                                         <div class="col-md-12">
                                             <div class="form-group">
                                                 <label for="message" class="form-label">Message*</label>
-                                                <textarea id="message" class="form-control" name="form-control" cols="30" rows="4" placeholder="Message"></textarea>
-                                            </div>
-                                        </div>
-                                        <div class="col-md-12">
-                                            <div class="form-group">
-                                                <div class="g_recaptcha" data-sitekey="CHANGE_BY_MY_KEY"></div>
+                                                <textarea id="message" class="form-control" name="form-control" cols="30" rows="4" placeholder="Message" required></textarea>
                                             </div>
                                         </div>
                                         <div class="col-md-12">
@@ -65,16 +60,15 @@
                                     </div>
                                     <div class="text">
                                         <p>
-                                            <span>Téléphone</span>
+                                            <span>Téléphone:</span>
                                             04 93 74 12 88
                                         </p>
                                     </div>
                                 </div>
                                 <div class="col-md-3">
                                     <div class="dbox w-100 text-center">
-                                        <div class="icon d-flex align-items-center justify-centent-center">
+                                        <div class="icon d-flex align-items-center justify-content-center">
                                             <span class="fa fa-map-marker">
-                                            
                                             </span>
                                         </div>
                                         <div class="text">

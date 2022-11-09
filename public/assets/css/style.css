@@ -325,14 +325,16 @@ a:hover, a:active, a:focus {
 }
 @media(min-width: 768px){
     .dbox{
-        margin-bottom: 0;
         padding: 0;
+        border-style: none;
+        margin-bottom: 0; 
     }
 }
 .dbox{
     width: 100%;
     margin-bottom: 25px;
     padding: 0 20px;
+    border-style: none;
 }
 .dbox .icon{
     width: 60px;
@@ -343,6 +345,9 @@ a:hover, a:active, a:focus {
     margin-bottom: 20px;
 }
 .text-center{
+    -webkit-box-flex: 0;
+    -ms flex: 0 0 16.66667%;
+    flex: 0 0 16.66667%;
     text-align: center!important;
 }
 .w-100{

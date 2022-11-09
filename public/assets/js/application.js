@@ -50,13 +50,25 @@ $(document).ready(function () {
 
     $("#contactForm").submit(function (event) {
         event.preventDefault();
-        const formData = {
-            first_name: $("#first_name").val(),
-            last_name: $("#last_name").val(),
-            email: $("#email").val(),
-            message: $("#message").val()
-        };
-        ajaxRequest("/messages/add",formData);
+        grecaptcha.ready(function() {
+            grecaptcha.execute('6Lc76e0iAAAAAP1NPOQdXfn769_bBu8qBGLZSFw5', {action: 'validate_contact'}).then(function(token) {
+                const formData = {
+                    first_name: $("#first_name").val(),
+                    last_name: $("#last_name").val(),
+                    email: $("#email").val(),
+                    message: $("#message").val(),
+                    token: token
+                };
+                if (formData.first_name === "" || formData.last_name === ""
+                || formData.email === "" || formData.message === "") {
+                    alertWarning("Veuillez remplir tout les champs du formulaire");
+                } else {
+                    ajaxRequest("/recaptcha/validateCaptcha", formData);
+                }
+            });
+          });
+  
+
     });
 
     $("#edit_product").submit(function (event) {
@@ -225,5 +237,6 @@ const removeImage = function(event) {
         alertError("Identifiant de l'image inconnu, veuillez contacter le support")
     }
 }
+
 
 window.initMap = initMap;

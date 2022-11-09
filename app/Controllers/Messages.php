@@ -17,13 +17,14 @@ class Messages extends BaseController{
         ));
         return view('application', $this->data);
     }
+
     public function delete($id){
         $messageModel=new MessageModel();
         $messageModel->deleteMessage(array('message_id'=>$id));
         return redirect()->to('/messages');
     }
-    public function add(){
-                    
+
+    public function add(){           
         $messagesModel=new MessageModel();
         $postParam = $this->request->getPost();
         if (isset($postParam['last_name']) && (isset($postParam['first_name']) && isset($postParam['email']) && isset($postParam['message']) && !empty($postParam['last_name']) && !empty($postParam['first_name']) && !empty($postParam['email']) && !empty($postParam['message']))){
