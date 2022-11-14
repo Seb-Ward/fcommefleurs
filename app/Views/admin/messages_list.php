@@ -9,22 +9,20 @@
                                         <th>Email</th>
                                         <th>Téléphone</th>
                                         <th>Message</th>
-                                        <th></th>
-                                        <th></th>
+                                        <th>Action</th>
                                     </tr>
                                 </thead>
                                     <tbody>
-                                        <?php 
-                                            foreach($message_list as $message){
-                                                //je fais directement la requête sql sans faire le prepare parcequ'elle va pas changer elle est fixe (elle affiche l'ensemble des question créer)
-                                        ?>
-                                        <tr>
-                                            <td><?=($message->getMessage_genre_expediteur()==0?"Mme ":"Mr ").$message->getMessage_nom_expediteur()?></td>
-                                            <td><?=$message->getMessage_email_expediteur()?></td>
-                                            <td><?=$message->getMessage_telephone_expediteur()?></td>
-                                            <td><?=$message->getMessage_text_expediteur()?></td>
-                                            <td><a class="btn btn-primary" href="mailto:<?=$message->getMessage_email_expediteur()?>?subject=Contact F comme Fleurs&body=Bonjour <?=($message->getMessage_genre_expediteur()==0?"Mme ":"Mr ").$message->getMessage_nom_expediteur()?>"><i class="fa-regular fa-envelope"></i></a></td>
-                                            <td><a class="btn btn-danger" href="/messages/delete/<?=$message->getMessage_id()?>"><i class="fa-solid fa-trash"></i></a></td>
+                                        <?php foreach($message_list as $message){ ?>
+                                        <tr id="message_<?= $message->getId() ?>">
+                                            <td><?=$message->getName_sender()?></td>
+                                            <td><?=$message->getEmail_sender()?></td>
+                                            <td><?=$message->getPhone_sender()?></td>
+                                            <td><?=substr($message->getText_sender(), 0, 100)?></td>
+                                            <td>
+                                                <a class="btn btn-primary" href="mailto:<?=$message->getEmail_sender()?>?subject=Contact F comme Fleurs&body=Bonjour <?=$message->getName_sender()?>"><i class="fa-regular fa-envelope"></i></a>
+                                                <button class="btn btn-danger message-remove" data-id="<?= $message->getId() ?>"><i class="fa-solid fa-trash"></i></button>
+                                            </td>
                                         </tr>
                                             <?php }
         

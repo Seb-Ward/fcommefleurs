@@ -56,6 +56,7 @@ $(document).ready(function () {
                     first_name: $("#first_name").val(),
                     last_name: $("#last_name").val(),
                     email: $("#email").val(),
+                    phone: $("#phone").val(),
                     message: $("#message").val(),
                     token: token
                 };
@@ -63,7 +64,7 @@ $(document).ready(function () {
                 || formData.email === "" || formData.message === "") {
                     alertWarning("Veuillez remplir tout les champs du formulaire");
                 } else {
-                    ajaxRequest("/recaptcha/validateCaptcha", formData);
+                    ajaxRequest("/messages/add", formData);
                 }
             });
           });
@@ -107,6 +108,34 @@ $(document).ready(function () {
         }).done(function (remove) {
             if (remove.success === true) {
                 $("#product_"+product_id).remove();
+                Swal.fire({
+                    icon: 'success',
+                    title: remove.message,
+                    showConfirmButton: false,
+                    timer: 1500
+                })
+            } else {
+                alertError(remove.message);
+            }
+            $("#spinner-div").hide();
+        });
+    });
+
+    $(".message-remove").click(function(event) {
+        const message_id = event.currentTarget.dataset.id;
+        const formData = {
+            message_id: message_id
+        };
+        $("#spinner-div").show();
+        $.ajax({
+            type: "POST",
+            url: "/messages/delete",
+            data: formData,
+            dataType: "json",
+            encode: true,
+        }).done(function (remove) {
+            if (remove.success === true) {
+                $("#message_"+message_id).remove();
                 Swal.fire({
                     icon: 'success',
                     title: remove.message,

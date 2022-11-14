@@ -18,10 +18,18 @@ class Messages extends BaseController{
         return view('application', $this->data);
     }
 
-    public function delete($id){
-        $messageModel=new MessageModel();
-        $messageModel->deleteMessage(array('message_id'=>$id));
-        return redirect()->to('/messages');
+    public function delete(){
+        $postParam = $this->request->getPost();
+        if (isset($postParam['message_id']) && $postParam['message_id'] > 0) {
+            $messageModel=new MessageModel();
+            if (!$messageModel->deleteData($postParam['message_id'])) {
+                $this->ajax_response['message'] = "Une erreur est survenu lors de la suppression du message, veuillez contacter le support";                
+            } else {
+                $this->ajax_response['success'] = true;
+                $this->ajax_response['message'] = "Le message a bien été supprimé";
+            }
+        }
+        echo json_encode($this->ajax_response);
     }
 
     public function add(){           
@@ -31,6 +39,7 @@ class Messages extends BaseController{
             $data = array(
                 "name_sender" => strtoupper($postParam['last_name']) . " ". ucfirst($postParam['first_name']),
                 "email_sender" => $postParam['email'], 
+                "phone_sender" => $postParam['phone'], 
                 "text_sender" => $postParam['message'], 
             ); 
             if (!$messagesModel->insertData($data)){

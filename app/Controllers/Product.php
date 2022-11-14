@@ -73,12 +73,11 @@ class Product extends BaseController {
             if (isset($postParam['product_id']) && $postParam['product_id'] != 0) {
                 if (!$productModel->updateData($postParam['product_id'], $data)){
                     $this->ajax_response['message'] = "Une erreur à été rencontré lors de la mise à jour du produit, veuillez contacter le support.";
-                } else{
+                } else {
                     if (!$this->processImage($postParam['product_id'])) {
                         $this->ajax_response['message'] = "Une erreur à été rencontré lors de la mise à jour de l'image du produit, veuillez contacter le support.";
                     } else {
                         $this->ajax_response['success'] = true;
-                        $this->ajax_response['message'] = "OUIOUI";
                     }
                 }
             } else {

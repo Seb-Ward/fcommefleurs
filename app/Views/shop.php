@@ -1,3 +1,4 @@
+    <section><?= $description ?? "" ?></section>
     <div class="row row-cols-1 row-cols-md-3 mb-5 g-5 text-center">
         <?php foreach ($product_list as $product) { ?>
             <div class="col">

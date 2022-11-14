@@ -1,3 +1,4 @@
+<script src="https://www.google.com/recaptcha/api.js?render=6Lc76e0iAAAAAP1NPOQdXfn769_bBu8qBGLZSFw5"></script>
 <section class="ftco-section">
     <div class="container">
         <div class="row justify-content-center">
@@ -25,16 +26,22 @@
                                                 <input id="first_name" class="form-control" type="text" name="name" placeholder="Prénom" required>
                                             </div>
                                         </div>
-                                        <div class="col-md-12">
+                                        <div class="col-md-6">
                                             <div class="form-group">
                                                 <label class="form-label" for="email">Email*</label>
-                                                <input id="email" class="form-control" type="text" name="email" placeholder="email" required>
+                                                <input id="email" class="form-control" type="text" name="email" placeholder="email" required maxlength="254">
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="form-group">
+                                                <label class="form-label" for="phone">Téléphone</label>
+                                                <input id="phone" class="form-control" type="text" name="phone" placeholder="Téléphone" maxlength="20">
                                             </div>
                                         </div>
                                         <div class="col-md-12">
                                             <div class="form-group">
                                                 <label for="message" class="form-label">Message*</label>
-                                                <textarea id="message" class="form-control" name="form-control" cols="30" rows="4" placeholder="Message" required></textarea>
+                                                <textarea id="message" class="form-control" name="form-control" cols="30" rows="4" placeholder="Message" required maxlength="500"></textarea>
                                             </div>
                                         </div>
                                         <div class="col-md-12">
