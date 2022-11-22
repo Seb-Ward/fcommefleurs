@@ -10,7 +10,7 @@
                         <div class="wrapper">
                             <div class="row">
                                 <div class="row no-gutters mb-5">
-                                    <h5 class="card-tittle text-center text-secondary"><?= ($product != null && $product->getId() != null ? "Modification" : "Ajout") ?> d'un produit</h5>
+                                    <h5 class="card-title text-center text-secondary"><?= ($product != null && $product->getId() != null ? "Modification" : "Ajout") ?> d'un produit</h5>
                                     <div class="col-md-6">
                                         <div class="contact-wrap w-100 p-md-5 p-4">
                                             <input type="hidden" name="product_id" id="product_id" value="<?= $product != null && $product->getId() != null ? $product->getId() : 0 ?>" />
