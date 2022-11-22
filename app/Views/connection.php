@@ -5,9 +5,9 @@
             <div class="login-wrap p-4 p-md-5">
                 <div class="d-flex">
                     <div class="w-100">
-                        <h3 class="mb-4">Sign-in</h3>
+                        <h3 class="mb-4">Se connecter</h3>
                     </div>
-                    <div class="w-100">
+                    <!--<div class="w-100">
                         <p class="social-media d-flex justify-content-end">
                             <a class="text-decoration-none social-icon d-flex align-items-center justify-content-center"
                                href="#">
@@ -18,7 +18,7 @@
                                 <i class="fa-brands fa-google"></i>
                             </a>
                         </p>
-                    </div>
+                    </div>-->
                 </div>
                 <form action="/connection/connect/" id="sign_in" method="post"><!--Here we use the $_POST method-->
                     <div class="form-group mt-3">
@@ -34,15 +34,15 @@
                         <button class="form-control btn btn-outline-primary rounded px-3">Sign-in</button>
                     </div>
                     <div class="form-group d-md-flex">
-                        <div class="w-50 text-left">
+                        <!--<div class="w-50 text-left">
                             <label class="checkbox-wrap checkbox-primary mb-0">
                                 Remember me
                                 <input type="checkbox" checked />
                                 <span class="checkmark"></span>
                             </label>
-                        </div>
-                        <div class="w-50 text-md-right">
-                            <a href="#">Forgot password</a>
+                        </div>-->
+                        <div class="w-100 text-md-right">
+                            <a href="#">Mot de passe oublié ?</a>
                         </div>
                     </div>
 
