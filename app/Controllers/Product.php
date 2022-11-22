@@ -14,7 +14,7 @@ class Product extends BaseController {
         }
         helper('product');
         $productModel = new ProductModel();
-        $productList = transformItemsToObjects($productModel->getProduct());
+        $productList = transformItemsToObjects($productModel->getProduct(null, null, true));
         $this->data['title'] = "Produit";
         $this->data['page'] = "product_list";
 

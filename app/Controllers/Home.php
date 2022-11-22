@@ -12,9 +12,9 @@ class Home extends BaseController
         $productModel = new ProductModel();
 
         $this->data['page'] = "home";
-        $this->data['content'] = view('home',array(
-            'trendy_collection'=> transformItemsToObjects($productModel->getProduct(null,array("categorie_id"=>1,"home_page"=>true))),
-            'monthly_offer'=> transformItemsToObjects($productModel->getProduct(null,array("categorie_id"=>2,"home_page"=>true)))
+        $this->data['content'] = view('home', array(
+            'trendy_collection' => transformItemsToObjects($productModel->getProduct(null, array("categorie_id" => 1, "home_page" => true), true)),
+            'monthly_offer' => transformItemsToObjects($productModel->getProduct(null, array("categorie_id" => 2, "home_page" => true), true))
         ));
         return view('application', $this->data);
     }

@@ -15,7 +15,7 @@ class Shop extends BaseController
         $this->data['page'] = "shop";
 
         $dataShop = array(
-            'product_list'=> transformItemsToObjects($productModel->getProduct(null, array("categorie_id" => $categorieId))
+            'product_list'=> transformItemsToObjects($productModel->getProduct(null, array("categorie_id" => $categorieId), true)
         ));
         if ($categorieId == 5) {
             $dataShop['description'] = 'Un hommage est toujours un moment difficile. Nous compatissons avec votre douleurs et nous sommes là pour vous accompagner afin de trouver le bouquet de fleurs qui correspondrait. Voici un coix de bouquets, mais si vous souhaiter qqchose de plus personnalisé remplisser votre besoin sur notre page <a href="/contact">contact</a>.';

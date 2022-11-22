@@ -8,7 +8,7 @@ class ProductModel extends ParentModel {
     protected $table = 'product';
     protected $allowedFields = ['name','description','price','tax_id', 'quantity', 'categorie_id', 'home_page'];
 
-    function getProduct($id = null, $data = array()){
+    function getProduct($id = null, $data = array(), $isGroup = false){
         $dbQuery = $this->db->table($this->table);
         $dbQuery->select("product.*, tax.description AS tax_description, tax.percentage, categorie.name AS categorie_name,
                 image.id AS image_id, image.name AS image_name, image.size AS image_size, image.type AS image_type, image.bin AS image_bin")
@@ -20,6 +20,9 @@ class ProductModel extends ParentModel {
             return $dbQuery->get()->getResultObject();
         } else if (!empty($data)) {
             $dbQuery->where($data);
+        }
+        if ($isGroup) {
+            $dbQuery->groupBy("$this->table.$this->primaryKey");
         }
         return $dbQuery->get()->getResultObject();
     }

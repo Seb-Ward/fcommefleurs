@@ -1,6 +1,6 @@
 $(document).ready(function () {
-    $('#message_table').DataTable();
-    $('#product_table').DataTable();
+    const message_table = $('#message_table').DataTable();
+    const product_table = $('#product_table').DataTable();
 
     $("#sign_in").submit(function (event) {
         const formData = {
@@ -68,8 +68,6 @@ $(document).ready(function () {
                 }
             });
           });
-  
-
     });
 
     $("#edit_product").submit(function (event) {
@@ -107,7 +105,7 @@ $(document).ready(function () {
             encode: true,
         }).done(function (remove) {
             if (remove.success === true) {
-                $("#product_"+product_id).remove();
+                product_table.row(this).remove().draw();
                 Swal.fire({
                     icon: 'success',
                     title: remove.message,
@@ -135,7 +133,7 @@ $(document).ready(function () {
             encode: true,
         }).done(function (remove) {
             if (remove.success === true) {
-                $("#message_"+message_id).remove();
+                message_table.row(this).remove().draw();
                 Swal.fire({
                     icon: 'success',
                     title: remove.message,
@@ -149,6 +147,9 @@ $(document).ready(function () {
         });
     });
 
+    $("a").click(function(event) {
+        $('#cover').fadeOut(1000);
+    });
 });
 
 function ajaxRequest(url, dataRequest) {
