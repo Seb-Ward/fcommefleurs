@@ -70,6 +70,29 @@ $(document).ready(function () {
           });
     });
 
+    $("#shopForm").click(function(event) {
+        event.preventDefault();
+        const product_id = $("#product_id").val();
+        const formData = {
+            product_id: product_id
+        };
+        $("#spinner-div").show();
+        $.ajax({
+            type: "POST",
+            url: "/basket/add",
+            data: formData,
+            dataType: "json",
+            encode: true,
+        }).done(function (add) {
+            if (add.success === true) {
+                alertSuccess(add.message)
+            } else {
+                alertError(add.message);
+            }
+            $("#spinner-div").hide();
+        });
+    });
+
     $("#edit_product").submit(function (event) {
         $("#spinner-div").show();
         $.ajax({

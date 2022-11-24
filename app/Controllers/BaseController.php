@@ -2,7 +2,6 @@
 
 namespace App\Controllers;
 
-use App\Entities\Categorie;
 use App\Models\CategorieModel;
 use CodeIgniter\Controller;
 use CodeIgniter\HTTP\CLIRequest;

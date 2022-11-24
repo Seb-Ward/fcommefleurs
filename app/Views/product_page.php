@@ -27,20 +27,18 @@
                 </div>
 
             <div class="d-flex flex-column flex-sm-row align-items-sm-center mb-4 ">
-                <form>
+                <form id="shopForm" class="shopForm" method="POST" name="shopForm" novalidate="novalidate">
                     <div class="form-group row mb-4">
+                        <input type="hidden" name="product_id" id="product_id" value="<?= $product->getId() ?>">
                         <span class="h4 mt-2"><?= $product->getPrice() ?>€</span>
-                        <label class="col-sm-3 col-form-label " for="quantity">Quantité:
-                        </label>
+                        <label class="col-sm-3 col-form-label " for="quantity">Quantité:</label>
                         <div class="col-sm-3">
                             <input type="number" class="form-control" name="quantity" id="quantity">
                         </div>
                         <div>
-                            <small id="emailHelp" class="form-text text-muted">Frais de livraison fixes : 9,95 €
-                            </small>
+                            <small id="emailHelp" class="form-text text-muted">Frais de livraison fixes : 9,95 €</small>
                         </div>
-                        <a class="btn btn-primary me-5" href="/basket">Commander</a>
-                        
+                        <input class="btn btn-primary me-5" type="submit" value="Ajouter au panier">
                     </div>
                 </form>
             </div>
