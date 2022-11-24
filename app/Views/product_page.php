@@ -39,7 +39,7 @@
                             <small id="emailHelp" class="form-text text-muted">Frais de livraison fixes : 9,95 €
                             </small>
                         </div>
-                        <a class="btn btn-primary me-5" href="/contact">Commander</a>
+                        <a class="btn btn-primary me-5" href="/basket">Commander</a>
                         
                     </div>
                 </form>
