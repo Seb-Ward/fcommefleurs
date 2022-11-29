@@ -2,6 +2,7 @@
 
 namespace App\Controllers;
 
+use App\Entities\Card;
 use \App\Entities\Product;
 use App\Models\ProductModel;
 
@@ -88,6 +89,27 @@ class Basket extends BaseController {
         $tva = $ttc * ($tax->getPercentage() / 100);
         $basket->setTVA($tva);
         $basket->setHTPrice($ttc - $tva);
+    }
+
+    public function join_message()
+    {
+        $this->data['title'] = "Panier";
+        $this->data['page'] = "basket";
+        $this->data['content'] = view('joinmessage');
+        return view('application', $this->data);
+    }
+
+    public function add_message(){
+        $join_message = $this->request->getPost();
+        if (isset($join_message['message']) && !empty($join_message['message']) && isset($join_message['signature']) && !empty($join_message['signature'])) {
+            $card = new Card();
+            $card->setMessage($join_message['message']);
+            $card->setSignature($join_message['signature']);
+            $basket = $this->getBasket();
+            $basket->setCard($card);
+            $this->session->set('basket', $basket);
+        }
+
     }
 
 }

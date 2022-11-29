@@ -12,6 +12,7 @@ class Basket extends Entity {
     private float $HT_price = 0;
     private float $TVA = 0;
     private float $TTC_price = 0;
+    private Card $card;
 
     /**
      * @return array
@@ -91,6 +92,22 @@ class Basket extends Entity {
     public function setTTCPrice(float $ttc_price): void
     {
         $this->TTC_price = $ttc_price;
+    }
+
+    /**
+     * @return Card
+     */
+    public function getCard(): Card
+    {
+        return $this->card;
+    }
+
+    /**
+     * @param Card $card
+     */
+    public function setCard(Card $card): void
+    {
+        $this->card = $card;
     }
 
 }
