@@ -31,20 +31,24 @@
                             <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
                                 <?php foreach ($shopCategorie as $categorie) { ?>
                                     <li>
+                                                    <i class="fa-solid fa-basket-shopping" width="92" height="23"></i>
                                         <a class="dropdown-item" href="/shop/<?= $categorie->id ?>"><?= $categorie->name ?></a>
                                     </li>
                                 <?php } ?>
                             </ul>
                         </div>
                     </li>
+                    
                     <li>
                         <a class='nav-link px-2 link-<?= $page == 'equipe' ? "secondary" : "dark" ?>' href="/team">L'équipe</a>
                     </li>
                     <li>
                         <a class='nav-link px-2 link-<?= $page == 'contact' ? "secondary" : "dark" ?>' href="/contact">Nous contacter</a>
                     </li>
-                </ul>
+                    </ul>
                 <div class="col-md-3 text-end">
+                <i class="fa-solid fa-basket-shopping"></i>
+
                     <?php
                     if ($connected == true){
                         if ($admin == true) {
@@ -70,8 +74,10 @@
             </header>
             <h5 class="hr">
                 BY FREDERIC
-                <img width="92" height="23" src="/assets/images/logo_interflora_min.png"/>
             </h5>
+            <div class="col-md-4 d-flex align-items-center">
+            <img width="92" height="23" src="/assets/images/logo_interflora_min.png"/>
+            </div>
             <main>
                 <?= $content ?>
             </main>

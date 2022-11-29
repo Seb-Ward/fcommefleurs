@@ -8,10 +8,10 @@ use CodeIgniter\Entity\Entity;
 
 class Basket extends Entity {
     private array $product_list = array();
-    private ?float $ship_price;
-    private ?float $HT_price;
-    private ?float $TVA;
-    private ?float $TTC_price;
+    private float $ship_price = 0;
+    private float $HT_price = 0;
+    private float $TVA = 0;
+    private float $TTC_price = 0;
 
     /**
      * @return array
@@ -30,65 +30,65 @@ class Basket extends Entity {
     }
 
     /**
-     * @return float|null
+     * @return float
      */
-    public function getShipPrice(): ?float
+    public function getShipPrice(): float
     {
         return $this->ship_price;
     }
 
     /**
-     * @param float|null $ship_price
+     * @param float $ship_price
      */
-    public function setShipPrice(?float $ship_price): void
+    public function setShipPrice(float $ship_price): void
     {
         $this->ship_price = $ship_price;
     }
 
     /**
-     * @return float|null
+     * @return float
      */
-    public function getHTPrice(): ?float
+    public function getHTPrice(): float
     {
         return $this->HT_price;
     }
 
     /**
-     * @param float|null $ht_price
+     * @param float $ht_price
      */
-    public function setHTPrice(?float $ht_price): void
+    public function setHTPrice(float $ht_price): void
     {
         $this->HT_price = $ht_price;
     }
 
     /**
-     * @return float|null
+     * @return float|
      */
-    public function getTVA(): ?float
+    public function getTVA(): float
     {
         return $this->TVA;
     }
 
     /**
-     * @param float|null $tva
+     * @param float $tva
      */
-    public function setTVA(?float $tva): void
+    public function setTVA(float $tva): void
     {
         $this->TVA = $tva;
     }
 
     /**
-     * @return float|null
+     * @return float
      */
-    public function getTTCPrice(): ?float
+    public function getTTCPrice(): float
     {
         return $this->TTC_price;
     }
 
     /**
-     * @param float|null $ttc_price
+     * @param float $ttc_price
      */
-    public function setTTCPrice(?float $ttc_price): void
+    public function setTTCPrice(float $ttc_price): void
     {
         $this->TTC_price = $ttc_price;
     }
