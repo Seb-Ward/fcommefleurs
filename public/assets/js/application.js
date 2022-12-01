@@ -1,3 +1,11 @@
+const swalWithBootstrapButtons = Swal.mixin({
+    customClass: {
+        confirmButton: 'btn btn-success',
+        cancelButton: 'btn btn-danger'
+    },
+    buttonsStyling: false
+})
+
 $(document).ready(function () {
     const message_table = $('#message_table').DataTable();
     const product_table = $('#product_table').DataTable();
@@ -85,9 +93,49 @@ $(document).ready(function () {
             encode: true,
         }).done(function (add) {
             if (add.success === true) {
-                alertSuccess(add.message)
+                swalWithBootstrapButtons.fire({
+                    title: 'Finaliser votre commande ?',
+                    text: '',
+                    icon: 'question',
+                    showCancelButton: true,
+                    confirmButtonText: 'Oui',
+                    cancelButtonText: 'Non, continuer mes achats',
+                }).then((result) => {
+                    if (result.isConfirmed) {
+                        window.location.replace("/basket");
+                    }
+                });
             } else {
                 alertError(add.message);
+            }
+            $("#spinner-div").hide();
+        });
+    });
+
+    $(".remove-basket").click(function(event) {
+        const product_id = event.currentTarget.dataset.id;
+        const formData = {
+            product_id: product_id
+        };
+        $("#spinner-div").show();
+        $.ajax({
+            type: "POST",
+            url: "/basket/remove",
+            data: formData,
+            dataType: "json",
+            encode: true,
+        }).done(function (remove) {
+            if (remove.success === true) {
+                $("#basket-product-" + product_id).remove();
+                window.location.replace("/basket");
+                /*swalWithBootstrapButtons.fire({
+                    icon: 'success',
+                    title: remove.message,
+                    showConfirmButton: false,
+                    timer: 1000
+                });*/
+            } else {
+                alertError(remove.message);
             }
             $("#spinner-div").hide();
         });
@@ -129,7 +177,7 @@ $(document).ready(function () {
         }).done(function (remove) {
             if (remove.success === true) {
                 product_table.row(this).remove().draw();
-                Swal.fire({
+                swalWithBootstrapButtons.fire({
                     icon: 'success',
                     title: remove.message,
                     showConfirmButton: false,
@@ -157,7 +205,7 @@ $(document).ready(function () {
         }).done(function (remove) {
             if (remove.success === true) {
                 message_table.row(this).remove().draw();
-                Swal.fire({
+                swalWithBootstrapButtons.fire({
                     icon: 'success',
                     title: remove.message,
                     showConfirmButton: false,
@@ -194,7 +242,7 @@ function ajaxRequest(url, dataRequest) {
 }
 
 function alertSuccess(message) {
-    Swal.fire({
+    swalWithBootstrapButtons.fire({
         title: 'Succès',
         text: message,
         icon: 'success',
@@ -203,7 +251,7 @@ function alertSuccess(message) {
 }
 
 function alertError(message) {
-    Swal.fire({
+    swalWithBootstrapButtons.fire({
         title: 'Erreur',
         text: message,
         icon: 'error',
@@ -213,7 +261,7 @@ function alertError(message) {
 }
 
 function alertWarning(message) {
-    Swal.fire({
+    swalWithBootstrapButtons.fire({
         title: 'Attention',
         text: message,
         icon: 'warning',

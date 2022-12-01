@@ -440,4 +440,7 @@ input[type="checkbox"] {
 .add-notif{
     background: #3d7546;
 }
-.
+.img-basket{
+    width: 100px !important;
+    height: 100px !important;
+}

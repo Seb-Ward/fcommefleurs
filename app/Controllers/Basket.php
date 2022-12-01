@@ -31,7 +31,7 @@ class Basket extends BaseController {
                 $productBasket = $basket->getProductList();
                 $productBasket[] = $product;
                 $basket->setProductList($productBasket);
-                $this->calculateBasket($basket);
+                $basket = $this->calculateBasket($basket);
                 $this->session->set('basket', $basket);
                 $this->ajax_response['message'] = "Panier mis à jour";
                 $this->ajax_response['success'] = true;
@@ -46,20 +46,23 @@ class Basket extends BaseController {
 
     public function remove() {
         $basket = $this->getBasket();
-        $productToRemove = $this->request->getPost();
-        $this->ajax_response['message'] = "Il n'y a aucun produit a supprimer";
-        $productBasket = $basket->getProductList();
-        if (!empty($productBasket)) {
-            $this->ajax_response['message'] = "Le produit demandé n'a pas été trouvé";
-            foreach ($productBasket as $key => $product) {
-                if ($product->getId() === $productToRemove['product_id']) {
-                    unset($productBasket[$key]);
-                    $basket->setProductList($productBasket);
-                    $this->calculateBasket($basket);
-                    $this->session->set('basket', $basket);
-                    $this->ajax_response['message'] = "Le produit à bien été supprimé";
-                    $this->ajax_response['success'] = true;
-                    break;
+        $this->ajax_response['message'] = "Les informations du produit sont manquantes";
+        $productToRemove = $this->request->getPost()['product_id'] ?? null;
+        if ($productToRemove != null) {
+            $this->ajax_response['message'] = "Il n'y a aucun produit a supprimer";
+            $productBasket = $basket->getProductList();
+            if (!empty($productBasket)) {
+                $this->ajax_response['message'] = "Le produit demandé n'a pas été trouvé";
+                foreach ($productBasket as $key => $product) {
+                    if ($product->getId() == $productToRemove) {
+                        unset($productBasket[$key]);
+                        $basket->setProductList($productBasket);
+                        $basket = $this->calculateBasket($basket);
+                        $this->session->set('basket', $basket);
+                        $this->ajax_response['message'] = "Le produit à bien été supprimé";
+                        $this->ajax_response['success'] = true;
+                        break;
+                    }
                 }
             }
         }
@@ -77,7 +80,7 @@ class Basket extends BaseController {
 
     private function calculateBasket($basket) {
         $productList = $basket->getProductList();
-        $ttc = $basket->getShipPrice();
+        $ttc = 0;
         $tax = null;
         foreach ($productList as $product) {
             $ttc += $product->getPrice();
@@ -85,10 +88,20 @@ class Basket extends BaseController {
                 $tax = $product->getTax();
             }
         }
-        $basket->setTTCPrice($ttc);
-        $tva = $ttc * ($tax->getPercentage() / 100);
-        $basket->setTVA($tva);
-        $basket->setHTPrice($ttc - $tva);
+        if ($ttc > 0) {
+            $shipPrice = 9.95;
+            $basket->setTTCPrice($ttc + $shipPrice);
+            $tva = $ttc * ($tax->getPercentage() / 100);
+            $basket->setTVA($tva);
+            $basket->setHTPrice($ttc - $tva);
+            $basket->setShipPrice($shipPrice);
+        } else {
+            $basket->setTTCPrice(0);
+            $basket->setTVA(0);
+            $basket->setHTPrice(0);
+            $basket->setShipPrice(0);
+        }
+        return $basket;
     }
 
     public function join_message()
