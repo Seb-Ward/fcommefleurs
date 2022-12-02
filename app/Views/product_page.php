@@ -38,7 +38,7 @@
                         <div>
                             <small id="emailHelp" class="form-text text-muted">Frais de livraison fixes : 9,95 €</small>
                         </div>
-                        <input class="btn btn-primary me-5" type="submit" value="Ajouter au panier">
+                        <input id="submitShopForm" class="btn btn-primary me-5" type="submit" value="Ajouter au panier">
                     </div>
                 </form>
             </div>

@@ -78,7 +78,7 @@ $(document).ready(function () {
           });
     });
 
-    $("#shopForm").click(function(event) {
+    $("#submitShopForm").click(function(event) {
         event.preventDefault();
         const product_id = $("#product_id").val();
         const formData = {

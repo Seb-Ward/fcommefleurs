@@ -69,15 +69,6 @@ class Basket extends BaseController {
         echo json_encode($this->ajax_response);
     }
 
-    private function getBasket() {
-        $basket = $this->session->get('basket');
-        if (is_null($basket)){
-            $basket = new \App\Entities\Basket();
-            $basket->setShipPrice(9.95);
-        }
-        return $basket;
-    }
-
     private function calculateBasket($basket) {
         $productList = $basket->getProductList();
         $ttc = 0;

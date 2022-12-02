@@ -17,66 +17,82 @@
     </head>
     <body>
         <div class="container">
-            <header class="pt-4 pb-4 d-flex flex-wrap align-items-center justify-content-center  justify-content-md-between">
-                <a class="d-flex align-items-center col-md-3 mb-2 mb-md-0" href="/Home">
-                    <img width="293" height="120" src="/assets/images/logo_fomme_fleurs_270x100px-min.png" alt="">
-                </a>
-                <ul class="nav col-12 col-md-auto mb-2 justify-content-center mb-md-0">
-                    <li>
-                        <a class='nav-link px-2 link-<?= $page == 'accueil' ? "secondary" : "dark" ?>' href="/Home">Accueil</a>
-                    </li>
-                    <li>
-                    <div class="col-md-3 text-end">
-                        <a class='nav-link dropdown-toggle px-2 link-<?= $page == 'boutique' ? "secondary" : "dark" ?>' href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Boutique</a>
-                            <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-                                <?php foreach ($shopCategorie as $categorie) { ?>
+            <header class="pt-4 pb-4 flex-wrap align-items-center justify-content-center  justify-content-md-between">
+                <div class="row">
+                    <div class="col-12">
+                        <div class="row">
+                            <div class="col-md-3">
+                                <a class="d-flex align-items-center col-md-3 mb-2 mb-md-0" href="/Home">
+                                    <img width="293" height="120" src="/assets/images/logo_fomme_fleurs_270x100px-min.png" alt="">
+                                </a>
+                            </div>
+                            <div class="col-md-6 d-flex align-items-center justify-content-center">
+                                <ul class="nav mb-2 justify-content-center mb-md-0">
                                     <li>
-                                                    <i class="fa-solid fa-basket-shopping" width="92" height="23"></i>
-                                        <a class="dropdown-item" href="/shop/<?= $categorie->id ?>"><?= $categorie->name ?></a>
+                                        <a class='nav-link px-2 link-<?= $page == 'accueil' ? "secondary" : "dark" ?>' href="/Home">Accueil</a>
                                     </li>
-                                <?php } ?>
-                            </ul>
-                        </div>
-                    </li>
-                    
-                    <li>
-                        <a class='nav-link px-2 link-<?= $page == 'equipe' ? "secondary" : "dark" ?>' href="/team">L'équipe</a>
-                    </li>
-                    <li>
-                        <a class='nav-link px-2 link-<?= $page == 'contact' ? "secondary" : "dark" ?>' href="/contact">Nous contacter</a>
-                    </li>
-                    </ul>
-                <div class="col-md-3 text-end">
-                <i class="fa-solid fa-basket-shopping"></i>
-
-                    <?php
-                    if ($connected == true){
-                        if ($admin == true) {
-                            ?>
-                            <div class="dropdown col-md-3 text-end dropdown-dashboard">
-                                <a class='btn btn-primary dropdown-toggle' href="#" role="button" id="dropdownMenuLink"
-                                   data-bs-toggle="dropdown" aria-expanded="false">Tableau de board</a>
-                                <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-                                    <li><a class="dropdown-item" href="/dashboard">dashboard</a></li>
-                                    <li><a class="dropdown-item" href="/messages">Consulter les messages</a></li>
-                                    <li><a class="dropdown-item" href="/product">Consulter les produits</a></li>
-                                    <li><a class="dropdown-item" href="/customer">Gestion des clients</a></li>
-                                    <li><a class="dropdown-item" href="/admin">Gestion des administrateurs</a></li>
+                                    <li>
+                                        <div class="col-md-3 text-end">
+                                            <a class='nav-link dropdown-toggle px-2 link-<?= $page == 'boutique' ? "secondary" : "dark" ?>' href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Boutique</a>
+                                            <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                                                <?php foreach ($shopCategorie as $categorie) { ?>
+                                                    <li>
+                                                        <a class="dropdown-item" href="/shop/<?= $categorie->id ?>"><?= $categorie->name ?></a>
+                                                    </li>
+                                                <?php } ?>
+                                            </ul>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <a class='nav-link px-2 link-<?= $page == 'equipe' ? "secondary" : "dark" ?>' href="/team">L'équipe</a>
+                                    </li>
+                                    <li>
+                                        <a class='nav-link px-2 link-<?= $page == 'contact' ? "secondary" : "dark" ?>' href="/contact">Nous contacter</a>
+                                    </li>
                                 </ul>
                             </div>
-                        <?php } ?>
-                        <a class='btn btn-warning' href="/connection/deconnect">Logout</a>
-                    <?php } else { ?>
-                    <a class="btn btn-outline-primary me-2" href="/connection">Login</a>
-                    <a class='btn btn-primary' href="/user">Sign-up</a>
+                            <div class="col-md-3 d-flex align-items-center justify-content-center text-end">
+                                <div class="basket-icon me-4">
+                                    <a class="link-dark" href="/basket">
+                                        <?php if ($itemBasket > 0) { ?>
+                                            <span class="notif-basket"><?= $itemBasket ?></span>                    
+                                        <?php } ?>
+                                        <i class="fa-solid fa-basket-shopping d-block"></i>
+                                    </a>
+                                </div>
+                                <?php
+                                if ($connected == true){
+                                    if ($admin == true) {
+                                        ?>
+                                        <div class="dropdown me-4 dropdown-dashboard">
+                                            <a class='btn btn-primary dropdown-toggle' href="#" role="button" id="dropdownMenuLink"
+                                            data-bs-toggle="dropdown" aria-expanded="false">Tableau de board</a>
+                                            <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                                                <li><a class="dropdown-item" href="/dashboard">dashboard</a></li>
+                                                <li><a class="dropdown-item" href="/messages">Consulter les messages</a></li>
+                                                <li><a class="dropdown-item" href="/product">Consulter les produits</a></li>
+                                                <li><a class="dropdown-item" href="/customer">Gestion des clients</a></li>
+                                                <li><a class="dropdown-item" href="/admin">Gestion des administrateurs</a></li>
+                                            </ul>
+                                        </div>
+                                    <?php } ?>
+                                    <a class='btn btn-warning' href="/connection/deconnect">Logout</a>
+                                <?php } else { ?>
+                                    <a class="btn btn-outline-primary me-4" href="/connection">Login</a>
+                                    <a class='btn btn-primary' href="/user">Sign-up</a>
+                                <?php } ?>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-                <?php } ?>
             </header>
             <h5 class="hr">
                 BY FREDERIC
             </h5>
-            <div class="col-md-4 d-flex align-items-center">
-            <img width="92" height="23" src="/assets/images/logo_interflora_min.png"/>
+            <div class="row">
+                <div class="col-md-12 mb-4 text-end">
+                    <img width="92" height="23" src="/assets/images/logo_interflora_min.png"/>
+                </div>
             </div>
             <main>
                 <?= $content ?>

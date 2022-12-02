@@ -61,12 +61,14 @@ class BaseController extends Controller
         $this->user = $this->session->get('user');
         $connected = $this->user != null;
         $categorieModel = new CategorieModel();
+        $basket = $this->getBasket();
         $this->data = array(
             'title' => "F comme Fleurs",
             'page' => "home",
             'content' => null,
             'connected' => $connected,
             'admin' => false,
+            'itemBasket' => count($basket->getProductList()),
             'shopCategorie' => $categorieModel->getData(null, null, "*", null, array("name" => "DESC"))
         );
         if ($connected) {
@@ -79,5 +81,14 @@ class BaseController extends Controller
 
     protected function isAdminConnected() {
         return $this->user != null && $this->user->getPrivilege() != null && $this->user->getPrivilege()->getId() >= 3;
+    }
+
+    protected function getBasket() {
+        $basket = $this->session->get('basket');
+        if (is_null($basket)){
+            $basket = new \App\Entities\Basket();
+            $basket->setShipPrice(9.95);
+        }
+        return $basket;
     }
 }
