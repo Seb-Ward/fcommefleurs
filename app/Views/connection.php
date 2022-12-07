@@ -23,12 +23,12 @@
                 <form action="/connection/connect/" id="sign_in" method="post"><!--Here we use the $_POST method-->
                     <div class="form-group mt-3">
                         <input class="form-control" type="text" name="login" id="login" required>
-                        <label class="form-control-placeholder" for="login">Login*</label>
+                        <label class="form-control-placeholder" htmlspecialchars for="login">Login*</label>
                     </div>
                     <div class="form-group">
                         <input class="form-control" type="password" id="password" name="password"
                                minlength="4" required>
-                        <label class="form-control-placeholder" for="password">Password (4 characters minimum):*</label>
+                        <label class="form-control-placeholder" htmlspecialchars for="password">Password (4 characters minimum):*</label>
                     </div>
                     <div class="form-group">
                         <button class="form-control btn btn-outline-primary rounded px-3">Sign-in</button>

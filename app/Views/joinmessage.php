@@ -6,7 +6,7 @@
                  <div class="col-md-12">
                      <div class="form-group">
                         <label for="message" class="form-label"></label>
-                             <textarea id="message" class="form-control" name="message" cols="30" rows="4" placeholder="Message" required maxlength="500"></textarea>
+                             <textarea id="message"htmlspecialchars class="form-control" name="message" cols="30" rows="4" placeholder="Message" required maxlength="500"></textarea>
                     </div>
                 </div>
              </div>

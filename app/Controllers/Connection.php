@@ -102,16 +102,6 @@ class Connection extends BaseController
         echo json_encode($this->ajax_response);
     }
 
-    public function sign_up() {
-        if ($this->data['connected']) {
-            return redirect()->to('/home');
-        }
-        $this->data['title'] = "S'inscrire";
-        $this->data['page'] = "sign_up";
-        $this->data['content'] = view('sign_up');
-        return view('application', $this->data);
-    }
-
     private function validateConnection($object, $user, $isAdmin = false) {
         $object->setId($user->id);
         $object->setName($user->name);

@@ -22,25 +22,25 @@
                                         </div>
                                         <div class="col-md-6">
                                             <div class="form-group">
-                                                <label class="form-label" for="first_name">Prénom*</label>
+                                                <label class="form-label" htmlspecialchars for="first_name">Prénom*</label>
                                                 <input id="first_name" class="form-control" type="text" name="first_name" placeholder="Prénom" required>
                                             </div>
                                         </div>
                                         <div class="col-md-6">
                                             <div class="form-group">
-                                                <label class="form-label" for="email">Email*</label>
+                                                <label class="form-label" htmlspecialchars for="email">Email*</label>
                                                 <input id="email" class="form-control" type="text" name="email" placeholder="email" required maxlength="254">
                                             </div>
                                         </div>
                                         <div class="col-md-6">
                                             <div class="form-group">
-                                                <label class="form-label" for="phone">Téléphone</label>
+                                                <label class="form-label" htmlspecialchars for="phone">Téléphone</label>
                                                 <input id="phone" class="form-control" type="text" name="phone" placeholder="Téléphone" maxlength="20">
                                             </div>
                                         </div>
                                         <div class="col-md-12">
                                             <div class="form-group">
-                                                <label for="message" class="form-label">Message*</label>
+                                                <label for="message" htmlspecialchars class="form-label">Message*</label>
                                                 <textarea id="message" class="form-control" name="message" cols="30" rows="4" placeholder="Message" required maxlength="500"></textarea>
                                             </div>
                                         </div>

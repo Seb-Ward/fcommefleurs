@@ -124,6 +124,7 @@
             </div>
         </div>
         <script src="/node_modules/jquery/dist/jquery.min.js"></script>
+        <script src="/node_modules/jquery-easing/dist/jquery.easing.1.3.umd.min.js"></script>
         <script src="/node_modules/datatables.net/js/jquery.dataTables.min.js"></script>
         <script src="/assets/js/application.js"></script>
     </body>
