@@ -7,10 +7,7 @@ class Customer extends User
     private Gender $gender;
     private string $email;
     private string $phone;
-    private string $address;
-    private string $address_bis;
-    private string $zipcode;
-    private string $city;
+    private ?Address $address;
 
     /**
      * @return Gender
@@ -61,67 +58,19 @@ class Customer extends User
     }
 
     /**
-     * @return string
+     * @return Address|null
      */
-    public function getAddress(): string
+    public function getAddress(): ?Address
     {
         return $this->address;
     }
 
     /**
-     * @param string $address
+     * @param Address|null $address
      */
-    public function setAddress(string $address): void
+    public function setAddress(?Address $address): void
     {
         $this->address = $address;
-    }
-
-    /**
-     * @return string
-     */
-    public function getAddressBis(): string
-    {
-        return $this->address_bis;
-    }
-
-    /**
-     * @param string $address_bis
-     */
-    public function setAddressBis(string $address_bis): void
-    {
-        $this->address_bis = $address_bis;
-    }
-
-    /**
-     * @return string
-     */
-    public function getZipcode(): string
-    {
-        return $this->zipcode;
-    }
-
-    /**
-     * @param string $zipcode
-     */
-    public function setZipcode(string $zipcode): void
-    {
-        $this->zipcode = $zipcode;
-    }
-
-    /**
-     * @return string
-     */
-    public function getCity(): string
-    {
-        return $this->city;
-    }
-
-    /**
-     * @param string $city
-     */
-    public function setCity(string $city): void
-    {
-        $this->city = $city;
     }
 
 }

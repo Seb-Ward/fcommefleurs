@@ -2,7 +2,7 @@
 
 namespace App\Controllers;
 
-use App\Entities\Card;
+use App\Entities\Cart;
 use \App\Entities\Product;
 use App\Models\ProductModel;
 

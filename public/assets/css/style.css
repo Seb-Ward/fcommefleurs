@@ -38,7 +38,7 @@ h3 ~ p ~ ul
 
 .header
 {
-    background-image:url(../images/logo2.jpg);
+    background-image:url("../images/logo2.jpg");
     width: 97vw;
     height: 24vh;
     padding: 100px 1px;
@@ -382,7 +382,7 @@ input[type="checkbox"] {
 }
 .text-center{
     -webkit-box-flex: 0;
-    -ms flex: 0 0 16.66667%;
+    -ms-flex: 0 0 16.66667%;
     flex: 0 0 16.66667%;
     text-align: center!important;
 }
