@@ -11,14 +11,13 @@
                 <form action="/sign_up/save_customer/" id="sign_up" method="post">
                     <!-- progressbar -->
                     <ul id="progressbar">
-                        <li class="active">Account Setup</li>
-                        <li>Social Profiles</li>
-                        <li>Personal Details</li>
+                        <li class="active">Etape 1</li>
+                        <li>Etape 2</li>
                     </ul>
                     <!-- fieldsets -->
                     <fieldset>
-                        <h4 class="fs-title">Create your account</h4>
-                        <h5 class="fs-subtitle">This is step 1</h5>
+                        <h4 class="fs-title">Créez votre compte</h4>
+                        <h5 class="fs-subtitle">Etape 1</h5>
                         <div class="form-group mt-3">
                             <input class="form-control" type="text" name="email" id="email" required>
                             <label class="form-control-placeholder" for="email">Entrez votre email</label>
@@ -34,25 +33,29 @@
                         <input type="button" name="next" class="next action-button" value="Next" />
                     </fieldset>
                     <fieldset>
-                        <h4 class="fs-title">Social Profiles</h4>
-                        <h5 class="fs-subtitle">Your presence on the social network</h5>
-                        <input type="text" name="twitter" placeholder="Twitter" />
-                        <input type="text" name="facebook" placeholder="Facebook" />
-                        <input type="text" name="gplus" placeholder="Google Plus" />
-                        <input type="button" name="previous" class="previous action-button" value="Previous" />
-                        <input type="button" name="next" class="next action-button" value="Next" />
-                    </fieldset>
-                    <fieldset>
-                        <h4 class="fs-title">Personal Details</h4>
-                        <h5 class="fs-subtitle">We will never sell it</h5>
-                        <input type="text" name="fname" placeholder="First Name" />
-                        <input type="text" name="lname" placeholder="Last Name" />
-                        <input type="text" name="phone" placeholder="Phone" />
-                        <textarea name="address" placeholder="Address"></textarea>
-                        <input type="button" name="previous" class="previous action-button" value="Previous" />
-                        <div class="form-group">
-                            <button class="form-control btn btn-outline-primary rounded px-3 submit action-button" type="submit">S'inscrire</button>
+                        <h4 class="fs-title">Informations complémentaires</h4>
+                        <h5 class="fs-subtitle">Etape 2 (optionnel)</h5>
+                        <div class="mb-4">
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio" name="gender" id="gender_woman" value="1"/>
+                                <label class="form-check-label" for="gender_woman">Féminin</label>
+                            </div>
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio" name="gender" id="gender_men" value="2"/>
+                                <label class="form-check-label" for="gender_men">Masculin</label>
+                            </div>
+                            <input type="text" name="first_name" placeholder="Prénom" maxlength="15" />
+                            <input type="text" name="last_name" placeholder="Nom" maxlength="15" />
+                            <p>Ou:</p>
+                            <input type="text" name="Company_name" placeholder="Nom de sociétée" maxlength="50" />
                         </div>
+                        <input type="text" name="phone" placeholder="Téléphone" maxlength="15"/>
+                        <input type="text" name="address" placeholder="Adresse" maxlength="50"/>
+                        <input type="text" name="zipcode" placeholder="Code postal" maxlength="5"/>
+                        <input type="text" name="town" placeholder="Ville" maxlength="50"/>
+                        <input type="text" name="additional_address" placeholder="Complément d'adresse" maxlength="50"/>
+                        <input type="button" name="previous" class="previous action-button" value="Précédent" />
+                        <input class="form-control btn btn-outline-primary rounded px-3 submit action-button" type="submit" value="S'inscrire">
                     </fieldset>
                 </form>
             </div>

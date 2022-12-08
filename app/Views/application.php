@@ -52,7 +52,7 @@
                                 </ul>
                             </div>
                             <div class="col-md-3 d-flex align-items-center justify-content-center text-end">
-                                <div class="basket-icon me-4">
+                                <div class="menu-icon me-4">
                                     <a class="link-dark" href="/basket">
                                         <?php if ($itemBasket > 0) { ?>
                                             <span class="notif-basket"><?= $itemBasket ?></span>                    
@@ -78,8 +78,11 @@
                                     <?php } ?>
                                     <a class='btn btn-warning' href="/connection/deconnect">Logout</a>
                                 <?php } else { ?>
-                                    <a class="btn btn-outline-primary me-4" href="/connection">Login</a>
-                                    <a class='btn btn-primary' href="/user">Sign-up</a>
+                                    <div class="menu-icon me-4">
+                                        <a class="link-dark" href="/connection">
+                                            <i class="fa-solid fa-user"></i>
+                                        </a>
+                                    </div>
                                 <?php } ?>
                             </div>
                         </div>
@@ -90,7 +93,7 @@
                 BY FREDERIC
             </h5>
             <div class="row">
-                <div class="col-md-12 mb-4 text-end">
+                <div class="col-md-12 mb-2 text-end">
                     <img width="92" height="23" src="/assets/images/logo_interflora_min.png"/>
                 </div>
             </div>

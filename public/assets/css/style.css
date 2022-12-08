@@ -376,6 +376,7 @@ input[type="checkbox"] {
     width: 60px;
     height:60px;
     border-radius: 50%;
+    color: white;
     background: #3d7546;
     margin: 0 auto;
     margin-bottom: 20px;
@@ -444,7 +445,7 @@ input[type="checkbox"] {
     width: 100px !important;
     height: 100px !important;
 }
-.basket-icon {
+.menu-icon {
     font-size: 20px;
     position:relative;
     display:inline-block;
@@ -477,7 +478,7 @@ a[disabled] {
 	display: none;
 }
 /*inputs*/
-#sign_up input, #sign_up textarea {
+#sign_up input[type=text], #sign_up input[type=password] {
 	padding: 15px;
 	border: 1px solid #ccc;
 	border-radius: 3px;
@@ -518,6 +519,7 @@ a[disabled] {
 /*progressbar*/
 #progressbar {
 	margin-bottom: 30px;
+    padding-left: 0;
 	overflow: hidden;
 	/*CSS counters to number the steps*/
 	counter-reset: step;
@@ -526,7 +528,7 @@ a[disabled] {
 	list-style-type: none;
 	text-transform: uppercase;
 	font-size: 9px;
-	width: 33.33%;
+	width: 50%;
 	float: left;
 	position: relative;
     text-align: center;

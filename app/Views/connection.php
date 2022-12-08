@@ -45,7 +45,7 @@
                             <a href="#">Mot de passe oublié ?</a>
                         </div>
                     </div>
-
+                    <h3>Vous êtes nouveau par ici?</h3><a href="/sign_up">Créer votre compte ici!</a>
                 </form>
             </div>
         </div>

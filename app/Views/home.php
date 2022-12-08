@@ -1,6 +1,5 @@
-<div class="py-4">
-    <h4 class="card-title text-center text-secondary">Notre selection du moment</h4>
-    <div class="row row-cols-1 row-cols-md-3 mb-5 g-5 text-center">
+    <h3 class="card-title text-center text-secondary pb-2">Nos selections du moment</h3>
+    <div class="row row-cols-1 row-cols-md-3 mb-5 g-4 text-center">
         <?php foreach ($trendy_collection as $product) { ?>
             <div class="col">
                 <div class="card shadow-sm">
@@ -24,8 +23,8 @@
         <h5 class="card-tittle text-bottom-left text-secondary">Voir plus de selections du moment</h5>
     </a>
     </div>
-    <h4 class="card-title text-center text-secondary">Offres du mois</h4>
-    <div class="row row-cols-1 row-cols-md-3 mb-5 g-5 text-center">
+    <h3 class="card-title text-center text-secondary pb-2">Offres du mois</h3>
+    <div class="row row-cols-1 row-cols-md-3 mb-5 g-4 text-center">
         <?php foreach ($monthly_offer as $product) { ?>
             <div class="col">
                 <div class="card shadow-sm">
@@ -49,5 +48,4 @@
         <h5 class="card-tittle text-bottom-left text-secondary">Voir plus d'offres du mois</h5>
     </a>
     </div>
-</div>
         
