@@ -4,6 +4,7 @@ namespace App\Controllers;
 
 use App\Entities\Customer;
 use App\Entities\Privilege;
+use App\Models\CustomerModel;
 use App\Models\GenderModel;
 use App\Models\PrivilegeModel;
 use App\Models\AdminModel;
@@ -31,11 +32,11 @@ class Connection extends BaseController
             $password = htmlspecialchars($postParam['password']);
 
             if (filter_var($login, FILTER_VALIDATE_EMAIL)) {
-                /*$userModel = new AdminModel();
-                $userToVerify = $userModel->getData(null, array("email" => $login))[0] ?? null;
-                if ($userToVerify != null && password_verify($password, $userToVerify->password_user)) { //If the Password_user matches the password and the user via the function password_verify then he is ok and his session_starts
-                    $this->ajax_response['success'] = $this->validateConnection(new Customer(), $userToVerify);
-                }*/
+                $customerModel = new CustomerModel();
+                $customerToVerify = $customerModel->getData(null, array("email" => $login))[0] ?? null;
+                if ($customerToVerify != null && password_verify($password, $customerToVerify->password_user)) { //If the Password_user matches the password and the user via the function password_verify then he is ok and his session_starts
+                    $this->ajax_response['success'] = $this->validateConnection(new Customer(), $customerToVerify);
+                }
             } else {
                 $adminModel = new AdminModel();
                 $adminToVerify = $adminModel->getData(null, array("nickname" => $login))[0] ?? null;
@@ -131,6 +132,7 @@ class Connection extends BaseController
             $object->setAddressBis($user->address_bis);
             $object->setZipcode($user->zipcode);
             $object->setCity($user->city);
+            $object->setCompanyName($user->society_name);
         }
         $this->session->set('user', $object);
         if ($object->isResetPassword()) {
