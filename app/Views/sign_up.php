@@ -44,18 +44,18 @@
                                 <input class="form-check-input" type="radio" name="gender" id="gender_men" value="2"/>
                                 <label class="form-check-label" for="gender_men">Masculin</label>
                             </div>
-                            <input type="text" name="first_name" placeholder="Prénom" maxlength="15" />
-                            <input type="text" name="last_name" placeholder="Nom" maxlength="15" />
+                            <input type="text" id="first_name" name="first_name" placeholder="Prénom" maxlength="15" />
+                            <input type="text" id="last_name" name="last_name" placeholder="Nom" maxlength="15" />
                             <p>Ou:</p>
-                            <input type="text" name="Company_name" placeholder="Nom de sociétée" maxlength="50" />
+                            <input type="text" id="company_name" name="company_name" placeholder="Nom de sociétée" maxlength="50" />
                         </div>
-                        <input type="text" name="phone" placeholder="Téléphone" maxlength="15"/>
-                        <input type="text" name="address" placeholder="Adresse" maxlength="50"/>
-                        <input type="text" name="zipcode" placeholder="Code postal" maxlength="5"/>
-                        <input type="text" name="town" placeholder="Ville" maxlength="50"/>
-                        <input type="text" name="additional_address" placeholder="Complément d'adresse" maxlength="50"/>
+                        <input type="text" id="phone" name="phone" placeholder="Téléphone" maxlength="15"/>
+                        <input type="text" id="address" name="address" placeholder="Adresse" maxlength="50"/>
+                        <input type="text" id="zipcode" name="zipcode" placeholder="Code postal" maxlength="5"/>
+                        <input type="text" id="town" name="town" placeholder="Ville" maxlength="50"/>
+                        <input type="text" id="additional_address" name="additional_address" placeholder="Complément d'adresse" maxlength="50"/>
                         <input type="button" name="previous" class="previous action-button" value="Précédent" />
-                        <input class="form-control btn btn-outline-primary rounded px-3 submit action-button" type="submit" value="S'inscrire">
+                        <input id="validSignUp" class="form-control btn btn-outline-primary rounded px-3 submit action-button" type="submit" value="S'inscrire">
                     </fieldset>
                 </form>
             </div>

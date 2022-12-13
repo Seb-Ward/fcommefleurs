@@ -11,19 +11,6 @@ class Gender extends Entity
     private string $long_description;
 
     /**
-     * @param int $id
-     * @param string $short_description
-     * @param string $long_description
-     */
-    public function __construct(int $id, string $short_description, string $long_description)
-    {
-        $this->id = $id;
-        $this->short_description = $short_description;
-        $this->long_description = $long_description;
-    }
-
-
-    /**
      * @return int
      */
     public function getId(): int

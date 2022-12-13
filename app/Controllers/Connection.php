@@ -2,6 +2,7 @@
 
 namespace App\Controllers;
 
+use App\Entities\Address;
 use App\Entities\Customer;
 use App\Entities\Privilege;
 use App\Models\CustomerModel;
@@ -34,8 +35,14 @@ class Connection extends BaseController
             if (filter_var($login, FILTER_VALIDATE_EMAIL)) {
                 $customerModel = new CustomerModel();
                 $customerToVerify = $customerModel->getData(null, array("email" => $login))[0] ?? null;
-                if ($customerToVerify != null && password_verify($password, $customerToVerify->password_user)) { //If the Password_user matches the password and the user via the function password_verify then he is ok and his session_starts
+                if ($customerToVerify != null && password_verify($password, $customerToVerify->password)) { //If the Password_user matches the password and the user via the function password_verify then he is ok and his session_starts
                     $this->ajax_response['success'] = $this->validateConnection(new Customer(), $customerToVerify);
+                } else if ($customerToVerify != null && !password_verify($password, $customerToVerify->password)) {
+                    $this->ajax_response['message'] = "Mot de passe érronée";
+                } else if ($customerToVerify != null) {
+                    $this->ajax_response['message'] = "Customer not found";
+                } else {
+                    $this->ajax_response['message'] = "Information érronée";
                 }
             } else {
                 $adminModel = new AdminModel();
@@ -83,7 +90,7 @@ class Connection extends BaseController
                 if ($this->user->getPrivilege() != null && $this->user->getPrivilege()->getId() >= 3) {
                     $model = new AdminModel();
                 } else {
-                    $model = new AdminModel();
+                    $model = new CustomerModel();
                 }
                 if (!$model->update_password($this->user->getId(), password_hash($postParam['new_password'], PASSWORD_DEFAULT))) {
                     $this->ajax_response['message'] = "Une erreur lors de la sauvegarde du nouveau mot de passe est survenue, contactez le support";
@@ -108,7 +115,7 @@ class Connection extends BaseController
         $object->setName($user->name);
         $object->setSurname($user->surname);
         $object->setResetPassword($user->reset_password);
-        if (!empty($user->privileges_id)) {
+        if (isset($user->privileges_id) && !empty($user->privileges_id)) {
             $privilegeModel = new PrivilegeModel();
             if (($tmp = $privilegeModel->getData($user->privileges_id)) != null) {
                 $privileges = new Privilege($tmp->id, $tmp->role);
@@ -124,22 +131,30 @@ class Connection extends BaseController
             $object->setNickname($user->nickname);
             $object->setActif($user->actif);
         } else {
-            $genderModel = new GenderModel();
-            $object->setGender($genderModel->getData($user->gender_id));
             $object->setEmail($user->email);
             $object->setPhone($user->phone);
-            $object->setAddress($user->address);
-            $object->setAddressBis($user->address_bis);
-            $object->setZipcode($user->zipcode);
-            $object->setCity($user->city);
             $object->setCompanyName($user->society_name);
+
+            if (!empty($user->gender_id)) {
+                helper('gender');
+                $genderModel = new GenderModel();
+                $object->setGender(transformItemToObject($genderModel->getData($user->gender_id)));
+            }
+            if (!empty($user->address)) {
+                $address = new Address();
+                $address->setAddress($user->address);
+                $address->setAdditionalAddress($user->address_bis);
+                $address->setZipcode($user->zipcode);
+                $address->setCity($user->city);
+                $object->setAddress($address);                
+            }
         }
         $this->session->set('user', $object);
-        if ($object->isResetPassword()) {
+        if (!empty($object->getResetPassword())) {
             $this->ajax_response['data']['redirect'] = "/connection/reset_password";
         } else if ($object->getPrivilege() != null && $object->getPrivilege()->id >= 3) {
             $this->ajax_response['data']['redirect'] = "/dashboard";
-        } else  {
+        } else {
             $this->ajax_response['data']['redirect'] = "/home";
         }
         return true;

@@ -128,14 +128,40 @@ $(document).ready(function () {
             if (remove.success === true) {
                 $("#basket-product-" + product_id).remove();
                 window.location.replace("/basket");
-                /*swalWithBootstrapButtons.fire({
-                    icon: 'success',
-                    title: remove.message,
-                    showConfirmButton: false,
-                    timer: 1000
-                });*/
             } else {
                 alertError(remove.message);
+            }
+            $("#spinner-div").hide();
+        });
+    });
+
+    $("#validSignUp").click(function(event) {
+        const formData = {
+            email: $("#email").val(),
+            password: $("#password").val(),
+            confirm_password: $("#confirm_password").val(), 
+            gender_id: $("input[name='gender']:checked").val(), 
+            name: $("#first_name").val(), 
+            surname: $("#last_name").val(), 
+            phone: $("#phone").val(), 
+            address: $("#address").val(), 
+            zipcode: $("#zipcode").val(), 
+            city: $("#town").val(), 
+            address_bis: $("#additional_address").val(),
+            society_name: $("#company_name").val()
+        };
+        $("#spinner-div").show();
+        $.ajax({
+            type: "POST",
+            url: "/sign_up/save_customer",
+            data: formData,
+            dataType: "json",
+            encode: true,
+        }).done(function(sign_up) {
+            if (sign_up.success === true) {
+                window.location.replace("/home");
+            } else {
+                alertError(sign_up.message);
             }
             $("#spinner-div").hide();
         });
@@ -182,7 +208,7 @@ $(document).ready(function () {
                     title: remove.message,
                     showConfirmButton: false,
                     timer: 1500
-                })
+                });
             } else {
                 alertError(remove.message);
             }
@@ -210,7 +236,7 @@ $(document).ready(function () {
                     title: remove.message,
                     showConfirmButton: false,
                     timer: 1500
-                })
+                });
             } else {
                 alertError(remove.message);
             }
@@ -331,7 +357,7 @@ function alertSuccess(message) {
         text: message,
         icon: 'success',
         confirmButtonText: 'Cool'
-    })
+    });
 }
 
 function alertError(message) {

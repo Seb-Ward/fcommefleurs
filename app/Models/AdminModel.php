@@ -10,6 +10,6 @@ class AdminModel extends ParentModel {
 
         public function update_password($id, $password) {
             $dbQuery = $this->db->table($this->table);
-            return $dbQuery->update(array('password' => $password, 'reset_password' => false), array($this->primaryKey => $id));
+            return $dbQuery->update(array('password' => $password, 'reset_password' => null), array($this->primaryKey => $id));
         }
 }

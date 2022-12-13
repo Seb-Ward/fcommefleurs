@@ -21,13 +21,14 @@ class Sign_up extends BaseController
         $postParam = $this->request->getPost();
         if (isset($postParam['email']) && isset($postParam['password']) && isset($postParam['confirm_password']) && !empty($postParam['email']) && !empty($postParam['password']) && !empty($postParam['confirm_password'])) {
             if ($postParam['password'] == $postParam['confirm_password']){
-                $data = array(
-                    "email" => $postParam['email'],
-                    "password" => $postParam['password']
-                ); 
+                $data = array(); 
                 foreach ($postParam as $key => $value) {
-                    if ($key != 'password' && $key != 'email' && !empty($value)) {
-                        $data[$key] = $value;
+                    if ($key != 'confirm_password' && !empty($value)) {
+                        if ($key == "password") {
+                            $data[$key] = password_hash($value, PASSWORD_DEFAULT);
+                        } else {
+                            $data[$key] = $value;
+                        }
                     }
                 }
                 if (isset($data['address']) && (!isset($data['zipcode']) || !isset($data['city']))) {
@@ -35,7 +36,7 @@ class Sign_up extends BaseController
                 } else {
                     $customerModel=new CustomerModel();
                     if (!$customerModel->insertData($data)){
-                        $this->ajax_response['message'] = "Une erreur à été rencontré lors de l'ajout du customer, veuillez contacter le support.";
+                        $this->ajax_response['message'] = "Une erreur a été rencontré lors de l'ajout du customer, veuillez contacter le support.";
                     } else {
                         $this->ajax_response['success'] = true;
                     }

@@ -6,9 +6,9 @@ use CodeIgniter\Entity\Entity;
 
 class User extends Entity {
     private int $id;
-    private string $name;
-    private string $surname;
-    private bool $reset_password;
+    private ?string $name;
+    private ?string $surname;
+    private ?string $reset_password;
     private ?Privilege $privilege;
 
     /**
@@ -28,65 +28,65 @@ class User extends Entity {
     }
 
     /**
-     * @return string
+     * @return string|null
      */
-    public function getName(): string
+    public function getName(): ?string
     {
         return $this->name;
     }
 
     /**
-     * @param string $name
+     * @param string|null $name
      */
-    public function setName(string $name): void
+    public function setName(?string $name): void
     {
         $this->name = $name;
     }
 
     /**
-     * @return string
+     * @return string|null
      */
-    public function getSurname(): string
+    public function getSurname(): ?string
     {
         return $this->surname;
     }
 
     /**
-     * @param string $surname
+     * @param string|null $surname
      */
-    public function setSurname(string $surname): void
+    public function setSurname(?string $surname): void
     {
         $this->surname = $surname;
     }
 
     /**
-     * @return bool
+     * @return string|null
      */
-    public function isResetPassword(): bool
+    public function getResetPassword(): ?string
     {
         return $this->reset_password;
     }
 
     /**
-     * @param bool $reset_password
+     * @param string|null $reset_password
      */
-    public function setResetPassword(bool $reset_password): void
+    public function setResetPassword(?string $reset_password): void
     {
         $this->reset_password = $reset_password;
     }
 
     /**
-     * @return Privilege
+     * @return Privilege|null
      */
-    public function getPrivilege(): Privilege
+    public function getPrivilege(): ?Privilege
     {
         return $this->privilege;
     }
 
     /**
-     * @param Privilege $privilege
+     * @param Privilege|null $privilege
      */
-    public function setPrivilege(Privilege $privilege): void
+    public function setPrivilege(?Privilege $privilege): void
     {
         $this->privilege = $privilege;
     }

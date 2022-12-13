@@ -73,7 +73,7 @@ class BaseController extends Controller
         );
         if ($connected) {
             $this->data['admin'] = $this->user->getPrivilege() != null && $this->user->getPrivilege()->getId() >= 3;
-            if ($this->user->isResetPassword()) {
+            if (!empty($this->user->getResetPassword())) {
                 return redirect()->to('/connection/reset_password');
             }
         }
