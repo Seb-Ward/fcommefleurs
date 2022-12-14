@@ -4,7 +4,7 @@ namespace App\Entities;
 
 
 use CodeIgniter\Entity\Entity;
-
+use DateTime;
 
 class Basket extends Entity {
     private array $product_list = array();
@@ -13,6 +13,8 @@ class Basket extends Entity {
     private float $TVA = 0;
     private float $TTC_price = 0;
     private Card $card;
+    private DateTime $delivery_date;
+     
 
     /**
      * @return array
@@ -108,6 +110,22 @@ class Basket extends Entity {
     public function setCard(Card $card): void
     {
         $this->card = $card;
+    }
+
+        /**
+     * @return DateTime
+     */
+    public function getDeliveryDate(): DateTime
+    {
+        return $this->delivery_date;
+    }
+
+    /**
+     * @param DateTime $date
+     */
+    public function setdeliveryDate(DateTime $date): void
+    {
+        $this->delivery_date = $date;
     }
 
 }

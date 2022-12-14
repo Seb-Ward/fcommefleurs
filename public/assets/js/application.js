@@ -135,6 +135,28 @@ $(document).ready(function () {
         });
     });
 
+    $("#submitMessageCard").click(function (event) {
+        const formData = {
+            message: $("#message").val()
+        };
+        $("#spinner-div").show();
+        $.ajax({
+            type: "POST",
+            url: "/basket/add_message",
+            data: formData,
+            dataType: "json",
+            encode: true,
+        }).done(function (add_message) {
+            if (add_message.success === true) {
+                window.location.replace("/basket/delivery_date");
+            } else {
+                alertError(add_message.message);
+            }
+            $("#spinner-div").hide();
+        });
+        event.preventDefault();
+    });
+
     $("#validSignUp").click(function(event) {
         const formData = {
             email: $("#email").val(),

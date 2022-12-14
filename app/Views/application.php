@@ -60,30 +60,32 @@
                                         <i class="fa-solid fa-basket-shopping d-block"></i>
                                     </a>
                                 </div>
-                                <?php
-                                if ($connected == true){
-                                    if ($admin == true) {
-                                        ?>
+                                <div class="menu-icon me-4">
+                                    <?php if ($connected == true){ ?>
                                         <div class="dropdown me-4 dropdown-dashboard">
-                                            <a class='btn btn-primary dropdown-toggle' href="#" role="button" id="dropdownMenuLink"
-                                            data-bs-toggle="dropdown" aria-expanded="false">Tableau de board</a>
+                                            <a class='link-dark fa-solid fa-user dropdown-toggle' href="#" role="button" id="dropdownMenuLink"
+                                            data-bs-toggle="dropdown" aria-expanded="false"></a>
                                             <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-                                                <li><a class="dropdown-item" href="/dashboard">dashboard</a></li>
-                                                <li><a class="dropdown-item" href="/messages">Consulter les messages</a></li>
-                                                <li><a class="dropdown-item" href="/product">Consulter les produits</a></li>
-                                                <li><a class="dropdown-item" href="/customer">Gestion des clients</a></li>
-                                                <li><a class="dropdown-item" href="/admin">Gestion des administrateurs</a></li>
+                                                <?php if ($admin) { ?>
+                                                    <li><a class="dropdown-item" href="/dashboard">Tableau de bord</a></li>
+                                                    <li><a class="dropdown-item" href="/messages">Consulter les messages</a></li>
+                                                    <li><a class="dropdown-item" href="/product">Consulter les produits</a></li>
+                                                    <li><a class="dropdown-item" href="/customer">Gestion des clients</a></li>
+                                                    <li><a class="dropdown-item" href="/admin">Gestion des administrateurs</a></li>
+                                                <?php } else { ?>
+                                                    <li><a class="dropdown-item" href="#">Mon Profil</a></li>
+                                                    <li><a class="dropdown-item" href="#">Suivre mes commandes</a></li>
+                                                    <li><a class="dropdown-item" href="#">Mes factures</a></li>
+                                                <?php } ?>
+                                                <li><a class="link-danger dropdown-item" href="/connection/deconnect">Déconnexion</a></li>
                                             </ul>
-                                        </div>
-                                    <?php } ?>
-                                    <a class='btn btn-warning' href="/connection/deconnect">Logout</a>
-                                <?php } else { ?>
-                                    <div class="menu-icon me-4">
+                                        </div>                                
+                                    <?php } else { ?>
                                         <a class="link-dark" href="/connection">
                                             <i class="fa-solid fa-user"></i>
                                         </a>
-                                    </div>
-                                <?php } ?>
+                                    <?php } ?>
+                                </div>
                             </div>
                         </div>
                     </div>

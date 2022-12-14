@@ -2,9 +2,9 @@
 
 namespace App\Controllers;
 
-use App\Entities\Cart;
-use \App\Entities\Product;
+use App\Entities\Card;
 use App\Models\ProductModel;
+use DateTime;
 
 class Basket extends BaseController {
     public function index()
@@ -32,6 +32,7 @@ class Basket extends BaseController {
                 $productBasket[] = $product;
                 $basket->setProductList($productBasket);
                 $basket = $this->calculateBasket($basket);
+                $basket->setDeliveryDate(new DateTime());
                 $this->session->set('basket', $basket);
                 $this->ajax_response['message'] = "Panier mis à jour";
                 $this->ajax_response['success'] = true;
@@ -97,23 +98,66 @@ class Basket extends BaseController {
 
     public function join_message()
     {
+        $basket = $this->session->get('basket') ?? new \App\Entities\Basket();
+        if (empty($basket->getProductList())) {
+            return redirect()->to("/home");
+        }
         $this->data['title'] = "Panier";
         $this->data['page'] = "basket";
-        $this->data['content'] = view('joinmessage');
+        $message = null;
+        if ($basket->getCard() != null && !empty($basket->getCard()->getMessage())) {
+            $message = $basket->getCard()->getMessage();
+        }
+        $this->data['content'] = view('joinmessage', array(
+            'message' => $message
+        ));
+        if ($basket->getCard() != null && !empty($basket->getCard()->getMessage())) {
+            $this->data['message'] = $basket->getCard()->getMessage();
+        }
         return view('application', $this->data);
     }
 
     public function add_message(){
         $join_message = $this->request->getPost();
-        if (isset($join_message['message']) && !empty($join_message['message']) && isset($join_message['signature']) && !empty($join_message['signature'])) {
+        if (isset($join_message['message']) && !empty($join_message['message'])) {
             $card = new Card();
             $card->setMessage($join_message['message']);
-            $card->setSignature($join_message['signature']);
             $basket = $this->getBasket();
             $basket->setCard($card);
             $this->session->set('basket', $basket);
+            $this->ajax_response['success'] = true;
+        } else {
+            $this->ajax_response['message'] = "Message manquant";
         }
+        echo json_encode($this->ajax_response);
+    }
 
+    public function delivery_date() {
+        $this->data['title'] = "Date de livraison";
+        $this->data['page'] = "delivery_date";
+        $basket = $this->session->get('basket') ?? new \App\Entities\Basket();
+        if (empty($basket->getProductList())) {
+            return redirect()->to("/home");
+        }
+        $deliveryData = array(
+            'basket' => $basket
+        );
+        $this->data['content'] = view('delivery_date', $deliveryData);
+        return view('application', $this->data);
+    }
+
+    public function delivery_address() {
+        $this->data['title'] = "Adresse de livraison";
+        $this->data['page'] = "delivery_address";
+        $basket = $this->session->get('basket') ?? new \App\Entities\Basket();
+        if (empty($basket->getProductList())) {
+            return redirect()->to("/home");
+        }
+        $deliveryData = array(
+            'basket' => $basket
+        );
+        $this->data['content'] = view('delivery_address', $deliveryData);
+        return view('application', $this->data);
     }
 
 }

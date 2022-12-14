@@ -6,7 +6,7 @@
                  <div class="col-md-12">
                      <div class="form-group">
                         <label for="message" class="form-label"></label>
-                             <textarea id="message"htmlspecialchars class="form-control" name="message" cols="30" rows="4" placeholder="Message" required maxlength="500"></textarea>
+                        <textarea id="message" class="form-control" name="message" cols="30" rows="4" placeholder="Message" required maxlength="500"><?= $message ?? "" ?></textarea>
                     </div>
                 </div>
              </div>
@@ -14,12 +14,12 @@
                 <div class="row">
                     <div class="col-md-5">
                         <div class="form-group">
-                            <a class="btn btn-warning" event="click" href="#">Ignorer cette étape</a>
+                            <a class="btn btn-warning" event="click" href="/basket/delivery_date">Ignorer cette étape</a>
                         </div>
                     </div>
                     <div class="col-md-7 text-end">
                         <div class="form-group">
-                            <button class="btn btn-primary" event="click" type="submit">Continuer</button>        
+                            <button class="btn btn-primary" id="submitMessageCard" type="submit">Continuer</button>        
                         </div> 
                     </div>
                 </div>

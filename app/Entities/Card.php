@@ -8,7 +8,6 @@ use CodeIgniter\Entity\Entity;
 
 class Card extends Entity {
     private string $message;
-    private string $signature;
 
 
     /**
@@ -25,21 +24,5 @@ class Card extends Entity {
     public function setMessage(string $message): void
     {
         $this->message = $message;
-    }
-
-        /**
-     * @return string
-     */
-    public function getSignature(): string
-    {
-        return $this->signature;
-    }
-
-    /**
-     * @param string 
-     */
-    public function setSignature(string $signature): void
-    {
-        $this->signature = $signature;
     }
 }

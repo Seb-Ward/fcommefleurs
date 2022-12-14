@@ -6,7 +6,9 @@ use App\Models\MessageModel;
 class Messages extends BaseController{
 
     public function index(){
-        
+        if (!$this->isAdminConnected()) {
+            return redirect()->to("/connection/");
+        }
         helper('message');
         $messagesModel=new MessageModel();
         $messagesList=transformItemsToObjects($messagesModel->getData());
