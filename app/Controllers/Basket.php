@@ -2,7 +2,6 @@
 
 namespace App\Controllers;
 
-use App\Entities\Card;
 use App\Models\ProductModel;
 use DateTime;
 
@@ -11,7 +10,7 @@ class Basket extends BaseController {
     {
         $this->data['title'] = "Panier";
         $this->data['page'] = "basket";
-        $basket = $this->session->get('basket') ?? new \App\Entities\Basket();
+        $basket = $this->getBasket();
         $basketData = array(
             'basket' => $basket
         );
@@ -98,32 +97,27 @@ class Basket extends BaseController {
 
     public function join_message()
     {
-        $basket = $this->session->get('basket') ?? new \App\Entities\Basket();
+        $basket = $this->getBasket();
         if (empty($basket->getProductList())) {
             return redirect()->to("/home");
         }
         $this->data['title'] = "Panier";
         $this->data['page'] = "basket";
         $message = null;
-        if ($basket->getCard() != null && !empty($basket->getCard()->getMessage())) {
-            $message = $basket->getCard()->getMessage();
+        if (!empty($basket->getMessage())) {
+            $message = $basket->getMessage();
         }
         $this->data['content'] = view('joinmessage', array(
             'message' => $message
         ));
-        if ($basket->getCard() != null && !empty($basket->getCard()->getMessage())) {
-            $this->data['message'] = $basket->getCard()->getMessage();
-        }
         return view('application', $this->data);
     }
 
     public function add_message(){
         $join_message = $this->request->getPost();
         if (isset($join_message['message']) && !empty($join_message['message'])) {
-            $card = new Card();
-            $card->setMessage($join_message['message']);
             $basket = $this->getBasket();
-            $basket->setCard($card);
+            $basket->setMessage($join_message['message']);
             $this->session->set('basket', $basket);
             $this->ajax_response['success'] = true;
         } else {
@@ -132,31 +126,17 @@ class Basket extends BaseController {
         echo json_encode($this->ajax_response);
     }
 
-    public function delivery_date() {
-        $this->data['title'] = "Date de livraison";
-        $this->data['page'] = "delivery_date";
-        $basket = $this->session->get('basket') ?? new \App\Entities\Basket();
-        if (empty($basket->getProductList())) {
-            return redirect()->to("/home");
-        }
-        $deliveryData = array(
-            'basket' => $basket
-        );
-        $this->data['content'] = view('delivery_date', $deliveryData);
-        return view('application', $this->data);
-    }
-
-    public function delivery_address() {
+    public function delivery() {
         $this->data['title'] = "Adresse de livraison";
         $this->data['page'] = "delivery_address";
-        $basket = $this->session->get('basket') ?? new \App\Entities\Basket();
+        $basket = $this->getBasket();
         if (empty($basket->getProductList())) {
             return redirect()->to("/home");
         }
         $deliveryData = array(
             'basket' => $basket
         );
-        $this->data['content'] = view('delivery_address', $deliveryData);
+        $this->data['content'] = view('delivery', $deliveryData);
         return view('application', $this->data);
     }
 

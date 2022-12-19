@@ -148,7 +148,7 @@ $(document).ready(function () {
             encode: true,
         }).done(function (add_message) {
             if (add_message.success === true) {
-                window.location.replace("/basket/delivery_date");
+                window.location.replace("/basket/delivery");
             } else {
                 alertError(add_message.message);
             }

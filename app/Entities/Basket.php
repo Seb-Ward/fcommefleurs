@@ -12,7 +12,7 @@ class Basket extends Entity {
     private float $HT_price = 0;
     private float $TVA = 0;
     private float $TTC_price = 0;
-    private Card $card;
+    private string $message = "";
     private DateTime $delivery_date;
      
 
@@ -97,19 +97,19 @@ class Basket extends Entity {
     }
 
     /**
-     * @return Card
+     * @return string
      */
-    public function getCard(): Card
+    public function getMessage(): string
     {
-        return $this->card;
+        return $this->message;
     }
 
     /**
-     * @param Card $card
+     * @param string $message
      */
-    public function setCard(Card $card): void
+    public function setMessage(string $message): void
     {
-        $this->card = $card;
+        $this->message = $message;
     }
 
         /**

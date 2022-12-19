@@ -17,7 +17,7 @@ class Order extends Entity {
     private float $HT_price;
     private float $TVA;
     private float $TTC_price;
-    private ?Card $card;
+    private string $message;
     private DateTime $order_date;
     private DateTime $sending_date;
 
@@ -150,19 +150,19 @@ class Order extends Entity {
     }
 
     /**
-     * @return Card|null
+     * @return string
      */
-    public function getCard(): ?Card
+    public function getMessage(): string
     {
-        return $this->card;
+        return $this->message;
     }
 
     /**
-     * @param Card|null $card
+     * @param string $message
      */
-    public function setCard(?Card $card): void
+    public function setMessage(string $message): void
     {
-        $this->card = $card;
+        $this->message = $message;
     }
 
     /**

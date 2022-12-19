@@ -14,7 +14,7 @@
                 <div class="row">
                     <div class="col-md-5">
                         <div class="form-group">
-                            <a class="btn btn-warning" event="click" href="/basket/delivery_date">Ignorer cette étape</a>
+                            <a class="btn btn-warning" event="click" href="/basket/delivery">Ignorer cette étape</a>
                         </div>
                     </div>
                     <div class="col-md-7 text-end">
