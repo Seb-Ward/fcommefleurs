@@ -87,6 +87,11 @@
                                     <div class="p-5">
                                         <h2 class="fw-bold md-5 mt-2 pt-1">Récapitulatif</h2>
                                         <hr class="my-4">
+                                        <?php foreach ($basket->getProductList() as $product) { ?>
+                                            <div class="col-md-2 col-lg-2 col-xl-2">
+                                                <img class="img-basket img-fluid rounded-3" src="data:image/<?= $product->getImageList()[0]->getType() ?>;base64,<?= base64_encode($product->getImageList()[0]->getBin()) ?>">
+                                            </div>
+                                        <?php } ?>
                                          <div class="d-flex justify-content-between mb-4">
                                             <h5 class="text-uppercase">Produit(s)</h5>
                                             <h5>€ <?= $basket->getTTCPrice() - $basket->getShipPrice() ?></h5>
@@ -100,7 +105,7 @@
                                             <h5 class="text-uppercase">Total</h5>
                                             <h5>€ <?= $basket->getTTCPrice() ?></h5>
                                          </div>
-                                        <a href="/basket/join_message" class="btn btn-warning btn-block btn-lg" <?= count($basket->getProductList()) == 0 ? "disabled" : "" ?>>Passer à l'étape suivante</a>
+                                        <a href="/payment" class="btn btn-warning btn-block btn-lg" <?= count($basket->getProductList()) == 0 ? "disabled" : "" ?>>Passer à l'étape suivante</a>
                                     </div>
                                     <div class="row">
                                         <div class="col-md-12">
