@@ -8,6 +8,8 @@ use CodeIgniter\HTTP\CLIRequest;
 use CodeIgniter\HTTP\IncomingRequest;
 use CodeIgniter\HTTP\RequestInterface;
 use CodeIgniter\HTTP\ResponseInterface;
+use Config\Encryption;
+use Config\Services;
 use Psr\Log\LoggerInterface;
 
 /**
@@ -45,7 +47,6 @@ class BaseController extends Controller
         'message' => null,
         'data' => null
     );
-
     protected $user;
 
     /**
@@ -55,9 +56,10 @@ class BaseController extends Controller
     {
         // Do Not Edit This Line
         parent::initController($request, $response, $logger);
+        $this->initEncryption();
 
         // Preload any models, libraries, etc, here.
-        $this->session = \Config\Services::session();
+        $this->session = Services::session();
         $this->user = $this->session->get('user');
         $connected = $this->user != null;
         $categorieModel = new CategorieModel();
@@ -79,10 +81,18 @@ class BaseController extends Controller
         }
     }
 
+    /**
+     * Check if an administrator is connected
+     * @return bool
+     */
     protected function isAdminConnected() {
-        return $this->user != null && $this->user->getPrivilege() != null && $this->user->getPrivilege()->getId() >= 3;
+        return !is_null($this->user) && $this->user->getPrivilege() != null && $this->user->getPrivilege()->getId() >= 3;
     }
 
+    /**
+     * Get the basket
+     * @return \App\Entities\Basket|array|mixed|null
+     */
     protected function getBasket() {
         $basket = $this->session->get('basket');
         if (is_null($basket)){
@@ -90,5 +100,36 @@ class BaseController extends Controller
             $basket->setShipPrice(9.95);
         }
         return $basket;
+    }
+
+    /**
+     * Encrypt data and encode into base64 string
+     * @param string $str
+     * @return string
+     */
+    protected function encrypt($str) {
+        $encryption = $this->initEncryption();
+        return base64_encode($encryption->encrypt($str));
+    }
+
+    /**
+     * Decode base64 string and decrypt data
+     * @param $str
+     * @return string
+     */
+    protected function decrypt($str) {
+        $encryption = $this->initEncryption();
+        return $encryption->decrypt(base64_decode($str));
+    }
+
+    /**
+     * Initialize encryption service
+     * @return \CodeIgniter\Encryption\EncrypterInterface
+     */
+    private function initEncryption() {
+        $config         = new Encryption();
+        $config->key    = ENCRYPTION_KEY;
+        $config->driver = ENCRYPTION_DRIVER;
+        return Services::encrypter($config);
     }
 }

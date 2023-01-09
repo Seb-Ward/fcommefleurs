@@ -2,7 +2,6 @@
 
 namespace App\Controllers;
 
-use FCommeFleursException;
 use Payplug\Exception\PayplugException;
 use Payplug\Notification;
 use Payplug\Payplug;
@@ -10,14 +9,14 @@ use Payplug\Payplug;
 class Payment extends BaseController {
 
     public function index() {
-        $payplug = Payplug::init(array(
+        Payplug::init(array(
             'secretKey' => "sk_live_" . PAYPLUG_PRIVATE_KEY,
             'apiVersion' => PAYPLUG_API_VERSION
         ));
-        $email = 'john.watson@example.net';
-        $amount = 33;
+        $email = $this->user->getEmail();
+        $basket = $this->getBasket();
+        $amount = $basket->getTTCPrice();
         $cust_id = '42710';
-
 
         $payment = \Payplug\Payment::create(array(
             'amount'           => $amount * 100, // 1 euro = 100 centimes
@@ -30,8 +29,8 @@ class Payment extends BaseController {
                 'address1'     => '221B Baker Street',
                 'postcode'     => 'NW16XE',
                 'city'         => 'London',
-                'country'      => 'GB',
-                'language'     => 'en'
+                'country'      => 'FR',
+                'language'     => 'fr'
             ),
             'shipping'  => array(
                 'title'         => 'mr',
@@ -41,15 +40,15 @@ class Payment extends BaseController {
                 'address1'      => '221B Baker Street',
                 'postcode'      => 'NW16XE',
                 'city'          => 'London',
-                'country'       => 'GB',
-                'language'      => 'en',
+                'country'       => 'FR',
+                'language'      => 'fr',
                 'delivery_type' => 'BILLING'
             ),
             'hosted_payment'   => array(
-                'return_url'     => 'https://example.net/return?id='.$cust_id,
-                'cancel_url'     => 'https://example.net/cancel?id='.$cust_id
+                'return_url'     => base_url().'/basket/validate_payment?id='.$cust_id,
+                'cancel_url'     => base_url().'/basket/delivery'
             ),
-            'notification_url' => 'https://example.net/notifications?id='.$cust_id,
+            'notification_url' => base_url().'/payment/notification',
             'metadata'         => array(
                 'customer_id'    => $cust_id
             )
@@ -67,10 +66,10 @@ class Payment extends BaseController {
             $resource = Notification::treat($input);
             if ($resource instanceof \Payplug\Resource\Payment && $resource->is_paid) {
                 $payment_id = $resource->id;
-                $payment_state = $resource->is_paid;
-                $payment_date = $resource->hosted_payment->paid_at;
                 $payment_amount = $resource->amount;
                 $payment_data = $resource->metadata['customer_id'];
+                $payment_state = $resource->is_paid;
+                $payment_date = $resource->hosted_payment->paid_at;
             }
         } catch (PayplugException $exception) {
             echo htmlentities($exception);

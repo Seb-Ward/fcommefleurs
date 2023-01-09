@@ -9,17 +9,35 @@ use DateTime;
 
 class Order extends Entity {
 
+    private int $id;
     private string $ref;
     private Customer $customer;
-    private Address $address;
     private array $product_list;
     private float $ship_price;
     private float $HT_price;
     private float $TVA;
     private float $TTC_price;
     private string $message;
+    private Customer $recipient;
     private DateTime $order_date;
+    private DateTime $payment_date;
     private DateTime $sending_date;
+
+    /**
+     * @return int
+     */
+    public function getId(): int
+    {
+        return $this->id;
+    }
+
+    /**
+     * @param int $id
+     */
+    public function setId(int $id): void
+    {
+        $this->id = $id;
+    }
 
     /**
      * @return string
@@ -166,6 +184,22 @@ class Order extends Entity {
     }
 
     /**
+     * @return Customer
+     */
+    public function getRecipient(): Customer
+    {
+        return $this->recipient;
+    }
+
+    /**
+     * @param Customer $recipient
+     */
+    public function setRecipient(Customer $recipient): void
+    {
+        $this->recipient = $recipient;
+    }
+
+    /**
      * @return DateTime
      */
     public function getOrderDate(): DateTime
@@ -179,6 +213,22 @@ class Order extends Entity {
     public function setOrderDate(DateTime $order_date): void
     {
         $this->order_date = $order_date;
+    }
+
+    /**
+     * @return DateTime
+     */
+    public function getPaymentDate(): DateTime
+    {
+        return $this->payment_date;
+    }
+
+    /**
+     * @param DateTime $payment_date
+     */
+    public function setPaymentDate(DateTime $payment_date): void
+    {
+        $this->payment_date = $payment_date;
     }
 
     /**

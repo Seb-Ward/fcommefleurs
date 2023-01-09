@@ -78,5 +78,18 @@ defined('EXIT_DATABASE')       || define('EXIT_DATABASE', 8); // database error
 defined('EXIT__AUTO_MIN')      || define('EXIT__AUTO_MIN', 9); // lowest automatically-assigned error code
 defined('EXIT__AUTO_MAX')      || define('EXIT__AUTO_MAX', 125); // highest automatically-assigned error code
 
+/*
+ | --------------------------------------------------------------------------
+ | Payplug parameters
+ | --------------------------------------------------------------------------
+*/
 defined("PAYPLUG_PRIVATE_KEY") || define('PAYPLUG_PRIVATE_KEY', "VOTRE_CLE_PRIVEE");
 defined("PAYPLUG_API_VERSION") || define('PAYPLUG_API_VERSION', "2019-08-06");
+
+/*
+ | --------------------------------------------------------------------------
+ | Encryption parameters
+ | --------------------------------------------------------------------------
+*/
+defined("ENCRYPTION_KEY") || define('ENCRYPTION_KEY', "5ae1b8a17bad4da4fdac796f64c16ecd");
+defined("ENCRYPTION_DRIVER") || define('ENCRYPTION_DRIVER', "OpenSSL");

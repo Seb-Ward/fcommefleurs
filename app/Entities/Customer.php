@@ -5,7 +5,7 @@ namespace App\Entities;
 class Customer extends User
 {
     private ?Gender $gender;
-    private string $email;
+    private ?string $email;
     private ?string $phone;
     private ?string $company_name;
     private ?Address $address;
@@ -27,17 +27,17 @@ class Customer extends User
     }
 
     /**
-     * @return string
+     * @return string|null
      */
-    public function getEmail(): string
+    public function getEmail(): ?string
     {
         return $this->email;
     }
 
     /**
-     * @param string $email
+     * @param string|null $email
      */
-    public function setEmail(string $email): void
+    public function setEmail(?string $email): void
     {
         $this->email = $email;
     }
