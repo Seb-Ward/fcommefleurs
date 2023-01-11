@@ -72,6 +72,7 @@
                                                     <li><a class="dropdown-item" href="/product">Consulter les produits</a></li>
                                                     <li><a class="dropdown-item" href="/customer">Gestion des clients</a></li>
                                                     <li><a class="dropdown-item" href="/admin">Gestion des administrateurs</a></li>
+                                                    <li><a class="dropdown-item" href="/order">Gestion des commandes</a></li>
                                                 <?php } else { ?>
                                                     <li><a class="dropdown-item" href="#">Mon Profil</a></li>
                                                     <li><a class="dropdown-item" href="#">Suivre mes commandes</a></li>

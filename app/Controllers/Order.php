@@ -19,7 +19,10 @@ class Order extends BaseController {
                 "order_list" => $orderList
             ));
         } else {
-            $orderList = transformItemsToObjects($orderModel->getOrder());
+
+            $orderList = transformItemsToObjects($orderModel->getOrder(null, array(
+                "sending_date IS NULL" => null
+            )));
             $this->data['title'] = "Gestion des commandes";
             $this->data['page'] = "order_list";
             $this->data['content'] = view('admin/ordered_list',array(

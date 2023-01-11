@@ -10,7 +10,7 @@ class Product extends Entity
     private string $name;
     private string $description;
     private float $price;
-    private Tax $tax;
+    private ?Tax $tax;
     private ?array $image_list;
     private ?int $quantity;
     private Categorie $categorie;

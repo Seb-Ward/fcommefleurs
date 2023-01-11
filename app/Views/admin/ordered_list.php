@@ -15,11 +15,11 @@
         </tr>
         </thead>
         <tbody>
-        <?php foreach($ordered_list as $order){?>
+        <?php foreach($order_list as $order){?>
             <tr>
                 <td><?=$order->getRef()?></td>
-                <td><?=$order->getPaymentDate()?></td>
-                <td><?=$order->getTTCPrice()?></td>
+                <td><?=$order->getPaymentDate()->format('d/m/Y H:i')?></td>
+                <td><?=$order->getTTCPrice()?> €</td>
                 <td><?= "VILLE" ?></td>
                 <td>
                     <a class="btn btn-primary" href="/order/info/<?=$order->getId()?>"><i class="fa-regular fa-eye"></i></a>

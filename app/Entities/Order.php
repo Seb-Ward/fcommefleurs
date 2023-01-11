@@ -20,8 +20,8 @@ class Order extends Entity {
     private string $message;
     private Customer $recipient;
     private DateTime $order_date;
-    private DateTime $payment_date;
-    private DateTime $sending_date;
+    private ?DateTime $payment_date;
+    private ?DateTime $sending_date;
 
     /**
      * @return int
@@ -216,33 +216,33 @@ class Order extends Entity {
     }
 
     /**
-     * @return DateTime
+     * @return DateTime|null
      */
-    public function getPaymentDate(): DateTime
+    public function getPaymentDate(): ?DateTime
     {
         return $this->payment_date;
     }
 
     /**
-     * @param DateTime $payment_date
+     * @param DateTime|null $payment_date
      */
-    public function setPaymentDate(DateTime $payment_date): void
+    public function setPaymentDate(?DateTime $payment_date): void
     {
         $this->payment_date = $payment_date;
     }
 
     /**
-     * @return DateTime
+     * @return DateTime|null
      */
-    public function getSendingDate(): DateTime
+    public function getSendingDate(): ?DateTime
     {
         return $this->sending_date;
     }
 
     /**
-     * @param DateTime $sending_date
+     * @param DateTime|null $sending_date
      */
-    public function setSendingDate(DateTime $sending_date): void
+    public function setSendingDate(?DateTime $sending_date): void
     {
         $this->sending_date = $sending_date;
     }
