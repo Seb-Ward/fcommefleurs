@@ -93,16 +93,30 @@ function transformItemToObject($item){
 
 function createProductObject($item)
 {
-    if ($item->image_id == null) {
+    if (!isset($item->product_id) || $item->product_id == null) {
         return null;
     }
     $product = new Product();
-    $product->setId($item->image_id);
-    $product->setName($item->image_name);
-    $product->setDescription($item->image_size);
-    $product->setPrice($item->image_type);
+    $product->setId($item->product_id);
+    $product->setName($item->product_name);
+    $product->setDescription($item->product_description);
+    $product->setPrice($item->product_);
 
 
     $product->setCategorie($item->image_bin);
     return $product;
+}
+
+
+function createImageObject($item) {
+    if ($item->image_id == null) {
+        return null;
+    }
+    $image = new Image();
+    $image->setId($item->image_id);
+    $image->setName($item->image_name);
+    $image->setSize($item->image_size);
+    $image->setType($item->image_type);
+    $image->setBin($item->image_bin);
+    return $image;
 }
