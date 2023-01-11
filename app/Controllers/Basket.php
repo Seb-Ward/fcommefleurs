@@ -140,6 +140,18 @@ class Basket extends BaseController {
         return view('application', $this->data);
     }
 
-    
+    public function process_delivery() {
+        $delivery_param = $this->request->getPost();
+        if (isset($delivery_param['first_name']) && isset($delivery_param['last_name']) && isset($delivery_param['address']) 
+        && isset($delivery_param['zipcode']) && isset($delivery_param['town'])  && !empty($delivery_param['first_name']) 
+        && !empty($delivery_param['last_name']) && !empty($delivery_param['address']) && !empty($delivery_param['zipcode']) 
+        && !empty($delivery_param['town'])) {
+            $basket = $this->getBasket();
+
+        } else {
+            $this->ajax_response['message'] = "Information de livraison manquante";
+        }
+        echo json_encode($this->ajax_response);
+    }
 
 }

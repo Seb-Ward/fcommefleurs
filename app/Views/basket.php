@@ -1,6 +1,6 @@
 <section class="pb-4">
     <div class="bg-white border rounded-5">
-        <section class="px-4 py-4 w-100" style="background-color: #3d7546; border-radius:.5rem .5rem .5rem .5rem;">
+        <section class="px-2 py-2 w-100" style="background-color: #3d7546; border-radius:.5rem .5rem .5rem .5rem;">
             <div class="row">
                 <div class="col-12">
                     <div class="card card-registration card-registration-2" style="border-radius: 15px;">
@@ -9,7 +9,8 @@
                                 <div class="col-lg-8">
                                     <div class="p-5">
                                         <div class="d-flex justify-content-between align-items-center mb-5">
-                                            <h1 class="fw-bold mb-0 text-black">Panier</h1>
+                                            <h1 class="fw-bold mb-0 text-black">Panier</i></h1>
+                                            
                                             <h6 class="mb-0 text-muted"><?= count($basket->getProductList()) ?> Produit(s)</h6>
                                         </div>
                                         <hr class="my-4">
@@ -49,16 +50,16 @@
                                             <hr class="my-4">
                                             <div class="d-flex justify-content-between mb-4">
                                                 <h5 class="text-uppercase">Produit(s)</h5>
-                                                <h5>€ <?= $basket->getTTCPrice() - $basket->getShipPrice() ?></h5>
+                                                <h5><?= $basket->getTTCPrice() - $basket->getShipPrice() ?>€ </h5>
                                             </div>
                                             <div class="d-flex justify-content-between mb-4">
-                                                <h5 class="text-uppercase mb-3">Livraison</h5>
-                                                <h5>€ <?= $basket->getShipPrice() ?></h5>
+                                                <h6 class="mb-0 text-black">Frais de livraison</h6>
+                                                <h5> <?= $basket->getShipPrice() ?>€</h5>
                                             </div>
                                             <hr class="my-4">
                                             <div class="d-flex justify-content-between mb-5">
-                                                <h5 class="text-uppercase">Total</h5>
-                                                <h5>€ <?= $basket->getTTCPrice() ?></h5>
+                                                <h4 class="fw-bold mb-0 text-black">Total</h4>
+                                                <h5 class="fw-bold mb-0 text-black"><?= $basket->getTTCPrice() ?>€</h5>
                                             </div>
                                             <a href="/basket/join_message" class="btn btn-warning btn-block btn-lg" <?= count($basket->getProductList()) == 0 ? "disabled" : "" ?>>Passer à l'étape suivante</a>
                                         </div>

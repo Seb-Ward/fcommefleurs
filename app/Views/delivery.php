@@ -123,7 +123,7 @@
                                             <h5> <?= $basket->getTTCPrice() - $basket->getShipPrice() ?>€</h5>
                                         </div>
                                         <div class="d-flex justify-content-between mb-4">
-                                            <h6 class="mb-0 text-black">Frais de Livraison</h6>
+                                            <h6 class="mb-0 text-black">Frais de livraison</h6>
                                             <h5> <?= $basket->getShipPrice() ?>€</h5>
                                         </div>
                                         <hr class="my-4">
@@ -131,11 +131,11 @@
                                             <h4 class="fw-bold mb-0 text-black">Total</h4>
                                             <h5 class="fw-bold mb-0 text-black"><?= $basket->getTTCPrice() ?>€</h5>
                                          </div>
-                                        <a href="/payment" class="btn btn-warning btn-block btn-lg" <?= count($basket->getProductList()) == 0 ? "disabled" : "" ?>>Passer à l'étape suivante<i class="fas fa-long-arrow-alt-right me-2"></i></a>
+                                        <a href="/payment" class="btn btn-warning btn-block btn-lg" <?= count($basket->getProductList()) == 0 ? "disabled" : "" ?>>Passer à l'étape suivante<i class="fas fa-long-arrow-alt-right ms-2"></i></a>
                                     </div>
                                     <div class="row">
                                         <div class="col-md-12">
-                                            <img class="rounded mx-auto d-block" width="300px" height="300px" src="/assets/images/devanture_3.png" alt="photo_devanture">
+                                            <img class="rounded mx-auto d-block" width="315px" height="235px" src="/assets/images/upload/voiture_fcommefleurs.jpg" alt="photo véhicule Fcommefleurs">
                                         </div>
                                     </div>
                                 </section>

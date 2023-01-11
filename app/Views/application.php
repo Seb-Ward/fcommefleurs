@@ -17,7 +17,7 @@
     </head>
     <body>
         <div class="container">
-            <header class="pt-4 pb-4 flex-wrap align-items-center justify-content-center  justify-content-md-between">
+            <header class="pt-3 pb-1 flex-wrap align-items-center justify-content-center  justify-content-md-between">
                 <div class="row">
                     <div class="col-12">
                         <div class="row">
@@ -60,9 +60,9 @@
                                         <i class="fa-solid fa-basket-shopping d-block"></i>
                                     </a>
                                 </div>
-                                <div class="menu-icon me-4">
+                                <div class="menu-icon me-1">
                                     <?php if ($connected == true){ ?>
-                                        <div class="dropdown me-4 dropdown-dashboard">
+                                        <div class="dropdown me-1 dropdown-dashboard">
                                             <a class='link-dark fa-solid fa-user dropdown-toggle' href="#" role="button" id="dropdownMenuLink"
                                             data-bs-toggle="dropdown" aria-expanded="false"></a>
                                             <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
@@ -91,14 +91,15 @@
                     </div>
                 </div>
             </header>
-            <h5 class="hr">
-                BY FREDERIC
-            </h5>
             <div class="row">
-                <div class="col-md-12 mb-2 text-end">
+                <div class="col-md-12 my-1 text-end">
                     <img width="92" height="23" src="/assets/images/logo_interflora_min.png"/>
                 </div>
             </div>
+            <h5 class="hr">
+                BY FREDERIC
+            </h5>
+            
             <main>
                 <?= $content ?>
             </main>

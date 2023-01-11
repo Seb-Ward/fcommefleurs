@@ -74,6 +74,8 @@
                                     </div>
                                 </div>
                             </div>
+                            <div class="row mb-5 mt-3">
+                            </div>
                         </div>
                         <div class="col-md-5 d-flex align-items-stretch">
                             <div class="rounded" id="map"></div>

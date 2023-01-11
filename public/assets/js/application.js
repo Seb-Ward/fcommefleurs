@@ -266,6 +266,38 @@ $(document).ready(function () {
         });
     });
 
+    $("#validDelivery").click(function(event) {
+        const formData = {
+            gender_woman: $("#gender_woman").val(), 
+            gender_men: $("#gender_men").val(), 
+            first_name: $("#first_name").val(),
+            last_name: $("#last_name").val(),
+            company_name: $("#company_name").val(), 
+            address: $("#address").val(), 
+            zipcode: $("#zipcode").val(), 
+            town: $("#town").val(), 
+            additional_address: $("#additional_address").val(), 
+            phone: $("#phone").val(), 
+
+        };
+        $("#spinner-div").show();
+        $.ajax({
+            type: "POST",
+            url: "/basket/process_delivery",
+            data: formData,
+            dataType: "json",
+            encode: true,
+        }).done(function(delivery) {
+            if (delivery.success === true) {
+                window.location.replace("/payment/");
+            } else {
+                alertError(delivery.message);
+            }
+            $("#spinner-div").hide();
+        });
+        event.preventDefault();
+    });
+
     $("a").click(function(event) {
         $('#cover').fadeOut(1000);
     });

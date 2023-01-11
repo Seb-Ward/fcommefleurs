@@ -1,24 +1,33 @@
-<fieldset>
-    <legend>Tableau de board de mes possibilitées.</legend>
-        <div class="col-md-6 d-flex align-items-center justify-content-center">
-            <ul class="nav mb-2 justify-content-center mb-md-0">
-                <li>
-                    <a class='nav-link px-2 link' href="/messages"><i class="fa-regular fa-envelope"></i></a>
-                </li>
-    
-                <li>
-                    <a class='nav-link px-2 link' href="/product">Modifier/Supprimer des produits</a>
-                </li>
-    
-                <li>
-                    <a class='nav-link px-2 link' href="/product/edit">Ajouter un   
-                    produit</a>
-                </li>
-    
-                <li>
-                    <a class='nav-link px-2 link' href="/product"><i class="fa-solid fa-shop"></i>Produits en boutique</a>
-                </li>
-            </ul>
+<div class="container">
+    <div class="row">
+        <div class="col">
+            <div class="card border btn btn-outline-primary rounded border-success shadow-sm text-dark">
+                <a class='nav-link px-2 link text-center' href="/messages"><i class="fa-regular fa-envelope"></i></a>
+            </div>
         </div>
-</fieldset>
+        <div class="col">
+            <div class="card border btn btn-outline-warning rounded border-warning shadow-sm text-dark">
+                <a class='nav-link px-2 link text-center' href="/product">Modifier/Supprimer des produits</a>
+            </div>
+        </div>
+        <div class="col">
+            <div class="card border btn btn-outline-primary rounded border-success shadow-sm text-dark">
+                <a class='nav-link link text-center' href="/product/edit">Ajouter un   
+                produit</a>
+            </div>
+        </div>
+        <div class="col">
+            <div class="card border btn btn-outline-warning rounded border-warning shadow-sm text-dark">
+                <a class='nav-link px-2 link text-center' href="/product"><i class="fa-solid fa-shop"></i> Produits dans la base de données</a>
+            </div>
+        </div>
+        <div class="col">
+            <div class="card border btn btn-outline-primary rounded border-success shadow-sm text-dark ">
+                <a class='nav-link px-2 link text-center' href="/product"><i class="fa-solid fa-basket-shopping d-block"></i>Commandes</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+
 
